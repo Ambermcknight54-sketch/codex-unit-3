@@ -10,11 +10,11 @@ Running JavaScript without a browser is the beginning of the backend journey of 
 
 ## Complete these tasks
 
-1. Install [NodeJs](https://nodejs.org/en).
-2. Open a terminal in VS Code.
+1. Open a terminal in VS Code.
+2. Run the command `node --version` to make sure you have NodeJS installed.
 3. Navigate to this lesson and level.
 4. Run `script.js` with the `node` command to reveal a secret message.
-5. Write `secret.js` to default export a string.
+5. Create `secret.js` to default export a string.
 6. The string should be the secret message.
 
 ## More Information
@@ -32,3 +32,4 @@ Running JavaScript without a browser is the beginning of the backend journey of 
 ## Hints
 
 - Use `export default` to export a single value. Example: `export default "My value."`
+- NodeJS can be downloaded from https://nodejs.org/en

@@ -4,19 +4,23 @@ const encoded =
 console.log("\n");
 decodeAndReveal();
 
-function decodeAndReveal() {
+async function decodeAndReveal() {
   const text = Buffer.from(encoded, "base64").toString("utf8");
-  const interval = setInterval(printChar, 6);
-
-  let i = 0;
-  function printChar() {
-    if (i < text.length) {
-      process.stdout.write(text[i]);
-      i += 1;
-    } else {
-      clearInterval(interval);
-      process.stdout.write("\n");
-      process.exit(0);
-    }
+  for (let index = 0; index < text.length; index++) {
+    const letter = text[index];
+    process.stdout.write(letter);
+    await timeout(6);
   }
+  process.stdout.write("\n");
+  process.exit(0);
+}
+
+async function timeout(milliseconds) {
+  await new Promise(curried(milliseconds));
+}
+
+function curried(milliseconds) {
+  return function (resolve) {
+    setTimeout(resolve, milliseconds);
+  };
 }
