@@ -1,1 +1,1 @@
-export default "command not found";
+export default "You ran JavaScript without a browser!";

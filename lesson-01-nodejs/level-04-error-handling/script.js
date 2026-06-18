@@ -8,11 +8,9 @@ try {
   // Tasks 5 & 6: Catching the error and explaining why it happened
   console.log("⚠️ An Error Was Caught Safely!");
   console.log("Reason for error:", error.message);
-  console.log("\nExplanation:");
+  console.log("\nlocal storage not provided");
   console.log(
     "This error occurs because we are running this script inside Node.js.",
   );
-  console.log(
-    "Node.js objects like 'localStorage' and 'document' do not exist here!",
-  );
+  console.log("Node.js objects like 'localStorage' do not exist here!");
 }
