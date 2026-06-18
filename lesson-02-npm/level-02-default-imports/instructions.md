@@ -32,6 +32,7 @@ Default exports and imports allow code to be accessed by any variable name from 
 - A variable or function name can be exported. Example: `export default myValue`
 - Use `export default` to directly export a single value. Example: `export default "My value."`
 - To `import`, specify a variable to store the value and specify the relative file path. Example: `import myValue from "./myValue.js"`
+- Note that there are no curly braces for default imports.
 
 ## Hints
 

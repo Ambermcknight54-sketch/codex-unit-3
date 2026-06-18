@@ -1,0 +1,9 @@
+*
+!.gitignore
+!lesson-**
+!lesson-**/**/*
+!package.json
+!*.code-workspace
+!*.min.js
+!.tests
+!.tests/**/*
