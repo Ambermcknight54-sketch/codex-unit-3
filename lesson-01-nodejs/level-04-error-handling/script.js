@@ -1,14 +1,17 @@
 console.log("Attempting to access browser features...");
+localStorage.setItem("username", "Amber");
+const pTag = document.querySelector("p");
+
 try {
-  localStorage["username"] = "Amber";
-  const paragraph = document.querySelector("p");
+  localStorage.setItem("username", "Amber");
+  const pTag = document.querySelector("p");
 
   console.log("Success!");
 } catch (error) {
   // Tasks 5 & 6: Catching the error and explaining why it happened
-  console.log("⚠️ An Error Was Caught Safely!");
+  console.log("The is an error!");
   console.log("Reason for error:", error.message);
-  console.log("\nlocal storage not provided");
+  console.log("\n local storage not provided");
   console.log(
     "This error occurs because we are running this script inside Node.js.",
   );
