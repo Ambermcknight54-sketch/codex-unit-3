@@ -48,10 +48,12 @@ for (let index = 0; index < numbers["length"]; index++) {
 }
 
 // 7, 8. Create the showItems function
-function showItems(arrayToDisplay) {
-  for (let index = 0; index < arrayToDisplay["length"]; index++) {
-    const item = arrayToDisplay[index];
+function showItems(arrayDisplay) {
+  for (let index = 0; index < arrayDisplay["length"]; index++) {
+    const item = arrayDisplay[index];
     const itemNumber = index + 1;
     console.log(`${itemNumber}. ${item}`);
   }
 }
+showItems(numbers);
+showItems(fruits);
