@@ -1,5 +1,10 @@
 console.log("Attempting to access browser features...");
 localStorage.setItem("username", "Amber");
-const paragraph = document.querySelector("p");
-localStorage.setItem("username", "Amber");
-const user = localStorage.getItem("username");
+const pTag = document.querySelector("p");
+
+try {
+  console.log("Attempting to access browser features...");
+  localStorage.setItem("username", "Amber");
+} catch (error) {
+  console.log("There is an error.");
+}
