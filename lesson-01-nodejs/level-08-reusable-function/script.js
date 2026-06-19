@@ -41,7 +41,7 @@ const numbers = [
 ];
 
 // 3, 4, 5. Initial loop
-for (let index = 0; index < numbers["length"]; index++) {
+for (let index = 0; index < numbers.length; index++) {
   const item = numbers[index];
   const itemNumber = index + 1;
   console.log(`${itemNumber}. ${item}`);
@@ -49,7 +49,7 @@ for (let index = 0; index < numbers["length"]; index++) {
 
 // 7, 8. Create the showItems function
 function showItems(arrayDisplay) {
-  for (let index = 0; index < arrayDisplay["length"]; index++) {
+  for (let index = 0; index < arrayDisplay.length; index++) {
     const item = arrayDisplay[index];
     const itemNumber = index + 1;
     console.log(`${itemNumber}. ${item}`);
