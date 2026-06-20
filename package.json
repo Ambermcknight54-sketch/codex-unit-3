@@ -1,5 +1,5 @@
 {
-  "module": "module",
+  "type": "module",
   "scripts": {
     "test": "vitest --watch=false --reporter=./test-messages.min.js"
   },
