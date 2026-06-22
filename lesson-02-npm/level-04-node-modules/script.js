@@ -8,7 +8,7 @@ const freeMemory = freemem();
 const arch = machine();
 const osPlatform = platform();
 
-console.log("=== Operating System Info ===");
+console.log("Operating System Info");
 console.log("Architecture:", arch);
 console.log("Platform:", osPlatform);
 console.log("Total Memory (Bytes):", totalMemory);
@@ -20,9 +20,9 @@ console.log("Primary CPU Model:", cpuList[0].model);
 const fullPath = resolve("./script.js");
 const pathParts = parse(fullPath);
 
-console.log("=== Path Module Utilities ===");
+console.log("Path Module Utilities");
 console.log("Absolute File Path:", fullPath);
-console.log("Parsed Path Object");
+console.log("Parsed Path Object", pathParts);
 // const absoluteScriptPath = resolve("./script.js");
 // const scriptPathDetails = parse(absoluteScriptPath);
 
