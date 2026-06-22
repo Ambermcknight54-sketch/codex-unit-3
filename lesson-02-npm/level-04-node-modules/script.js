@@ -16,8 +16,6 @@ console.log("Free Memory (Bytes):", freeMemory);
 console.log("CPU Cores Count:", cpuList.length);
 console.log("Primary CPU Model:", cpuList[0].model);
 
-console.log("\n-----------------------------------\n");
-
 // --- Tasks 6 & 7: Path Management Utilities ---
 const fullPath = resolve("./script.js");
 const pathParts = parse(fullPath);
