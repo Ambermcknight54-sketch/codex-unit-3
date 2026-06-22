@@ -22,7 +22,11 @@ const pathParts = parse(fullPath);
 
 console.log("Path Module Utilities");
 console.log("Absolute File Path:", fullPath);
+<<<<<<< HEAD
 console.log("Parsed Path Object");
+=======
+console.log("Parsed Path Object", pathParts);
+>>>>>>> master
 
 // const absoluteScriptPath = resolve("./script.js");
 // const scriptPathDetails = parse(absoluteScriptPath);
