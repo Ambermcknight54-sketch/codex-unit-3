@@ -1,0 +1,12 @@
+{
+  "name": "level-10-node_modules",
+  "version": "1.0.0",
+  "description": "level-10",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
