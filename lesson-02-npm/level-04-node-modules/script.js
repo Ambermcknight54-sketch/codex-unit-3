@@ -23,25 +23,13 @@ const pathParts = parse(fullPath);
 console.log("=== Path Module Utilities ===");
 console.log("Absolute File Path:", fullPath);
 console.log("Parsed Path Object");
-// const absoluteScriptPath = resolve("./script.js");
-// const scriptPathDetails = parse(absoluteScriptPath);
+const absoluteScriptPath = resolve("./script.js");
+const scriptPathDetails = parse(absoluteScriptPath);
 
-// // 7. Use console.log to display the value of each variable
-// console.log("=== Path Module Utilities ===");
-// console.log("Absolute File Path:", absoluteScriptPath);
-// console.log("Parsed Path Object Details:", scriptPathDetails);
-
-const cpuInfo = cpus();
-const totalmemInfo = totalmem();
-const freememInfo = freemem();
-const machineInfo = machine();
-const platformInfo = platform();
-
-console.log("CPU:", cpuInfo);
-console.log("Total Memory:", totalmemInfo);
-console.log("Free Memory:", freememInfo);
-console.log("Machine:", machineInfo);
-console.log("Platform:", platformInfo);
+// 7. Use console.log to display the value of each variable
+console.log("=== Path Module Utilities ===");
+console.log("Absolute File Path:", absoluteScriptPath);
+console.log("Parsed Path Object Details:", scriptPathDetails);
 
 // const cpuInfo = cpus();
 // const totalmemInfo = totalmem();
@@ -49,8 +37,8 @@ console.log("Platform:", platformInfo);
 // const machineInfo = machine();
 // const platformInfo = platform();
 
-// console.log("CPU:", (cpuInfo);
-// console.log(totalmemInfo);
-// console.log(freememInfo);
-// console.log(machineInfo);
-// console.log(platformInfo);
+// console.log("CPU:", cpuInfo);
+// console.log("Total Memory:", totalmemInfo);
+// console.log("Free Memory:", freememInfo);
+// console.log("Machine:", machineInfo);
+// console.log("Platform:", platformInfo);
