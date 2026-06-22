@@ -9,6 +9,7 @@ const arch = machine();
 const osPlatform = platform();
 
 console.log("Operating System Info");
+console.log("Operating System Info");
 console.log("Architecture:", arch);
 console.log("Platform:", osPlatform);
 console.log("Total Memory:", totalMemory);
@@ -21,17 +22,15 @@ const fullPath = resolve("./script.js");
 const pathParts = parse(fullPath);
 
 console.log("Path Module Utilities");
+console.log("Path Module Utilities");
 console.log("Absolute File Path:", fullPath);
-<<<<<<< HEAD
 console.log("Parsed Path Object");
-=======
-console.log("Parsed Path Object", pathParts);
->>>>>>> master
 
 // const absoluteScriptPath = resolve("./script.js");
 // const scriptPathDetails = parse(absoluteScriptPath);
 
 // // 7. Use console.log to display the value of each variable
+// console.log("Path Module Utilities");
 // console.log("Path Module Utilities");
 // console.log("Absolute File Path:", absoluteScriptPath);
 // console.log("Parsed Path Object Details:", scriptPathDetails);
