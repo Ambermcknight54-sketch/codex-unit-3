@@ -11,8 +11,8 @@ const osPlatform = platform();
 console.log("Operating System Info");
 console.log("Architecture:", arch);
 console.log("Platform:", osPlatform);
-console.log("Total Memory (Bytes):", totalMemory);
-console.log("Free Memory (Bytes):", freeMemory);
+console.log("Total Memory:", totalMemory);
+console.log("Free Memory:", freeMemory);
 console.log("CPU Cores Count:", cpuList.length);
 console.log("Primary CPU Model:", cpuList[0].model);
 
