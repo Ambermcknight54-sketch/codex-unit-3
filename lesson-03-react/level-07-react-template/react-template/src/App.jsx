@@ -9,11 +9,11 @@ function App() {
     <main>
       <h1>React Template</h1>
       <p>
-        To build a custom React template from scratch, use Vite to scaffold a
-        clean project setup, run the package installation command to fetch your
-        core dependencies, and then strip away all the default starter code and
-        placeholder styles. This gives you a completely blank canvas to start
-        designing your own layouts right away.
+        To make a React template, run the Vite command in your terminal to
+        create the project. Go into the new folder and run npm install to get
+        the files ready. Then, delete the starter code and extra CSS so you have
+        a clean folder for your next project. designing your own layouts right
+        away.
       </p>
     </main>
   );
