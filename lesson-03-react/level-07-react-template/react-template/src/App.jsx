@@ -5,17 +5,18 @@ import heroImg from "./assets/hero.png";
 import "./App.css";
 
 function App() {
-  <main>
-    <h1>React Template</h1>
-    <p>
-      To build a React template from scratch, use the terminal command "npm
-      create vite@latest set a folder-name to scaffold the files. Next, navigate
-      into that new folder using "cd folder-name" and run "npm install" to
-      download the core React packages. Finally, clear out the dcode and styling
-      inside the src folder that is a blank, and start the local environment
-      using "npm run dev".
-    </p>
-  </main>;
+  return (
+    <main>
+      <h1>React Template</h1>
+      <p>
+        To build a custom React template from scratch, use Vite to scaffold a
+        clean project setup, run the package installation command to fetch your
+        core dependencies, and then strip away all the default starter code and
+        placeholder styles. This gives you a completely blank canvas to start
+        designing your own layouts right away.
+      </p>
+    </main>
+  );
 }
 
 export default App;
