@@ -7,3 +7,4 @@
 !*.min.js
 !.tests
 !.tests/**/*
+node_modules/
