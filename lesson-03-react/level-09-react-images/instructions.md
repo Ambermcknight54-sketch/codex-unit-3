@@ -10,7 +10,7 @@ In React, local images can be imported as variables and inserted into HTML tags.
 
 ## Complete these tasks
 
-1. In your system's folder explorer or file picker, copy your `react-template` folder into this level folder.
+1. In your system's file explorer or file finder, copy your `react-template` folder into this level folder.
 2. In this level folder, rename `react-template` to `react-images`.
 3. In the folder `react-images/src/assets/`, add 3 image files.
 4. In the terminal, navigate to the `react-images` folder.

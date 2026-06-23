@@ -17,7 +17,7 @@ Although Vite can scaffold a React project, you can apply customizations that fi
 5. Let it automatically install dependencies.
 6. Open a web browser to the URL provided by Vite.
 7. In the VS Code file list, view `App.jsx` in the `react-template/src/` folder.
-8. Delete all code in the `App` function such that it's an empty function. Observe that the web browser display a blank page.
+8. Delete all code in the `App` function such that it's an empty function. Observe that the web browser displays a blank page.
 9. Let the `App` function return a `main` tag.
 10. In the `main` tag, add an `h1` tag and a `p` tag.
 11. Let the `h1` title be `React Template`.
