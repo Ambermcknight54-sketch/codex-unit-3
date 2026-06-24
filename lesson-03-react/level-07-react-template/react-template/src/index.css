@@ -1,11 +1,11 @@
-body {
-  color: blue;
-  margin: 0;
-  padding: 20px;
+html {
+  text-align: center;
 }
 
-main {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 30px;
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
 }
