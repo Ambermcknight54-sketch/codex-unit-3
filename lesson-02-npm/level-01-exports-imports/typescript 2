@@ -1,0 +1,31 @@
+Script started on Wed Jun 17 21:30:45 2026
+[1m[7m%[27m[1m[0m                                                                                                        [0m[27m[24m[Jamber@Ambers-MacBook-Pro level-01-exports-imports % [K[?2004h[7mcd path/to/this-level-folder[27m[28D[27mc[27md[27m [27mp[27ma[27mt[27mh[27m/[27mt[27mo[27m/[27mt[27mh[27mi[27ms[27m-[27ml[27me[27mv[27me[27ml[27m-[27mf[27mo[27ml[27md[27me[27mr[?2004l
+cd: no such file or directory: path/to/this-level-[7mcd path/to/this-level-folder[27m[28D[27mc[27md[27m [27mp[27ma[27mt[27mh[27m/[27mt[27mo[27m/[27mt[27mh[27mi[27ms[27m-[27ml[27me[27mv[27me[27ml[27m-[27mf[27mo[27ml[27md[27me[27mr[?2004lls[?2004l
+greet.js	instructions.md	showNames.js	typescript
+index.js	names.js	stats.js
+[1m[7m%[27m[1m[0m                                                                                                        [0m[27m[24m[Jamber@Ambers-MacBook-Pro level-01-exports-imports % [K[?2004hnnon  sscr s  nnode script[?2004l
+node:internal/modules/cjs/loader:1522
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/amber/Library/Mobile Documents/com~apple~CloudDocs/codex-unit-3/lesson-02-npm/level-01-exports-imports/script'
+[90m    at Module._resolveFilename (nodennode script[?2004l
+node:internal/modules/cjs/loader:1522
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/amber/Library/Mobile Documents/com~apple~CloudDocs/codex-unit-3/lesson-02-npm/level-01-exports-imports/script'
+[90m    at Module._resolveFilename (node:internal/modules/cjs/loader:1519:15)[39m
+[90m    at wrapResolveFilename (node:internal/modules/cjs/loader:1073:27)[39m
+[90m    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1097:10)[39m
+[90m    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1124:12)[39m
+[90m    at Module._load (node:internal/modules/cjs/loader:1296:5)[39m
+[90m    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)[39m
+[90m    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)[39m
+[90m    at node:internal/main/run_main_module:33:47[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: []
+}
+
+Node.js v26.3.0
+[1m[7m%[27m[1m[0m                                                                                                        [0m[27m[24m[Jamber@Ambers-MacBook-Pro level-01-exports-imports % [K[?2004h
