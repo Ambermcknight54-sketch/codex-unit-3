@@ -9,5 +9,4 @@ showNames(names);
 
 console.log("Benefits of Exports & Imports");
 console.log("- Keeping code organized and readable.");
-console.log("- Making components easier to debug.");
 console.log("- Allows code to it to be reused.");
