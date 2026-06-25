@@ -1,4 +1,5 @@
 // Task 4-6: Create an array of objects ("things") with corrected category spellings
+// const messsage = ["website gives an array of things like catagory and publish date"]
 const npmThings = [
   {
     category: "Animals & Fun",
@@ -20,3 +21,4 @@ const npmThings = [
 // Task 7: Add console.log to display the array of objects
 console.log("NPM Cat Things");
 console.log(npmThings);
+// console.log ("message");

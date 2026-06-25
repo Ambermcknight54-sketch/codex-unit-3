@@ -1,1 +1,1 @@
-console.log("NPX command can run modules that are installed or not installed");
+console.log("NPX runs node modules direcly in the terminal.");
