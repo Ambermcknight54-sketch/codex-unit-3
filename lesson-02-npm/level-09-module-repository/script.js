@@ -7,6 +7,6 @@ figlet("Hello Figlet!", function (err, data) {
     console.dir(err);
     return;
   }
-  // Print the beautiful banner message
+
   console.log(data);
 });
