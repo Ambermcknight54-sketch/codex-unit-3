@@ -1,7 +1,5 @@
 console.log("Roses are red.");
 console.log("Violets are blue.");
-console.log("Roses are red.");
-console.log("Violets are blue.");
 
 try {
   // Interacting with browser features using standard bracket notation (no dots)
