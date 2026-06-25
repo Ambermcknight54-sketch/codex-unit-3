@@ -162,14 +162,122 @@ export function splitArrayElements(raw: string) {
 
 // Find the body of a top-level function (declaration or const/let/var = () => {}) by name.
 // Returns the body string or empty string when not found.
+// This implementation scans the source to find the matching brace while
+// correctly skipping over strings and template literals so that inner
+// `}` characters inside `${...}` expressions do not prematurely end the match.
 export function findFunctionBody(src: string, name: string) {
   const stripped = stripComments(src)
-  const fnDecl = new RegExp(`function\\s+${name}\\s*\\([^)]*\\)\\s*\\{([\\s\\S]*?)\\}`, 'm')
-  const fnExpr = new RegExp(`(?:const|let|var)\\s+${name}\\s*=\\s*\\([^)]*\\)\\s*=>\\s*\\{([\\s\\S]*?)\\}`, 'm')
-  const decl = fnDecl.exec(stripped)
-  if (decl) return decl[1]
-  const expr = fnExpr.exec(stripped)
-  if (expr) return expr[1]
+
+  // Try to find the function declaration or function expression start
+  const declRe = new RegExp(`function\\s+${name}\\s*\\([^)]*\\)`, 'm')
+  const exprRe = new RegExp(`(?:const|let|var)\\s+${name}\\s*=\\s*(?:async\\s*)?\\([^)]*\\)\\s*=>`, 'm')
+
+  let match = declRe.exec(stripped)
+  if (!match) match = exprRe.exec(stripped)
+  if (!match) return ''
+
+  // Find the first '{' after the match index
+  let startIdx = stripped.indexOf('{', match.index + match[0].length)
+  if (startIdx === -1) return ''
+
+  // Scan forward to find the matching closing '}' balancing braces,
+  // while skipping over string literals and template literals.
+  let i = startIdx
+  let depth = 0
+  const len = stripped.length
+
+  while (i < len) {
+    const ch = stripped[i]
+
+    // Enter single-quoted string
+    if (ch === "'") {
+      i++
+      while (i < len) {
+        if (stripped[i] === "'" && stripped[i - 1] !== "\\") { i++; break }
+        if (stripped[i] === '\\') i += 2
+        else i++
+      }
+      continue
+    }
+
+    // Enter double-quoted string
+    if (ch === '"') {
+      i++
+      while (i < len) {
+        if (stripped[i] === '"' && stripped[i - 1] !== "\\") { i++; break }
+        if (stripped[i] === '\\') i += 2
+        else i++
+      }
+      continue
+    }
+
+    // Enter template literal: needs special handling for ${...} expressions
+    if (ch === '`') {
+      i++
+      while (i < len) {
+        if (stripped[i] === '`' && stripped[i - 1] !== "\\") { i++; break }
+        // Handle escaped chars inside template
+        if (stripped[i] === '\\') { i += 2; continue }
+        // Handle ${ ... } expression inside template by scanning until its matching brace
+        if (stripped[i] === '$' && stripped[i + 1] === '{') {
+          i += 2 // skip '${'
+          let nested = 1
+          while (i < len && nested > 0) {
+            const c = stripped[i]
+            if (c === "'") {
+              i++
+              while (i < len) {
+                if (stripped[i] === "'" && stripped[i - 1] !== "\\") { i++; break }
+                if (stripped[i] === '\\') i += 2
+                else i++
+              }
+              continue
+            }
+            if (c === '"') {
+              i++
+              while (i < len) {
+                if (stripped[i] === '"' && stripped[i - 1] !== "\\") { i++; break }
+                if (stripped[i] === '\\') i += 2
+                else i++
+              }
+              continue
+            }
+            if (c === '`') {
+              // nested template - reuse outer template handling
+              i++
+              while (i < len) {
+                if (stripped[i] === '`' && stripped[i - 1] !== "\\") { i++; break }
+                if (stripped[i] === '\\') i += 2
+                else i++
+              }
+              continue
+            }
+            if (c === '{') { nested++ }
+            else if (c === '}') { nested-- }
+            else if (c === '\\') { i += 2; continue }
+            i++
+          }
+          continue
+        }
+        i++
+      }
+      continue
+    }
+
+    // Count braces for block depth
+    if (ch === '{') {
+      depth++
+    } else if (ch === '}') {
+      depth--
+      if (depth === 0) {
+        // return the body between the outermost braces (excluding them)
+        return stripped.slice(startIdx + 1, i)
+      }
+    }
+
+    i++
+  }
+
   return ''
 }
 
