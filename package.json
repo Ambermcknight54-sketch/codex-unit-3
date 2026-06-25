@@ -15,5 +15,20 @@
     "data": "^2.0.0",
     "dependencies": "^0.0.1",
     "urls": "^0.0.4"
-  }
+  },
+  "name": "codex-unit-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test-messages.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolazar/codex-unit-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolazar/codex-unit-3/issues"
+  },
+  "homepage": "https://github.com/rolazar/codex-unit-3#readme"
 }
