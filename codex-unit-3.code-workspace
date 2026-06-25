@@ -13,6 +13,12 @@
         "request": "launch",
         "url": "http://127.0.0.1:3000/lesson-03-react/level-07-react-template/react-template/index.html",
       },
+      {
+        "type": "chrome",
+        "name": "http://127.0.0.1:3000/lesson-03-react/level-02-scaffold/html-css-javascript/index.html",
+        "request": "launch",
+        "url": "http://127.0.0.1:3000/lesson-03-react/level-02-scaffold/html-css-javascript/index.html",
+      },
     ],
   },
 }
