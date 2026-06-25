@@ -9,7 +9,6 @@ const arch = machine();
 const osPlatform = platform();
 
 console.log("Operating System Info");
-console.log("Operating System Info");
 console.log("Architecture:", arch);
 console.log("Platform:", osPlatform);
 console.log("Total Memory:", totalMemory);
@@ -21,7 +20,6 @@ console.log("Primary CPU Model:", cpuList[0].model);
 const fullPath = resolve("./script.js");
 const pathParts = parse(fullPath);
 
-console.log("Path Module Utilities");
 console.log("Path Module Utilities");
 console.log("Absolute File Path:", fullPath);
 console.log("Parsed Path Object");
