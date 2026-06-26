@@ -10,7 +10,7 @@ createRoot(document.getElementById("root")).render(
 );
 import React from "react";
 import Title from "./components/Title.jsx";
-import Info from "./components/Info.jsx";
+import Info from "./components/Info.js";
 import "./App.css"; // Make sure styles are imported
 
 function App() {
