@@ -1,7 +1,3 @@
-const npmjsInfo = [
-  "NPMJS stands for Node Package Manager JavaScript. Its initial stable version was published back in 2014.",
-];
+const secretMessage = "You ran JavaScript without a browser!";
 
-console.log(npmjsInfo);
-
-export default npmjsInfo;
+export default secretMessage;
