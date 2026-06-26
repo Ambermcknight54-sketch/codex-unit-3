@@ -16,5 +16,5 @@ console.log(
 );
 console.log("3. Select 'JavaScript Debug Terminal' from the menu.");
 console.log(
-  "4. Navigate to your folder and type 'node script'—it will automatically trigger any breakpoints!",
+  "4. Navigate to your folder and type 'node script', it will automatically trigger any breakpoints!",
 );
