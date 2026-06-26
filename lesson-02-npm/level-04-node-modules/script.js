@@ -7,6 +7,11 @@ const totalMemory = totalmem();
 const freeMemory = freemem();
 const arch = machine();
 const osPlatform = platform();
+// const cpuInfo = cpus();
+// const totalmemInfo = totalmem();
+// const freememInfo = freemem();
+// const machineInfo = machine();
+// const platformInfo = platform();
 
 console.log(arch);
 console.log(osPlatform);
@@ -14,14 +19,24 @@ console.log(totalMemory);
 console.log(freeMemory);
 console.log(cpuList.length);
 console.log(cpuList[0].model);
+// console.log("CPU:", cpuInfo);
+// console.log("Total Memory:", totalmemInfo);
+// console.log("Free Memory:", freememInfo);
+// console.log("Machine:", machineInfo);
+// console.log("Platform:", platformInfo);
+
+// console.log("CPU:", cpuInfo);
+// console.log("Total:", totalmemInfo);
+// console.log("Free:", freememInfo);
+// console.log("Machine:", machineInfo);
+// console.log("Platform:", platformInfo);
 
 // --- Tasks 6 & 7: Path Management Utilities ---
 const fullPath = resolve("./script.js");
 const pathParts = parse(fullPath);
-
-console.log("Path Module Utilities");
-console.log("Absolute File Path:", fullPath);
-console.log("Parsed Path Object");
+console.log("Path Utilities:");
+console.log("Absolute:", fullPath);
+console.log("Parsed Object:");
 
 // const absoluteScriptPath = resolve("./script.js");
 // const scriptPathDetails = parse(absoluteScriptPath);
