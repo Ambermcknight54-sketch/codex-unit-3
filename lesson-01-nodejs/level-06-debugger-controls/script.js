@@ -3,7 +3,7 @@
 try {
   console.log("Attempting to access browser features...");
   localStorage.setItem("username", "Amber");
-  const paragraph = document.querySelector("p");
+  const pTag = document.querySelector("pTag");
 } catch (error) {
   console.log("An error was caught by the try/catch block!");
 }
