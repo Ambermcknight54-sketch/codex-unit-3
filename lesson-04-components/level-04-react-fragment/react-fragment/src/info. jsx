@@ -1,0 +1,11 @@
+mport React from 'react';
+
+export default function Info() {
+  return (
+    <p>
+      React components are building blocks used to construct user interfaces. 
+      By combining HTML-like structures (JSX) with JavaScript logic, they let you write reusable 
+      code
+    </p>
+  );
+}
