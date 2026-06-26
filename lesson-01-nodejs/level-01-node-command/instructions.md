@@ -32,4 +32,4 @@ Running JavaScript without a browser is the beginning of the backend journey of 
 ## Hints
 
 - Use `export default` to export a single value. Example: `export default "My value."`
-- NodeJS can be downloaded from https://nodejs.org/en
+- NodeJS can be downloaded from <https://nodejs.org/en>
