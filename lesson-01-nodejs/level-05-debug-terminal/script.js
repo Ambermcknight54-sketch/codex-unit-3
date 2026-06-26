@@ -3,7 +3,7 @@ console.log("Violets are blue.");
 
 try {
   localStorage.username = "Amber";
-  const paragraph = document.querySelector("p");
+  const pTag = document.querySelector("pTag");
 } catch (error) {
   console.log("An error was caught");
 }
