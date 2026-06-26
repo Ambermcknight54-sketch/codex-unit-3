@@ -8,13 +8,12 @@ const freeMemory = freemem();
 const arch = machine();
 const osPlatform = platform();
 
-console.log("Operating System Info");
-console.log("Architecture:", arch);
-console.log("Platform:", osPlatform);
-console.log("Total Memory:", totalMemory);
-console.log("Free Memory:", freeMemory);
-console.log("CPU Cores Count:", cpuList.length);
-console.log("Primary CPU Model:", cpuList[0].model);
+console.log(arch);
+console.log(osPlatform);
+console.log(totalMemory);
+console.log(freeMemory);
+console.log(cpuList.length);
+console.log(cpuList[0].model);
 
 // --- Tasks 6 & 7: Path Management Utilities ---
 const fullPath = resolve("./script.js");
