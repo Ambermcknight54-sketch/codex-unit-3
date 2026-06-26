@@ -17,15 +17,6 @@ for (let index = 0; index < fruits.length; index++) {
   console.log(`${itemNumber}. ${item}`);
 }
 
-// Reusable showItems function
-function showItems(arrayDisplay) {
-  for (let index = 0; index < arrayDisplay.length; index++) {
-    const item = arrayDisplay[index];
-    const itemNumber = index + 1;
-    console.log(`${itemNumber}. ${item}`);
-  }
-}
-
 // 2. Create an array with 10 values
 const numbers = [
   "Apples",
