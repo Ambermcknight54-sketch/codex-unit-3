@@ -32,12 +32,16 @@ console.log(cpuList[0].model);
 // console.log("Platform:", platformInfo);
 
 // --- Tasks 6 & 7: Path Management Utilities ---
+import { resolve, parse } from "path";
+
 const fullPath = resolve("./script.js");
 const pathParts = parse(fullPath);
+
 console.log("Path Utilities:");
 console.log("Absolute:", fullPath);
-console.log("Parsed Object:");
+console.log("Parsed Object:", pathParts);
 
+export default pathParts;
 // const absoluteScriptPath = resolve("./script.js");
 // const scriptPathDetails = parse(absoluteScriptPath);
 
