@@ -1,7 +1,7 @@
 // const message = "chalk. "
 import chalk from "chalk";
 console.log(
-  chalk.green(
+  chalk.cyan(
     "A folder that contains external modules or libraries and explains what they are.",
   ),
 );
