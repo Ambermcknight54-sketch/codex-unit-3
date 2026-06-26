@@ -3,20 +3,35 @@
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
 import React from "react";
-import "./App.css";
+import "./App.css"; // Importing our custom styles
 
 function App() {
   return (
-    <main>
-      <h1>React Template</h1>
-      <p>
-        To make a React template, run the Vite command in your terminal to
-        create the project. Go into the new folder and run npm install to get
-        the files ready. Then, delete the starter code and extra CSS so you have
-        a clean folder for your next project. designing your own layouts right
-        away.
-      </p>
-    </main>
+    // Step 6: Containing adjacent elements inside a React Fragment
+    <>
+      {/* Step 7: Header tag with title */}
+      <header>
+        {" "}
+        Site-Header"
+        <h1>React Fragment</h1>
+      </header>
+
+      {/* Step 8: Main tag with a custom explanation */}
+      <main>
+        "Main-Content"
+        <p>
+          A React Fragment lets a component return multiple side-by-side
+          elements simultaneously.
+        </p>
+      </main>
+
+      {/* Step 9: Footer tag with standard info */}
+      <footer>
+        {" "}
+        Site-Footer"
+        <p> Frontend Development </p>
+      </footer>
+    </>
   );
 }
 
