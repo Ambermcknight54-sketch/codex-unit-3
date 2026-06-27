@@ -1,7 +1,22 @@
-h1 {
-  font-size: 60px;
+.product-showcase {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
-p {
-  font-family: "Georgia", serif;
-  color: #34495e;
+
+/* Force the heading and paragraph to take up full width so the images line up under them */
+.product-showcase h1,
+.product-showcase p {
+  flex: 1 1 100%;
+}
+
+.product-showcase img {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
 }
