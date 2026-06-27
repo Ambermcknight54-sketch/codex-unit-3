@@ -2,19 +2,35 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
+import React from "react";
 import "./App.css";
 
 function App() {
+  // 6. Return a main tag (with a layout class applied directly to it)
   return (
-    <main>
-      <h1>React Template</h1>
+    <main className="product-showcase">
+      {/* 8, 9. h1 title describing the product */}
+      <h1>Mechanical Ergonomic Keyboard</h1>
+
+      {/* 8, 9. p tag describing the product */}
       <p>
-        To make a React template, run the Vite command in your terminal to
-        create the project. Go into the new folder and run npm install to get
-        the files ready. Then, delete the starter code and extra CSS so you have
-        a clean folder for your next project. designing your own layouts right
-        away.
+        This is a high-quality, split mechanical keyboard made for comfortable
+        typing.
       </p>
+
+      {/* 8, 10. Three image tags using valid internet URLs as sources */}
+      <img
+        src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=500"
+        alt="Ergonomic mechanical keyboard angled view"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=500"
+        alt="Close up of mechanical switch keycaps"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1601445638532-3c6f6c3aa1d6?q=80&w=500"
+        alt="Minimalist workspace setup with keyboard"
+      />
     </main>
   );
 }
