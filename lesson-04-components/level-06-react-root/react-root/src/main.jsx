@@ -1,5 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 import "./index.css";
 
 // 6, 7. Save the selected HTML element in a variable named divTag first
