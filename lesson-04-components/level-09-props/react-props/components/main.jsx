@@ -1,13 +1,12 @@
-import React from "react";
+function Header(props) {
+  // Remove or comment out after inspection:
+  // debugger;
 
-export function Main() {
   return (
-    <main>
-      {/* 15. A descriptive paragraph detailing how to structure a semantic template */}
-      <p>
-        When you make a Semantic Template, you throw away that extra box!
-        Instead, you attach your website block.
-      </p>
-    </main>
+    <header>
+      <h1>{props.title}</h1>
+    </header>
   );
 }
+
+export default Header;
