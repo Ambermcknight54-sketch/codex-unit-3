@@ -1,9 +1,12 @@
-import React from "react";
+function Header(props) {
+  // Remove or comment out after inspection:
+  // debugger;
 
-export function Header() {
   return (
     <header>
-      <h1>Semantic Template</h1>
+      <h1>{props.title}</h1>
     </header>
   );
 }
+
+export default Header;
