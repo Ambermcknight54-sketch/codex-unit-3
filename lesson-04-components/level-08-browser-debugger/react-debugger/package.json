@@ -1,5 +1,5 @@
 {
-  "name": "react-debugger",
+  "name": "react-template",
   "private": true,
   "type": "module",
   "scripts": {
@@ -23,7 +23,7 @@
     "globals": "^17.6.0",
     "vite": "^8.1.0"
   },
- "version": "0.2.0",
+  "version": "0.2.0",
   "configurations": [
     {
       "name": "Attach to Edge",
@@ -43,11 +43,10 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "skipFiles": ["<node_internals>/**"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
       "program": "${workspaceFolder}/lesson-01-nodejs/level-06-debugger-controls/script.js"
     }
   ]
 }
-
-
-
