@@ -1,0 +1,29 @@
+.body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #0a3967;
+}
+
+/* Style 1: Enhance the Header background and text spacing */
+.site-header {
+  background-color: #4f46e5;
+  color: #ffffff;
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+.main-content p {
+  color: #1e293b;
+  font-size: 24px;
+  margin: 0;
+}
+
+.site-footer {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 12px;
+}
