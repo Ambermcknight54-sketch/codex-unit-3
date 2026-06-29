@@ -1,9 +1,12 @@
-import React from "react";
+function Header({ title }) {
+  // You can keep this line active while using the browser debugger to inspect the 'title' variable directly.
+  debugger;
 
-export function Header() {
   return (
     <header>
-      <h1>Semantic Template</h1>
+      <h1>{title}</h1>
     </header>
   );
 }
+
+export default Header;
