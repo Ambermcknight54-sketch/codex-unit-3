@@ -7,7 +7,7 @@ function App() {
     <>
       <Header title="Destructured Props" />
       <Main message="To destructure props in React, replace the single 'props' parameter in your function declaration with curly braces containing the exact property names you want to extract, like ({ title, message }). This unpacks them directly into standard variables you can use immediately without typing 'props.' every time." />
-      <Footer />
+      <Footer year="2026" />
     </>
   );
 }
