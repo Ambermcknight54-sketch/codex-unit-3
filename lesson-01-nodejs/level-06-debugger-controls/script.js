@@ -7,8 +7,7 @@ try {
 } catch (error) {
   console.log("An error was caught by the try/catch block!");
 }
-// Tasks 5 & 6: Catching the error and explaining the debugger controls
-console.log("error was caught by the try/catch block!");
+// Tasks 5 & 6: Catching the error and explaining the debugger control
 
 console.log("Quick Debugger Controls Guide");
 console.log(
