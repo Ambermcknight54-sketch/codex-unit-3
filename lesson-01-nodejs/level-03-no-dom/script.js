@@ -6,6 +6,7 @@ try {
   const pTag = document.querySelector("pTag");
 
   console.log("Success!");
+  debugger;
 } catch (error) {
   // Tasks 5 & 6: Catching the error and explaining why it happened
   console.log("There is an error!");
