@@ -21,7 +21,12 @@ function Main() {
     <main>
       <button onClick={handleClick}>Click counter</button>
       <p>{count}</p>
-      <p>{message}</p>
+      <p>
+       Using useState with array destructuring lets you unpack the state variable and its setter function onto a single line of code.
+        setCount.
+      </p>
+    </main>
+  );
     </main>
   );
 }
