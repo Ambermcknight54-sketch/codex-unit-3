@@ -1,10 +1,10 @@
-function Header({ title }) {
-  // You can keep this line active while using the browser debugger to inspect the 'title' variable directly.
-  debugger;
+function Header(props) {
+  // Task 11: The browser debugger will pause here so you can inspect 'props'
+  `debugger`;
 
   return (
     <header>
-      <h1>{title}</h1>
+      <h1>{props.title}</h1>
     </header>
   );
 }
