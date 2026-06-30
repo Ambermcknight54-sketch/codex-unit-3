@@ -1,3 +1,3 @@
 const definedMessage =
-  "To use 'export default', you can define a variable and export default variableName;";
+  "Export default allows you to defie a variable and export default it";
 export default definedMessage;
