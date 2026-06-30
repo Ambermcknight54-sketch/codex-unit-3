@@ -1,7 +1,8 @@
-console.log("Attempting to access browser features...");
+// console.log("Attempting to access browser features...");
 
 try {
   // Move these inside the try block so the catch block can actually handle the error
+  console.log("Attempting to access browser features...");
   localStorage.setItem("username", "Amber");
   const pTag = document.querySelector("pTag");
 
