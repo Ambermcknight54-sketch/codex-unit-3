@@ -1,20 +1,27 @@
+import React from "react";
+
 function Main() {
   return (
     <main>
-      <h2>Event Handling</h2>
+      {/* 6. Added button tag with text */}
+      {/* 12. Added onClick attribute referencing handleClick */}
       <button onClick={handleClick}>Click event</button>
     </main>
   );
 }
 
+// 7. Created handleClick outside and underneath the Main function
+// 8. Passed the event object parameter
 function handleClick(event) {
+  // 9. Prevents the default HTML element behavior
   event.preventDefault();
 
-  // Execution pauses here in the VS Code browser debugger when the button is clicked
+  // 10. Pauses execution when the button is clicked
   debugger;
 
+  // 10 & 11. Logged message explaining the event handler
   console.log(
-    "To use a click event handler in React, assign an event listener function directly to the element's 'onClick' attribute using camelCase and curly braces. The handler function automatically receives a synthetic event object, allowing you to control behaviors like event.preventDefault().",
+    "To handle click events in React, you attach an onClick attribute directly to an HTML element like a button and pass it the name of a callback function. That function automatically receives an event object which you can use to control or prevent standard browser behaviors.",
   );
 }
 
