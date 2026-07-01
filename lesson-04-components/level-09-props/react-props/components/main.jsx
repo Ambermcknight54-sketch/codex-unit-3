@@ -1,12 +1,14 @@
-function Header(props) {
-  // Remove or comment out after inspection:
-  // debugger;
+// 15. Added the props object as a parameter
+function Main(props) {
+  // 14. Added the debugger here to inspect the incoming message
+  debugger;
 
   return (
-    <header>
-      <h1>{props.title}</h1>
-    </header>
+    <main>
+      {/* 19. Render the message property inside a paragraph tag */}
+      <p>{props.message}</p>
+    </main>
   );
 }
 
-export default Header;
+export default Main;

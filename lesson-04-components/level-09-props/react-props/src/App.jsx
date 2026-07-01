@@ -5,9 +5,13 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
+      {/* 10. Added the title attribute */}
       <Header title="React Props" />
-      <Main message="To use props in React, add custom attributes to the component tag when rendering it in the parent file. Then, accept the 'props' object as a parameter in the child component function and reference those attributes using dot notation inside curly braces." />
-      <Footer year="Amber Mcknight 2026" />
+
+      {/* 16 & 17. Added the message attribute with an explanation */}
+      <Main message="Props are like arguments passed into a function. When you add attributes to a custom React tag, React groups them into a single object called props and sends it to the component so you can dynamically use that data." />
+
+      <Footer />
     </>
   );
 }
