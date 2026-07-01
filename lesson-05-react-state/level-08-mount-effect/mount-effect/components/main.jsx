@@ -4,7 +4,7 @@ function Main() {
   const [didMount, setDidMount] = useState(false);
 
   // 10. This pops up the debugger so you can check things out!
-  debugger;
+  // debugger;
 
   // 15 & 16. This calls useEffect with your function and the empty brackets []
   useEffect(componentDidMount, []);
@@ -12,7 +12,7 @@ function Main() {
   // 12. We put this function right here so JavaScript can find it
   function componentDidMount() {
     // 14. Another pause button for the debugger!
-    debugger;
+    // debugger;
 
     // 13. Changing the switch from false to true
     setDidMount(true);
