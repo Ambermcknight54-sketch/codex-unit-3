@@ -1,21 +1,34 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "./assets/vite.svg";
-// import heroImg from "./assets/hero.png";
-import "./App.css";
+import { useState } from "react";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 function App() {
+  // 6. Add useState to track unmounting state
+  const [unmount, setUnmount] = useState(false);
+
+  // 25. Debugger to watch mainComponent and unmount variables change
+  debugger;
+
+  // 7. Store the Main element in a variable and pass down setUnmount
+  let mainComponent = <Main setUnmount={setUnmount} />;
+
+  // 8. Check if unmount is true
+  if (unmount) {
+    // 9. Replace with an empty fragment to clear it from the DOM
+    mainComponent = <></>;
+  }
+
   return (
-    <main>
-      <h1>React Template</h1>
-      <p>
-        To make a React template, run the Vite command in your terminal to
-        create the project. Go into the new folder and run npm install to get
-        the files ready. Then, delete the starter code and extra CSS so you have
-        a clean folder for your next project. designing your own layouts right
-        away.
-      </p>
-    </main>
+    <>
+      {/* 5. Header rendering the requested title */}
+      <Header title="Unmount Effect" />
+
+      {/* 10. Render the variable holding our component */}
+      {mainComponent}
+
+      <Footer />
+    </>
   );
 }
 
