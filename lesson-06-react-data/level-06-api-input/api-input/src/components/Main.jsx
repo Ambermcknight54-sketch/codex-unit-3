@@ -1,169 +1,99 @@
 import { useState, useEffect } from "react";
 
 function Main() {
-  // Stateful variable to hold the final character details elements
   const [characters, setCharacters] = useState([]);
 
-  // State to track the mount phase
-  const [didMount, setDidMount] = useState(false);
-
-  // Breakpoint to watch variables change during execution
-  debugger;
-
-  // Track the mount phase
-  useEffect(componentDidMount, []);
-
-  // Callback function for the mount phase
-  function componentDidMount() {
-    debugger;
-    setDidMount(true);
-
-    // Call our async data handler
+  // Fetch initial characters when the component mounts
+  useEffect(() => {
+    async function handleData() {
+      try {
+        const response = await fetch(
+          "https://potterapi-fedeperin.vercel.app/en/characters",
+        );
+        const results = await response.json();
+        const details = results.map(toCharacters);
+        setCharacters(details);
+      } catch (error) {
+        console.error("Error fetching initial data:", error);
+      }
+    }
     handleData();
-  }
+  }, []);
 
-  // Asynchronous function to fetch and process API data
-  async function handleData() {
-    // 1. Fetch data from the API
-    const response = await fetch(
-      "https://potterapi-fedeperin.vercel.app/en/characters",
-    );
+  // 16. Create the handleSubmit function under handleData
+  async function handleSubmit(event) {
+    // 25. Place a debugger breakpoint at the beginning of handleSubmit
+    // debugger;
 
-    // 2. Parse the response into a usable array of objects
-    const data = await response.json();
+    // 18. Accept the event object and prevent default form behavior
+    event.preventDefault();
 
-    // 3. Use the dot method (.map) with a standard inline function to transform the data
-    const details = data.map(function (dataItem, index) {
-      // Breakpoint inside the loop to inspect each API character object
-      debugger;
+    // 19. Capture the form element
+    const form = event.target;
 
-      return (
-        <details key={index}>
-          <summary>{dataItem.character}</summary>
-          <figure>
-            <img src={dataItem.image} alt={dataItem.character} />
-            <figcaption>{dataItem.actor}</figcaption>
-          </figure>
-        </details>
+    // 20. Build the data object using the key expected by the API
+    const data = {
+      limit: form.elements.max.value,
+    };
+
+    // 21. Use URLSearchParams to create a dataString query string
+    const dataString = new URLSearchParams(data).toString();
+
+    try {
+      // 22. Fetch from the API and include the dataString as query parameters
+      const response = await fetch(
+        `https://potterapi-fedeperin.vercel.app/en/characters?${dataString}`,
       );
-    });
 
-    // 4. Save the final collection of React elements to state
-    setCharacters(details);
+      // 23. Parse the response into results, map them, and update the state array
+      const results = await response.json();
+      const details = results.map(toCharacters);
+      setCharacters(details);
+    } catch (error) {
+      console.error("Error fetching filtered data:", error);
+    }
   }
 
   return (
     <main>
-      {/* Render the value of didMount */}
-      <p>{"didMount: " + didMount}</p>
+      {/* 14 & 15. Form layout specifying the max number of characters to fetch */}
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="max">Max Characters: </label>
+          <input type="number" id="max" name="max" min="1" required />
+        </div>
+        <button type="submit">Fetch Characters</button>
+      </form>
 
-      {/* Render the character details blocks */}
-      <section>{characters}</section>
+      {/* Render the element array saved in characters state */}
+      <output>{characters}</output>
 
-      {/* Explanation of how map works with API data */}
+      {/* 28. Paragraph explaining the input submission and render process */}
       <p>
-        To render data from an API, we fetch the array of information when the
-        component first mounts. Once we have the data, we use standard dot
-        notation to call the .map method, writing a regular function directly
-        inside it to loop through each character and output organized HTML
-        elements to the page.
+        To change API data with user input, we capture the values from form
+        submission inputs, wrap them inside a data object, and pass that object
+        into URLSearchParams to generate a clean query string. This data string
+        is appended directly onto the API fetch URL following a question mark,
+        allowing the server to return a filtered array of results that we loop
+        through and render on the screen.
       </p>
     </main>
   );
 }
 
-export default Main;
+// 10. Add index as the second parameter to the callback function
+function toCharacters(dataItem, index) {
+  // 11. Create a unique key tracking loop position combined with character name
+  const key = index + dataItem.fullName;
 
-// const handleData = async function() {
-//   const response = await fetch("https://potterapi-fedeperin.vercel.app/en/characters");
-//   const data = await response.json();
-
-//   const details = data.map(function (dataItem, index) {
-//     return (
-//       <details key={index}>
-//         <summary>{dataItem.character}</summary>
-//         <figure>
-//           <img src={dataItem.image} alt={dataItem.character} />
-//           <figcaption>{dataItem.actor}</figcaption>
-//         </figure>
-//       </details>
-//     );
-//   });
-
-//   setCharacters(details);
-// };
-
-// import { useState, useEffect } from "react";
-
-// function Main() {
-//   // Stateful variable to hold our Harry Potter characters
-//   const [characters, setCharacters] = useState([]);
-  
-//   // State to track the mount phase
-//   const [didMount, setDidMount] = useState(false);
-
-//   // Breakpoint above the return statement to trace rendering phases
-//   debugger;
-
-//   // 1. Function Expression: Asynchronous function assigned to a variable
-//   const handleData = async function () {
-//     // Fetch data from the Harry Potter API
-//     const response = await fetch("https://potterapi-fedeperin.vercel.app/en/characters");
-    
-//     // Parse the API response into a data array
-//     const data = await response.json();
-
-//     // The dot method (.map) using a standard, inline anonymous function
-//     const details = data.map(function (dataItem, index) {
-//       // Breakpoint inside the loop to inspect the dataItem object
-//       debugger;
-
-//       return (
-//         <details key={index}>
-//           <summary>{dataItem.character}</summary>
-//           <figure>
-//             <img src={dataItem.image} alt={dataItem.character} />
-//             <figcaption>{dataItem.actor}</figcaption>
-//           </figure>
-//         </details>
-//       );
-//     });
-
-//     // Update state with the completed array of React elements
-//     setCharacters(details);
-//   };
-
-//   // 2. Setup the component to track the mount phase
-//   useEffect(componentDidMount, []);
-
-//   // 3. Callback function for the mount phase
-//   function componentDidMount() {
-//     debugger;
-//     setDidMount(true);
-
-//     // Call our variable-assigned function safely below its definition
-//     handleData();
-//   }
-
-//   return (
-//     <main>
-//       {/* Render the value of didMount using concatenation */}
-//       <p>{"didMount: " + didMount}</p>
-
-//       {/* Render the character details blocks inside a section tag */}
-//       <section>
-//         {characters}
-//       </section>
-
-//       {/* Message explaining the setup */}
-//       <p>
-//         To render data from an API, we fetch the array of information when the 
-//         component first mounts. Once we have the data, we use standard dot notation 
-//         to call the .map method, writing a regular function directly inside it to 
-//         loop through each character and output organized HTML elements to the page.
-//       </p>
-//     </main>
-//   );
-// }
+  // 12. Apply the invisible tracking key attribute to the details element
+  return (
+    <details key={key}>
+      <summary>{dataItem.fullName}</summary>
+      <p>House: {dataItem.hogwartsHouse}</p>
+      <p>Actor: {dataItem.interpretedBy}</p>
+    </details>
+  );
+}
 
 export default Main;
