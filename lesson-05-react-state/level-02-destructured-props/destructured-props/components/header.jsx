@@ -1,10 +1,12 @@
-function Header(props) {
-  // Task 11: The browser debugger will pause here so you can inspect 'props'
-  `debugger`;
+// 10 & 14. Destructured the title property directly in the parameter block
+function Header({ title }) {
+  // 11. Debugger statement to inspect variables during execution
+  // debugger;
 
   return (
     <header>
-      <h1>{props.title}</h1>
+      {/* 16. Rendered the destructured title variable */}
+      <h1>{title}</h1>
     </header>
   );
 }
