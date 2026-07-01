@@ -9,8 +9,10 @@ function App() {
       <Header title="React Props" />
 
       {/* 16 & 17. Added the message attribute with an explanation */}
-      <Main message="Props are like arguments passed into a function. When you add attributes to a custom React tag, React groups them into a single object called props and sends it to the component so you can dynamically use that data." />
-
+      <Main
+        message="Props are like inputs for a function. When you add attributes to a custom React tag, 
+      React puts them all into a single object called props so your component can use that data."
+      />
       <Footer />
     </>
   );
