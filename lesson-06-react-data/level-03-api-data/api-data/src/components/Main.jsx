@@ -1,84 +1,75 @@
 import { useState, useEffect } from "react";
 
 function Main() {
-  // 8 & 9. Stateful variable to contain characters from Harry Potter (initialized as an empty array)
+  // Stateful variable to hold the final character details elements
   const [characters, setCharacters] = useState([]);
 
-  // 12. State to track the mount phase
+  // State to track the mount phase
   const [didMount, setDidMount] = useState(false);
 
-  // 31. Breakpoint to inspect state changes during execution
+  // Breakpoint to watch variables change during execution
   debugger;
 
-  // 12. Setup the component to track the mount phase
+  // Track the mount phase
   useEffect(componentDidMount, []);
 
-  // 12. Callback function for the mount phase
+  // Callback function for the mount phase
   function componentDidMount() {
-    // 31. Breakpoint inside the mount execution block
     debugger;
     setDidMount(true);
 
-    // 14. Call the handleData function
+    // Call our async data handler
     handleData();
   }
 
-  // 15. handleData function configured with async/await to handle the api promise
+  // Asynchronous function to fetch and process API data
   async function handleData() {
-    // 17. Fetch data from the Harry Potter API
+    // 1. Fetch data from the API
     const response = await fetch(
       "https://potterapi-fedeperin.vercel.app/en/characters",
     );
 
-    // 18. Parse the API response and store the character array
+    // 2. Parse the response into a usable array of objects
     const data = await response.json();
 
-    // 19. Map the data to React elements using toCharacters as the callback
-    const details = data.map(toCharacters);
+    // 3. Use the dot method (.map) with a standard inline function to transform the data
+    const details = data.map(function (dataItem, index) {
+      // Breakpoint inside the loop to inspect each API character object
+      debugger;
 
-    // 20. Update state with the newly created elements array
+      return (
+        <details key={index}>
+          <summary>{dataItem.character}</summary>
+          <figure>
+            <img src={dataItem.image} alt={dataItem.character} />
+            <figcaption>{dataItem.actor}</figcaption>
+          </figure>
+        </details>
+      );
+    });
+
+    // 4. Save the final collection of React elements to state
     setCharacters(details);
   }
 
   return (
     <main>
-      {/* 12. Render the value of didMount */}
+      {/* Render the value of didMount */}
       <p>{"didMount: " + didMount}</p>
 
-      {/* 10. Render the characters variable inside a section tag */}
+      {/* Render the character details blocks */}
       <section>{characters}</section>
 
-      {/* 34. Explanation p tag */}
+      {/* Explanation of how map works with API data */}
       <p>
-        To render data from an API, we use an asynchronous fetch request inside
-        our mount phase. Once the network promise resolves, we pass the raw data
-        array to the map method, converting each character object into
-        structured HTML blocks before saving them to state so React can
-        dynamically output them.
+        To render data from an API, we fetch the array of information when the
+        component first mounts. Once we have the data, we use standard dot
+        notation to call the .map method, writing a regular function directly
+        inside it to loop through each character and output organized HTML
+        elements to the page.
       </p>
     </main>
   );
-}
-
-// 21. Create the toCharacters callback function outside and under the Main function
-// 23. Receive dataItem object from the API array map
-function toCharacters(dataItem, index) {
-  // 24. Breakpoint to inspect incoming data properties (character, image, actor, etc.)
-  debugger;
-
-  // 25, 26, 27 & 28. Construct details tag with summary, figure, img, and figcaption
-  const details = (
-    <details key={index}>
-      <summary>{dataItem.character}</summary>
-      <figure>
-        <img src={dataItem.image} alt={dataItem.character} />
-        <figcaption>{dataItem.actor}</figcaption>
-      </figure>
-    </details>
-  );
-
-  // 29. Return the details object to populate the map array output
-  return details;
 }
 
 export default Main;
