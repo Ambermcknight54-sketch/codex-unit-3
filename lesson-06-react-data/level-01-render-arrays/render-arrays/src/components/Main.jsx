@@ -1,61 +1,38 @@
 import { useState, useEffect } from "react";
 // 11. Default import without curly braces from the relative data path
-import data from "../data/data.js";
+import {data} from "../data/data.js";
+
 export function Main() {
+  debugger;
   const [didMount, setDidMount] = useState(false);
   const [subjects, setSubjects] = useState([]);
   useEffect(componentDidMount, []);
-  // 25. Debugger breakpoint inside Main to watch state initialization
-  // debugger;
-
-  // 6. Use useEffect with an empty array of dependencies to track the mount phase
-
-  // 6. Callback function for the mount phase
-  function componentDidMount() {
-    // 25. Debugger breakpoint inside componentDidMount to watch execution
-    // debugger;
-    setDidMount(true);
-
-    // 17. Add an empty array to hold our JSX elements temporarily
-    const figures = [];
-
-    // 18. Traverse the data array with a traditional for loop
-    for (let i = 0; i < data.length; i++) {
-      // 19, 20 & 21. Create a figure element with an img and a figcaption tag
-      const figure = (
-        <figure key={i}>
-          <img src={data[i].src} alt={data[i].caption} />
-          <figcaption>{data[i].caption}</figcaption>
-        </figure>
-      );
-
-      // 22. Push the newly created figure tag into the figures array
-      figures.push(figure);
-    }
-
-    // 23. Save the completed array of HTML elements into our stateful variable
-    setImages(figures);
-  }
-
+  
+  
   return (
     <main>
-      {/* 6. Render the value of didMount using string concatenation */}
       <p>{"didMount: " + didMount}</p>
+      <section>{subjects}</section>
 
-      {/* 15. Render images array inside a section tag */}
-      <section>{images}</section>
-
-      {/* 28. Paragraph explaining how to render a data array with HTML */}
-      <p>
-        To render a data array into HTML, we loop through the items during the
-        mount phase using a for loop. Inside the loop, we wrap each item's data
-        into semantic figure tags, push them into an array, and save that array
-        to state so React can dynamically output the elements on the page.
-      </p>
     </main>
   );
-}
 
+  function componentDidMount() {
+    setDidMount(true);
+    const details = [];
+  for (let index =0; index < data.length; index ++)
+    const item = (
+  <details>;
+      <summary>item.name</summary>
+      {item.description} 
+    </details>
+  
+    ); 
+    detailsElements.push(details);
+
+  }
+  setSubjects(detailsElements);
+}
 export default Main;
 
 // import { useState, useEffect } from "react";
