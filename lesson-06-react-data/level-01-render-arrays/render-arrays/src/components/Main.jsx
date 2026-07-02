@@ -1,45 +1,39 @@
 import { useState, useEffect } from "react";
-// 11. Import the data array (default import, no curly braces)
-import imageData from "../data/data.js";
-
-function Main() {
-  // 6. State to track the mount phase
+// 11. Default import without curly braces from the relative data path
+import data from "../data/data.js";
+export function Main() {
   const [didMount, setDidMount] = useState(false);
-
-  // 13 & 14. Stateful array initialized to an empty array to hold HTML elements
-  const [images, setImages] = useState([]);
-
-  // 25. Debugger above the return statement to watch state changes
-  debugger;
-
-  // 6. Trigger componentDidMount on initial mount phase
+  const [subjects, setSubjects] = useState([]);
   useEffect(componentDidMount, []);
+  // 25. Debugger breakpoint inside Main to watch state initialization
+  // debugger;
+
+  // 6. Use useEffect with an empty array of dependencies to track the mount phase
 
   // 6. Callback function for the mount phase
   function componentDidMount() {
-    // 25. Debugger inside mount phase
-    debugger;
-
+    // 25. Debugger breakpoint inside componentDidMount to watch execution
+    // debugger;
     setDidMount(true);
 
-    // 17. Array to hold our JSX elements temporarily
+    // 17. Add an empty array to hold our JSX elements temporarily
     const figures = [];
 
     // 18. Traverse the data array with a traditional for loop
-    for (let i = 0; i < imageData.length; i++) {
-      // 19, 20 & 21. Create a figure tag with an img and a figcaption using data properties
+    for (let i = 0; i < data.length; i++) {
+      // 19, 20 & 21. Create a figure element with an img and a figcaption tag
       const figure = (
         <figure key={i}>
-          <img src={imageData[i].src} alt={imageData[i].caption} />
-          <figcaption>{imageData[i].caption}</figcaption>
+          <img src={data[i].src} alt={data[i].caption} />
+          <figcaption>{data[i].caption}</figcaption>
         </figure>
       );
 
-      // 22. Push the JSX element into the figures array
+      // 22. Push the newly created figure tag into the figures array
       figures.push(figure);
     }
 
-    // 23. Save the completed array of HTML tags into our stateful variable
+    // 23. Save the completed array of HTML elements into our stateful variable
     setImages(figures);
   }
 
@@ -48,10 +42,10 @@ function Main() {
       {/* 6. Render the value of didMount using string concatenation */}
       <p>{"didMount: " + didMount}</p>
 
-      {/* 15. Render the stateful images array inside a section tag */}
+      {/* 15. Render images array inside a section tag */}
       <section>{images}</section>
 
-      {/* 28. Simple p tag explaining how to render a data array with HTML */}
+      {/* 28. Paragraph explaining how to render a data array with HTML */}
       <p>
         To render a data array into HTML, we loop through the items during the
         mount phase using a for loop. Inside the loop, we wrap each item's data
@@ -63,3 +57,136 @@ function Main() {
 }
 
 export default Main;
+
+// import { useState, useEffect } from "react";
+// // 12. Named import using curly braces from the data file
+// import { data } from "../data/data.js";
+
+// // 8. Track mount phase
+// export function Main() {
+//   const [didMount, setDidMount] = useState(false);
+//   const [subjects, setSubjects] = useState([]);
+
+//   // 27. Breakpoint to watch state variables change during execution
+//   debugger;
+
+//   useEffect(componentDidMount, []);
+
+//   // 8. Mount phase callback function
+//   function componentDidMount() {
+//     setDidMount(true);
+//     // 27. Breakpoint inside the mount execution block
+//     debugger;
+
+//     // 24. Transform data array into React elements using the map method
+//     const details = data.map(toDetails);
+
+//     // 25. Pass the newly generated elements to state
+//     setSubjects(details);
+//   }
+
+//   return (
+//     <main>
+// {/* 8. Render the boolean state string using concatenation */}
+// <p>{"didMount: " + didMount}</p>
+// {/* 16. Render subjects inside a section tag */}
+// <section>{subjects}</section>
+
+//       {/* 30. Explanation p tag */}
+//       <p>
+//         To render an array using map, we run the .map method directly on our data.
+//         The map tool loops through each object, feeds it to a function to turn
+//         it into HTML tags, and instantly outputs the elements onto the page.
+//       </p>
+//     </main>
+//   );
+// }
+
+// // 18. Callback function outside and under the Main function
+// // 19. Receives a single dataItem object parameter from the data array
+// function toDetails(dataItem, index) {
+//   // 27. Breakpoint inside the map iteration hook
+//   debugger;
+
+//   // 20, 21 & 22. Construct details tag with dynamic properties from dataItem
+//   const details = (
+//     <details key={index}>
+//       <summary>{dataItem.name}</summary>
+//       {dataItem.description}
+//     </details>
+//   );
+
+//   // 23. Return the element to populate the map array output
+//   return details;
+// }
+
+// export default Main;
+//     // 17. Array to hold our JSX elements temporarily
+//     const figures = [];
+
+//     export function Main(){
+
+//     }
+//     function toDetails(dataItems){
+//       const details=
+//       <details>
+//         <summary>{dataItems.name}</
+//       </details>
+
+//    return(d)
+// const details = data.map (toDetails);
+// setSubjects (details;)
+
+// // 18. Traverse the data array with a traditional for loop
+// function componentDidMount (){
+//   setDidMount(true);
+//   const detailsElements =[]
+// //   for (let i = 0; i < data.length; i++)
+//   const item = data[index];
+//   const details = (
+//      <details>
+//       <summary> (item.name)</summary>
+//       {item.description}
+//     </details>
+//   );
+//   detailsElements.push(details);
+
+// }
+// setSubjects(detailsElements);
+
+//       // 19, 20 & 21. Create a figure tag with an img and a figcaption using data properties
+//       const figure = (
+//         <figure key={i}>
+//           <img src={imageData[i].src} alt={imageData[i].caption} />
+//           <figcaption>{imageData[i].caption}</figcaption>
+//         </figure>
+//       );
+
+//       // 22. Push the JSX element into the figures array
+//       figures.push(figure);
+//     }
+
+//     // 23. Save the completed array of HTML tags into our stateful variable
+//     setImages(figures);
+//   }
+
+//   return (
+//     <main>
+//       {/* 6. Render the value of didMount using string concatenation */}
+//       <p>{"didMount: " + didMount}</p>
+
+//       {/* 15. Render the stateful images array inside a section tag */}
+//       <section>{images}</section>
+
+//       {/* 28. Simple p tag explaining how to render a data array with HTML */}
+//       <p>
+//         To render a data array into HTML, we loop through the items during the
+//         mount phase using a for loop. Inside the loop, we wrap each item's data
+//         into semantic figure tags, push them into an array, and save that array
+//         to state so React can dynamically output the elements on the page.
+//       </p>
+//     </main>
+//   );
+// }
+
+// export default Main;
