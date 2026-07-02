@@ -16,13 +16,11 @@ export const data = [
       "A modern, ultra-fast frontend build tool and development server that pre-bundles dependencies using esbuild to deliver lightning-quick Hot Module Replacement.",
   },
   {
-    name: "HTML5",
-    description:
-      "The latest major version of the Hypertext Markup Language, offering advanced semantic elements and native multimedia support to structures web content cleanly.",
+    name: "Mount Phase",
+    description: "When a react component appears in the DOM.",
   },
   {
-    name: "CSS3",
-    description:
-      "The latest evolution of Cascading Style Sheets that handles the presentation, formatting, and layout of web pages with powerful features like Flexbox and Grid.",
+    name: "New Orleans",
+    description: "A city a the bottom of the map of the USA",
   },
 ];
