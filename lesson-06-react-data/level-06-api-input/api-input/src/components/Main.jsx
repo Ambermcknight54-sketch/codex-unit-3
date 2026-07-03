@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 
 export function Main() {
@@ -24,7 +25,7 @@ export function Main() {
           Max Characters:
           <input type="number" name="max" />
         </label>
-        <button type="submit">Fetch Characters</button>
+        <button type="submit">Characters</button>
       </form>
     </main>
   );
@@ -41,7 +42,6 @@ export function Main() {
         "https://potterapi-fedeperin.vercel.app/en/characters",
       );
       const results = await response.json();
-      // Fixed the map syntax error here
       const details = results.map(toCharacters);
       setCharacters(details);
     } catch (error) {
