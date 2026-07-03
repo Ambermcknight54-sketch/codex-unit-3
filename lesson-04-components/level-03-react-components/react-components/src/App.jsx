@@ -4,8 +4,8 @@
 // import heroImg from "./assets/hero.png";
 import "./App.css";
 // 11. Import Title and Info from the components directory
-import { Title } from "./components/Title";
-import { Info } from "./components/Info";
+import { Title } from "./components/Title.jsx";
+import { Info } from "./components/Info.jsx";
 
 function App() {
   // 12. Let the App function return a main tag

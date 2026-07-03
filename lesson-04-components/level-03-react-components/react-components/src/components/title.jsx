@@ -1,5 +1,3 @@
-import React from "react";
-
-export default function Title() {
+export function Title() {
   return <h1>React Components</h1>;
 }
