@@ -1,5 +1,5 @@
- import { useState, useEffect } from "react";
- 
+import { useState, useEffect } from "react";
+
 export function Main() {
   const [characters, setCharacters] = useState([]);
   const [didMount, setDidMount] = useState(false);
@@ -29,37 +29,85 @@ export function Main() {
     const response = await fetch(
       "https://potterapi-fedeperin.vercel.app/en/characters",
     );
+
     const result = await response.json();
     const details = result.map(toCharacters);
     setCharacters(details);
   }
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const data = {
-      max: form.elements.max.value
-    };
-    
-    const dataString = new URLSearchParams(data).toString();
-
-    const response = await fetch(
-      `https://potterapi-fedeperin.vercel.app/en/characters?${dataString}`,
+  function toCharacters(dataItem) {
+    return (
+      <details>
+        <summary>{dataItem.fullName}</summary>
+        <figure>
+          <img src={dataItem.image} />
+          <figcaption>
+            {dataItem.interpretedBy ? dataItem.interpretedBy : dataItem.actor}
+          </figcaption>
+        </figure>
+      </details>
     );
-    const results = await response.json();
-    const details = results.map(toCharacters);
-    setCharacters(details);
   }
-export default Main;
+}
 
+// import { useState, useEffect } from "react";
+// export function Main() {
+//   const [characters, setCharacters] = useState([]);
+//   const [didMount, setDidMount] = useState(false);
 
+//   useEffect(componentDidMount, []);
 
+//   return (
+//     <main>
+//       <p>{"didMount: " + didMount}</p>
+//       <section>{characters}</section>
+//       <p>
+//         To render data from an API, we fetch the array of information when the
+//         component first mounts. Once we have the data, we use standard dot
+//         notation to call the .map method, writing a regular function directly
+//         inside it to loop through each character and output organized HTML
+//         elements to the page.
+//       </p>
+//     </main>
+//   );
 
+//   function componentDidMount() {
+//     setDidMount(true);
+//     handleData();
+//   }
+
+//   async function handleData() {
+//     const response = await fetch(
+//       "https://potterapi-fedeperin.vercel.app/en/characters",
+//     );
+//     const result = await response.json();
+//     const details = result.map(toCharacters);
+//     setCharacters(details);
+//   }
+
+//   async function handleSubmit(event) {
+//     event.preventDefault();
+//     const form = event.target;
+//     const data = {
+//       max: form.elements.max.value
+//     };
+
+//     const dataString = new URLSearchParams(data).toString();
+
+//     const response = await fetch(
+//       `https://potterapi-fedeperin.vercel.app/en/characters?${dataString}`,
+//     );
+//     const results = await response.json();
+//     const details = results.map(toCharacters);
+//     setCharacters(details);
+//   }
+// }
+
+// export default Main;
 
 //   function toCharacters(dataItem) {
 //     return (
 //       <details>
-//         <summary>{dataItem.fullName}</summary> 
+//         <summary>{dataItem.fullName}</summary>
 //         <figure>
 //           <img src={dataItem.image}  />
 //           <figcaption>{dataItem.interpretedBy || dataItem.actor}</figcaption>
@@ -69,9 +117,8 @@ export default Main;
 //   }
 // }
 
+//
 
-// 
- 
 // export function Main() {
 //   const [characters, setCharacters] = useState([]);
 //   const [didMount, setDidMount] = useState(false);
@@ -126,7 +173,7 @@ export default Main;
 //   function toCharacters(dataItem) {
 //     return (
 //       <details>
-//         <summary>{dataItem.fullName}</summary> 
+//         <summary>{dataItem.fullName}</summary>
 //         <figure>
 //           <img src={dataItem.image} alt={dataItem.fullName} />
 //           <figcaption>
@@ -138,15 +185,15 @@ export default Main;
 //   }
 // }
 
-      // <figure>
-      //   <img src={dataItem.image} alt={dataItem.fullName} />
-      //   <figcaption>{dataItem.actor}</figcaption>
-      // </figure>
+// <figure>
+//   <img src={dataItem.image} alt={dataItem.fullName} />
+//   <figcaption>{dataItem.actor}</figcaption>
+// </figure>
 
-  // export default Main;
-  
+// export default Main;
+
 // import { useState, useEffect } from "react";
- 
+
 // export function Main() {
 //   const [characters, setCharacters] = useState([]);
 //   const [didMount, setDidMount] = useState(false);
@@ -181,13 +228,13 @@ export default Main;
 //     const details = result.map(toCharacters);
 //     setCharacters(details);
 //   }
-// } 
+// }
 
 // // Completely removed the key attribute from the <details> tag
 // function toCharacters(dataItem) {
 //   return (
 //     <details>
-//       <summary>{dataItem.fullName}</summary> 
+//       <summary>{dataItem.fullName}</summary>
 //       <figure>
 //         <img src={dataItem.image} alt={dataItem.fullName} />
 //         <figcaption>{dataItem.actor}</figcaption>
@@ -196,56 +243,55 @@ export default Main;
 //   );
 // }
 
-      //  function toCharacters(dataItem){
-      //   debugger;
-      //   const details = {
-      //     <details>
+//  function toCharacters(dataItem){
+//   debugger;
+//   const details = {
+//     <details>
 
-      //       <summary> {dataItem.fullname} </summary>
-      //       <figure>
-      //       img src= {dataItem.image} />
-      //       <figcaption>{dataItem.actor}</figcaption>
-          
-      //       </figure>
-      //    </details>
-      //   }
-      //  }
-    //   (function (dataItem, index) {
-    //   // Breakpoint inside the loop to inspect each API character object
-    //   debugger;
+//       <summary> {dataItem.fullname} </summary>
+//       <figure>
+//       img src= {dataItem.image} />
+//       <figcaption>{dataItem.actor}</figcaption>
 
-    //   return (
-    //     <details key={index}>
-    //       <summary>{dataItem.character}</summary>
-    //       <figure>
-    //         <img src={dataItem.image} alt={dataItem.character} />
-    //         <figcaption>{dataItem.actor}</figcaption>
-    //       </figure>
-    //     </details>
-    //   );
-    // });
+//       </figure>
+//    </details>
+//   }
+//  }
+//   (function (dataItem, index) {
+//   // Breakpoint inside the loop to inspect each API character object
+//   debugger;
 
-    // 4. Save the final collection of React elements to state
-    
-  // return (
-  //   <main>
-  //     {/* Render the value of didMount */}
-  //     <p>{"didMount: " + didMount}</p>
+//   return (
+//     <details key={index}>
+//       <summary>{dataItem.character}</summary>
+//       <figure>
+//         <img src={dataItem.image} alt={dataItem.character} />
+//         <figcaption>{dataItem.actor}</figcaption>
+//       </figure>
+//     </details>
+//   );
+// });
 
-  //     {/* Render the character details blocks */}
-  //     <section>{characters}</section>
+// 4. Save the final collection of React elements to state
 
-  //     {/* Explanation of how map works with API data */}
-  //     <p>
-  //       To render data from an API, we fetch the array of information when the
-  //       component first mounts. Once we have the data, we use standard dot
-  //       notation to call the .map method, writing a regular function directly
-  //       inside it to loop through each character and output organized HTML
-  //       elements to the page.
-  //     </p>
-  //   </main>
-  // );
+// return (
+//   <main>
+//     {/* Render the value of didMount */}
+//     <p>{"didMount: " + didMount}</p>
 
+//     {/* Render the character details blocks */}
+//     <section>{characters}</section>
+
+//     {/* Explanation of how map works with API data */}
+//     <p>
+//       To render data from an API, we fetch the array of information when the
+//       component first mounts. Once we have the data, we use standard dot
+//       notation to call the .map method, writing a regular function directly
+//       inside it to loop through each character and output organized HTML
+//       elements to the page.
+//     </p>
+//   </main>
+// );
 
 // const handleData = async function() {
 //   const response = await fetch("https://potterapi-fedeperin.vercel.app/en/characters");
@@ -271,7 +317,7 @@ export default Main;
 // function Main() {
 //   // Stateful variable to hold our Harry Potter characters
 //   const [characters, setCharacters] = useState([]);
-  
+
 //   // State to track the mount phase
 //   const [didMount, setDidMount] = useState(false);
 
@@ -282,7 +328,7 @@ export default Main;
 //   const handleData = async function () {
 //     // Fetch data from the Harry Potter API
 //     const response = await fetch("https://potterapi-fedeperin.vercel.app/en/characters");
-    
+
 //     // Parse the API response into a data array
 //     const data = await response.json();
 
@@ -330,12 +376,11 @@ export default Main;
 
 //       {/* Message explaining the setup */}
 //       <p>
-//         To render data from an API, we fetch the array of information when the 
-//         component first mounts. Once we have the data, we use standard dot notation 
-//         to call the .map method, writing a regular function directly inside it to 
+//         To render data from an API, we fetch the array of information when the
+//         component first mounts. Once we have the data, we use standard dot notation
+//         to call the .map method, writing a regular function directly inside it to
 //         loop through each character and output organized HTML elements to the page.
 //       </p>
 //     </main>
 //   );
 // }
-
