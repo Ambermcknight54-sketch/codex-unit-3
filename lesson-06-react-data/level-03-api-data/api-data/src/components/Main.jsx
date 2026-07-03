@@ -17,7 +17,7 @@ export function Main() {
         inside it to loop through each character and output organized HTML
         elements to the page.
       </p>
-      form onSubmit.handleSubmit
+      form.onSubmit.handleSubmit
       <form>
         <label>
           Max Characters:
