@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+ import { useState, useEffect } from "react";
  
 export function Main() {
   const [characters, setCharacters] = useState([]);
@@ -17,13 +17,6 @@ export function Main() {
         inside it to loop through each character and output organized HTML
         elements to the page.
       </p>
-      form.onSubmit.handleSubmit
-      <form>
-        <label>
-          Max Characters:
-        <input type ="5" name = "Max" />
-      </label>
-      </form>
     </main>
   );
 
@@ -36,40 +29,115 @@ export function Main() {
     const response = await fetch(
       "https://potterapi-fedeperin.vercel.app/en/characters",
     );
-
     const result = await response.json();
-    const details = result.map((dataItem, index) => toCharacters(dataItem, index));
+    const details = result.map(toCharacters);
     setCharacters(details);
   }
-} function handleSubmit(event){
-  event. preventDefault();
-  const form= event.target;
-  const data = {
-    max: form.elements.max.value
-  };
-  const dataString = new URLSearchParams(data);
-}
-const response= await fetch (
 
-);
-const results = await response.json();
-const details = results.map (toCharacters);
-setCharacters (details);
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const data = {
+      max: form.elements.max.value
+    };
+    
+    const dataString = new URLSearchParams(data).toString();
+
+    const response = await fetch(
+      `https://potterapi-fedeperin.vercel.app/en/characters?${dataString}`,
+    );
+    const results = await response.json();
+    const details = results.map(toCharacters);
+    setCharacters(details);
+  }
+export default Main;
 
 
-// Added the missing closing curly brace at the very bottom
-function toCharacters(dataItem, index) {
-  const key = index + dataItem.fullName
-  return (
-    <details key={key}>
-      <summary>{dataItem.fullName}</summary> 
-      <figure>
-        <img src={dataItem.image} />
-        <figcaption>{dataItem.interpretedBy}</figcaption>
-      </figure>
-    </details>
-  );
-} // <--- Fixed here!
+
+
+
+//   function toCharacters(dataItem) {
+//     return (
+//       <details>
+//         <summary>{dataItem.fullName}</summary> 
+//         <figure>
+//           <img src={dataItem.image}  />
+//           <figcaption>{dataItem.interpretedBy || dataItem.actor}</figcaption>
+//         </figure>
+//       </details>
+//     );
+//   }
+// }
+
+
+// 
+ 
+// export function Main() {
+//   const [characters, setCharacters] = useState([]);
+//   const [didMount, setDidMount] = useState(false);
+
+//   useEffect(componentDidMount, []);
+
+//   return (
+//     <main>
+//       <p>{"didMount: " + didMount}</p>
+//       <section>{characters}</section>
+//       <p>
+//         To render data from an API, we fetch the array of information when the
+//         component first mounts. Once we have the data, we use standard dot
+//         notation to call the .map method, writing a regular function directly
+//         inside it to loop through each character and output organized HTML
+//         elements to the page.
+//       </p>
+//     </main>
+//   );
+
+//   function componentDidMount() {
+//     setDidMount(true);
+//     handleData();
+//   }
+
+//   async function handleData() {
+//     const response = await fetch(
+//       "https://potterapi-fedeperin.vercel.app/en/characters",
+//     );
+
+//     const result = await response.json();
+//     const details = result.map(toCharacters);
+//     setCharacters(details);
+//   }
+
+//   async function handleSubmit(event) {
+//     event.preventDefault();
+//     const form = event.target;
+//     const data = {
+//       max: form.elements.max.value
+//     };
+//     const dataString = new URLSearchParams(data).toString();
+
+//     const response = await fetch(
+//       `https://potterapi-fedeperin.vercel.app/en/characters?${dataString}`,
+//     );
+//     const results = await response.json();
+//     const details = results.map(toCharacters);
+//     setCharacters(details);
+//   }
+
+//   function toCharacters(dataItem) {
+//     return (
+//       <details>
+//         <summary>{dataItem.fullName}</summary> 
+//         <figure>
+//           <img src={dataItem.image} alt={dataItem.fullName} />
+//           <figcaption>
+//             {dataItem.interpretedBy ? dataItem.interpretedBy : dataItem.actor}
+//           </figcaption>
+//         </figure>
+//       </details>
+//     );
+//   }
+// }
+
       // <figure>
       //   <img src={dataItem.image} alt={dataItem.fullName} />
       //   <figcaption>{dataItem.actor}</figcaption>
@@ -158,9 +226,7 @@ function toCharacters(dataItem, index) {
     // });
 
     // 4. Save the final collection of React elements to state
-    setCharacters(details) {};
-  }
-
+    
   // return (
   //   <main>
   //     {/* Render the value of didMount */}
@@ -179,9 +245,7 @@ function toCharacters(dataItem, index) {
   //     </p>
   //   </main>
   // );
-}
 
-export default Main;
 
 // const handleData = async function() {
 //   const response = await fetch("https://potterapi-fedeperin.vercel.app/en/characters");
@@ -275,4 +339,3 @@ export default Main;
 //   );
 // }
 
-export default Main;
