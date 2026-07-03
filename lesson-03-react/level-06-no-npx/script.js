@@ -1,14 +1,17 @@
-//  Explaining when npx is required vs not required
-console.log("=== Understanding when npx is required vs not required ===");
-
-console.log("\n1. Inside NPM Scripts (package.json):");
-console.log("   npx is NOT required.");
-console.log(
-  "   Reason: npm run automatically looks inside your local './node_modules/.bin' folder first.",
-);
-
-console.log("\n2. Directly in the Terminal:");
+console.log(" Directly in the Terminal:");
 console.log("   npx IS required for locally installed packages.");
 console.log(
-  "   Reason: Your terminal shell doesn't know where node_modules is. npx bridges that gap, or downloads the package on-the-fly if it isn't installed.",
+  " Reason: Your terminal can't find local project packages without it.",
+);
+
+console.log("=== When is npx required? ===");
+
+console.log("\n1. NOT REQUIRED: Inside package.json scripts");
+console.log('   Example: "message": "cowsay Hello"');
+console.log("   Reason: npm automatically finds local packages here.");
+
+console.log("\n2. REQUIRED: Directly in your terminal");
+console.log("   Example: npx cowsay Hello");
+console.log(
+  "   Reason: Your terminal can't find local project packages without it.",
 );
