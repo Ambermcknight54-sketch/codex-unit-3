@@ -4,12 +4,12 @@ function Main() {
   const [count, setCount] = useState(0);
 
   // Execution pauses here during rendering to let you inspect count and setCount
-  debugger;
+  // debugger;
 
   function handleClick(event) {
     event.preventDefault();
     // Execution pauses here on each click before updating the layout state
-    debugger;
+    // debugger;
 
     setCount(count + 1);
   }
