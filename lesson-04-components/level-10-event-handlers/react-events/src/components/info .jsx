@@ -1,5 +1,3 @@
-import React from "react";
-// 9. Export a function called Info that returns a p tag
 export function Info() {
   /* 10. Explanation of what components are and how to use them */
   return (

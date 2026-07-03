@@ -3,5 +3,8 @@ h1 {
 }
 p {
   font-family: "Georgia", serif;
-  color: #34495e;
+  color: #f10f9b;
+}
+body {
+  background-color: aqua;
 }
