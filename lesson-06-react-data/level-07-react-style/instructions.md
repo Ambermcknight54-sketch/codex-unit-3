@@ -12,33 +12,35 @@ There are noticable differences in how Tailwind and TW Elements are installed an
 
 1. In your system's file explorer or file picker, copy your `react-template` folder into this level folder. The template should render `Header`, `Main`, and `Footer` components.
 2. In this level folder, rename `react-template` to `react-style`.
-3. In the terminal, navigate to the `react-style` folder.
-4. Start the Vite server and open a web browser to the URL provided by Vite.
-5. In the `src/components/` folder, let the `Header` component render the title `Style React with Tailwind and TW Elements`.
-6. View the page to make sure it runs without errors.
+3. Start the Vite server and open a web browser to the URL provided by Vite.
+4. In the `src/components/` folder, let the `Header` component render the title `Style React with Tailwind and TW Elements`.
+5. View the page to make sure it runs without errors.
+6. In a new terminal, navigate to the `react-style` folder.
 7. In the terminal, install these packages - `tailwindcss@3`, `postcss`, `autoprefixer`, and `tw-elements`.
 8. In the terminal, initialize Tailwind with `npx tailwindcss init --postcss`. This will create the files `tailwind.config.js` and `postcss.config.js`.
 9. In `tailwind.config.js`, add `"./index.html"`, `"./src/**/*.{html,js,ts,jsx,tsx}"`, and `"./node_modules/tw-elements/js/**/*.js"` to the `content` array.
 10. In `tailwind.config.js`, add `require("tw-elements/plugin.cjs")` to the `plugins` array.
 11. On the line after `plugins`, add `darkMode: "class"`.
 12. Adjacent or next to `index.html`, create the file `style.css`.
-13. In `index.html`, use the `link` tag to connect `style.css` in the `head` tag.
-14. In `style.css`, add the CSS code to connect Tailwind and TW Elements. (See details below.)
+13. In `style.css`, add the CSS code to connect Tailwind and TW Elements. See details below. Some warnings may appear, but those can be ignored.
+14. In `index.html`, use the `link` tag to connect `style.css` in the `head` tag.
 15. In the `components` folder, create the file `Slides.jsx` to export the `Slides` component.
 16. In `Slides`, `return` the TW Elements HTML code for a carousel.
-17. View the page. Observe errors with `class` and `stroke-`.
+17. View the page. There will be errors.
 18. Code the following tasks from scratch. Don't copy/paste.
-19. In `Slides`, replace `class=` with `className=`, and convert hyphendated `stroke-` attributes to camelCase.
-20. View the page. Observe errors with `style`.
-21. In `Slides`, convert the `style` strings to an object. Convert hyphenated CSS properties to camelCase.
-22. View the page to make sure it runs without errors. Observe that the carousel renders, but doesn't work properly.
-23. In the TW Elements website, view the JavaScript code for the carousel. In React, `initTWE` must run in the mount phase, after the carousel code has mounted.
-24. Set up the component to track the mount phase. Use `useState`, `didMount`, `setDidMount`, `componentDidMount`, `useEffect`, an empty array of dependencies, and a `p` tag to render the value of `didMount`.
-25. In `Slides.jsx`, import the items listed in the TW Elements website - `Carousel` and `initTWE`.
-26. In `componentDidMount`, use `initTWE` as instructed in the TW Elements website.
-27. View the page in the browser. The carousel should work properly.
-28. In the `Main` component, add a `p` tag with a message that explains how to render TW Elements components.
-29. View the page in the browser.
+19. To fix comment errors, replace HTML comments with JavaScript comments.
+20. To fix class errors, replace `class=` with `className=`.
+21. To fix style errors, convert `style` strings into objects and convert hyphenated CSS properties to camelCase.
+22. To fix stroke errors, convert hyphendated `stroke-` attributes to camelCase.
+23. To fix render or visual issues, restart the server.
+24. View the page to make sure it runs without errors and visual issues. Observe that the carousel renders, but doesn't work properly.
+25. In the TW Elements website, view the JavaScript code for the carousel. In React, `initTWE` must run in the mount phase, after the carousel code has mounted.
+26. Set up the `Slides` component to track the mount phase. Use `useState`, `didMount`, `setDidMount`, `componentDidMount`, `useEffect`, and an empty array of dependencies.
+27. In `Slides.jsx`, import the items listed in the TW Elements website - `Carousel` and `initTWE`.
+28. In `componentDidMount`, use `initTWE` as instructed in the TW Elements website.
+29. View the page in the browser. The carousel should work properly.
+30. In the `Main` component, add a `p` tag with a message that explains how to render TW Elements components.
+31. View the page in the browser.
 
 ## More Information
 
@@ -50,6 +52,7 @@ There are noticable differences in how Tailwind and TW Elements are installed an
 - In React, most hyphenated attributes are camelCased. For example, replace `min-width` with `minWidth`.
 - In React, the `style` attribute accepts a JavaScript object instead of a string. For example, replace `style="color:red; max-width:100px"` with `style={ {color:"red", maxWidth: "100px"} }`.
 - In the `style` attribute, hyphenated CSS properties must be converted to camelCase for React projects.
+- Comments for JavaScript are different from comments for HTML.
 - Code for connecting Tailwind and TW Elements with `style.css`:
 
 ```css
@@ -80,6 +83,8 @@ p {
 - Use curly braces to insert variables into HTML. Example: `<p>{myVariable}</p>`
 - To connect a .css file, the `link` tag needs `rel` and `href`. Example: `<link rel="stylesheet" href="style.css" />`
 - With `pnpm`, multiple packages can be installed, separated by spaces. Example: `pnpm install package1 package2 package3`
+- Comments for JavaScript start with `//` or wrapped with `/*   */`.
+- Comments for HTML are wrapped with `<!--    -->`.
 
 ## Hints
 

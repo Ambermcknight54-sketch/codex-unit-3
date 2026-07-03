@@ -17,7 +17,7 @@ Data is commonly received from an API, then converted to React elements with the
 5. View the page to make sure it runs without errors.
 6. Code the following tasks from scratch. Don't copy/paste.
 7. In the `src/components/` folder, view the file `Main.jsx`.
-8. In the `Main` component, on the line after `useState`, add `const [] = useState();`. This stateful array will contain characters from Harry Potter.
+8. In the `Main` component, add `const [] = useState();`. This stateful array will contain characters from Harry Potter.
 9. Destructure the items into `characters` and `setCharacters`.
 10. In the `main` tag, render the `characters` variable in a `section` tag.
 11. View the page to make sure it runs without errors.
@@ -49,12 +49,12 @@ Data is commonly received from an API, then converted to React elements with the
 ## More Information
 
 - The `fetch` function accepts the URL of an API and an options object. The options object can be omitted if the `GET` method will be used.
+- The `fetch` function will receive a `response` object, which has the the `json` method that extracts or parses data from the response. Example: `const results = await response.json();`
 - All arrays have access to the `map` method.
 - The `map` method takes in a callback function.
 - The callback function receives an item of the array, the index number of the item, and the complete array. If only the item is needed, parameters for the index number and the array can be omitted.
 - Callback functions for the `map` method often begin with `to` and describe what they produce. Example: `toCard` produces a card and `toFigure` produces a figure.
 - The `map` method returns an array of items produced by the callback function.
-- [Harry Potter API documentation](https://vlaurencena.github.io/harry-potter-openapi-swagger-ui/#/Characters/get_characters)
 
 ## Usage Tips
 
@@ -62,6 +62,7 @@ Data is commonly received from an API, then converted to React elements with the
 - In `StrictMode`, components are automatically forced to quickly mount, unmount, then mount again.
 - `useEffect` always calls its callback function when the component mounts.
 - [`details` and `summary` are semantic tags for subjects with descriptions.](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details).
+- [Harry Potter API documentation](https://vlaurencena.github.io/harry-potter-openapi-swagger-ui/#/Characters/get_characters)
 
 ## Hints
 
