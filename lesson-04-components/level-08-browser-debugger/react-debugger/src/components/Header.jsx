@@ -1,5 +1,3 @@
-import React from "react";
-
 export function Header() {
   return (
     <header>
@@ -7,3 +5,5 @@ export function Header() {
     </header>
   );
 }
+
+export default Header;
