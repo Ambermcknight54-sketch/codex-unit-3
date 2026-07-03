@@ -33,7 +33,7 @@ function Main() {
 
     // 20. Build the data object using the key expected by the API
     const data = {
-      limit: form.elements.max.value,
+      data: form.elements.max.value,
     };
 
     // 21. Use URLSearchParams to create a dataString query string
@@ -60,7 +60,7 @@ function Main() {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="max">Max Characters: </label>
-          <input type="number" id="max" name="max" min="1" required />
+          <input type="number" id="max" name="max" min="5" />
         </div>
         <button type="submit">Fetch Characters</button>
       </form>
