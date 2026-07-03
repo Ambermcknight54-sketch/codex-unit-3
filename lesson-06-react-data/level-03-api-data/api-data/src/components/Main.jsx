@@ -29,7 +29,6 @@ export function Main() {
     const response = await fetch(
       "https://potterapi-fedeperin.vercel.app/en/characters",
     );
-
     const result = await response.json();
     const details = result.map(toCharacters);
     setCharacters(details);
@@ -48,7 +47,7 @@ export function Main() {
     );
   }
 }
-
+export default Main;
 // import { useState, useEffect } from "react";
 // export function Main() {
 //   const [characters, setCharacters] = useState([]);
