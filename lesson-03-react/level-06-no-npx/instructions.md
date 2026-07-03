@@ -13,7 +13,7 @@ Knowing when `npx` is required and not required can clarify inconsistencies betw
 1. In a VS Code terminal, navigate to this level folder.
 2. Use `npm` initialize a new project.
 3. Use `npm` to install `cowsay`. Source control will have many untracked files.
-4. In the VS Code file list, select the folder for this level.
+4. In the VS Code file list, select the follsder for this level.
 5. Add `.gitignore` with `node_modules`. Many untracked files should be removed from source control.
 6. In `package.json`, add a `"scripts"` object if it's not already there.
 7. In the `"scripts"` object, add a property called `"message1"`.
