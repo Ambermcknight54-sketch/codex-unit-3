@@ -3,10 +3,10 @@
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
 import "./App.css";
-// 13. Import your local images into variables
-import { pic1 } from "./assets/pic1.jpg";
-import { pic2 } from "./assets/pic2.jpg";
-import { pic3 } from "./assets/pic3.jpg";
+// 13. Import your local images into variables (No curly braces!)
+import pic1 from "./assets/pic1.jpg";
+import pic2 from "./assets/pic2.jpg";
+import pic3 from "./assets/pic3.jpg";
 
 function App() {
   // 7. Return a main tag
