@@ -2,18 +2,21 @@ main {
   max-width: 700px;
   margin: 80px auto;
   padding: 40px;
-  background-color: #ffffff;
+  background-color: #6427c6;
   border-radius: 10px;
 }
 
 h1 {
   font-family: sans-serif;
-  color: #2c3e50;
+  color: #f9f3f3;
   font-size: 50px;
 }
 
 p {
   font-family: sans-serif;
-  color: #34495e;
+  color: #dc183c;
   font-size: 20px;
+}
+body {
+  background-color: yellow;
 }
