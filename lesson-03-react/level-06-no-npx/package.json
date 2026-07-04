@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "main": "script.js",
+  "scripts": {
+    "message1": "npx cowsay Is npx required?",
+    "message2": "cowsay Is npx required?",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "ansi-regex": "^3.0.1",
     "ansi-styles": "^4.3.0",
@@ -33,9 +38,6 @@
     "y18n": "^4.0.3",
     "yargs": "^15.4.1",
     "yargs-parser": "^18.1.3"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
