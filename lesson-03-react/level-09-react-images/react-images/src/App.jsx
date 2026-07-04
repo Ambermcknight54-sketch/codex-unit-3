@@ -1,37 +1,22 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "./assets/vite.svg";
-// import heroImg from "./assets/hero.png";
-import "./App.css";
-// 13. Import your local images into variables (No curly braces!)
 import pic1 from "./assets/pic1.jpg";
 import pic2 from "./assets/pic2.jpg";
 import pic3 from "./assets/pic3.jpg";
+import "./App.css";
 
-function App() {
-  // 7. Return a main tag
+export default function App() {
   return (
     <main>
-      {/* 9. h1 title */}
       <h1>React Images</h1>
-
-      {/* 10. Description of adding local images */}
       <p>
-        To include local images in a React project built with Vite, you should
-        import the image file at the top of your component just like a
-        JavaScript module. This assigns a dynamic path to a variable, which you
-        can then inject directly into the src attribute of your image tag using
-        curly braces.
+        To display local images in a React app, you first import the file from
+        your assets folder at the top of the component file, assigning it to a
+        variable name. Then, you pass that variable inside curly braces directly
+        into the image tag's source attribute.
       </p>
-
-      {/* 8, 11, 14. Image tags with variables in curly braces */}
-      <div className="image-gallery">
-        <img src={pic1.jpg} alt="First gallery showcase" />
-        <img src={pic2.jpg} alt="Second gallery showcase" />
-        <img src={pic3.jpg} alt="Third gallery showcase" />
-      </div>
+      {/* Wrapped the variables in curly braces here */}
+      <img src={pic1} alt="First gallery item" />
+      <img src={pic2} alt="Second gallery item" />
+      <img src={pic3} alt="Third gallery item" />
     </main>
   );
 }
-
-export default App;
