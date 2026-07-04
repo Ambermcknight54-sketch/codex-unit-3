@@ -1,9 +1,8 @@
-function Main({ message }) {
+export function Main({ message }) {
+  // debugger;
   return (
     <main>
       <p>{message}</p>
     </main>
   );
 }
-
-export default Main;
