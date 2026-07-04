@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header>
-      <h1>Semantic Template</h1>
+      <h1>React Events</h1>
     </header>
   );
 }

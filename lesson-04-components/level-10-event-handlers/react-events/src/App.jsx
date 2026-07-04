@@ -3,20 +3,16 @@
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
 import "./App.css";
-
+import { Header } from "./components/Header.jsx";
+import { Main } from "./components/Main.jsx";
+import { Footer } from "./components/Footer.jsx";
 function App() {
   return (
-    <main>
-      <h1>React Template</h1>
-      <p>
-        To make a React template, run the Vite command in your terminal to
-        create the project. Go into the new folder and run npm install to get
-        the files ready. Then, delete the starter code and extra CSS so you have
-        a clean folder for your next project. designing your own layouts right
-        away.
-      </p>
-    </main>
+    <>
+      <Header />
+      <Main />
+      <Footer />
+    </>
   );
 }
-
 export default App;
