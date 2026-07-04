@@ -1,30 +1,22 @@
+import { createRoot } from "react-dom/client";
+// import App from "./App.jsx"; // Note: You can comment this out or leave it if unused
 import "./index.css";
 
-// 6, 7. Save the selected HTML element in a variable named divTag first
+// 7. Save the element in the variable divTag first
 const divTag = document.getElementById("root");
 
-// 8, 11, 12. Pass divTag into createRoot and save the returned Root object in a variable named root
-const root = ReactDOM.createRoot(divTag);
+// 8, 10, 12. Pass divTag to createRoot and save the Root object in a variable named 'root'
+const root = createRoot(divTag);
 
-// 9, 10, 13. Move the .render method to a separate line and chain it to the root variable
-// 14. Overwrite the passed value with a semantic main tag containing your h1 and p tags
+// 13, 14, 15, 16, 17. Chain render to root and pass a main tag with custom content
 root.render(
-  <React.StrictMode>
-    {/* 15. Semantic main wrapper */}
-    <main>
-      {/* 16. h1 title */}
-      <h1>React Root</h1>
-
-      {/* 17. Explanation of the React Root */}
-      <p>
-        It automatically starts on its own line and sets a comfortable reading
-        distance from other elements.
-      </p>
-
-      <p>
-        This is a second paragraph, cleanly separated from the first one without
-        using any generic containers or line breaks.
-      </p>
-    </main>
-  </React.StrictMode>,
+  <main>
+    <h1>React Root</h1>
+    <p>
+      The React root is the entry point of your application. It hooks into a
+      standard HTML element in your page and hands over control to React,
+      allowing it to dynamically manage, update, and render your component tree
+      inside that container.
+    </p>
+  </main>,
 );
