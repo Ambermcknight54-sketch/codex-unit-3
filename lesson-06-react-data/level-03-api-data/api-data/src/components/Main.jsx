@@ -4,6 +4,7 @@ export function Main() {
   const [characters, setCharacters] = useState([]);
   const [didMount, setDidMount] = useState(false);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(componentDidMount, []);
 
   return (
@@ -39,9 +40,7 @@ export function Main() {
         <summary>{dataItem.fullName}</summary>
         <figure>
           <img src={dataItem.image} />
-          <figcaption>
-            {dataItem.interpretedBy ? dataItem.interpretedBy : dataItem.actor}
-          </figcaption>
+          <figcaption>{dataItem.interpretedBy}</figcaption>
         </figure>
       </details>
     );
