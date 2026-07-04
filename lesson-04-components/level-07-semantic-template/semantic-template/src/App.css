@@ -3,8 +3,5 @@ h1 {
 }
 p {
   font-family: "Georgia", serif;
-  color: #31669b;
-}
-body {
-  background-color: aquamarine;
+  color: hwb(314 19% 39%);
 }

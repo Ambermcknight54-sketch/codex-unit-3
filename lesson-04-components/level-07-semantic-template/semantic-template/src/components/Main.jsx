@@ -1,6 +1,4 @@
-import React from "react";
-
-export function Main() {
+export default function Main() {
   return (
     <main>
       {/* 15. A descriptive paragraph detailing how to structure a semantic template */}

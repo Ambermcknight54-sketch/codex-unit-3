@@ -1,10 +1,7 @@
-import React from "react";
-
-export function Header() {
+export default function Header() {
   return (
     <header>
-      <h1>Semantic Template</h1>
+      <h1>React Template</h1>
     </header>
   );
 }
-export default Header;
