@@ -1,4 +1,4 @@
-main {
+body {
   max-width: 650px;
   margin: 60px auto;
   padding: 30px;
@@ -15,6 +15,6 @@ h1 {
 
 p {
   font-family: sans-serif;
-  color: #4a4a4a;
+  color: #022306;
   font-size: 24px;
 }
