@@ -7,7 +7,7 @@ import "./App.css";
 function App() {
   return (
     <main>
-      <h1>React Template</h1>
+      <h1>Stateless Variable </h1>
       <p>
         To make a React template, run the Vite command in your terminal to
         create the project. Go into the new folder and run npm install to get

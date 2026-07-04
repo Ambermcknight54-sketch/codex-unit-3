@@ -1,29 +1,59 @@
-import { useState } from "react";
+// import React from "react";
 
 function Main() {
-  const [count, setCount] = useState(0);
+  // Step 7: The count variable
+  let count = 0;
 
+  // The handleClick function that accepts an event and prevents default behavior
   const handleClick = (event) => {
     event.preventDefault();
-    setCount(count + 1);
+    count++;
+    console.log("Current count is:", count);
   };
 
   return (
     <main>
+      {/* Attached handleClick using the onClick attribute */}
       <button onClick={handleClick}>Click counter</button>
       <p>{count}</p>
 
-      {/* Clean, paragraph-formatted explanation */}
       <p>
-        The useState function returns an array with a state variable and a
-        setter function. Array destructuring lets you unpack both of these
-        values into separate variables on a single line of code.
+        Because "count" is a regular local variable (stateless), clicking the
+        button won't update the UI. React doesn't track changes to standard
+        variables, so the component won't re-render to display a new value.
       </p>
     </main>
   );
 }
 
 export default Main;
+
+// import { useState } from "react";
+
+// function Main() {
+//   const [count, setCount] = useState(0);
+
+//   const handleClick = (event) => {
+//     event.preventDefault();
+//     setCount(count + 1);
+//   };
+
+//   return (
+//     <main>
+//       <button onClick={handleClick}>Click counter</button>
+//       <p>{count}</p>
+
+//       {/* Clean, paragraph-formatted explanation */}
+//       <p>
+//         The useState function returns an array with a state variable and a
+//         setter function. Array destructuring lets you unpack both of these
+//         values into separate variables on a single line of code.
+//       </p>
+//     </main>
+//   );
+// }
+
+// export default Main;
 
 // function Main() {
 //   // Step 7: Define the stateless variable
