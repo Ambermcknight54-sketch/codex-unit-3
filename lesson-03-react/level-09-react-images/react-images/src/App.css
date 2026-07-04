@@ -1,15 +1,18 @@
-.image-gallery {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 30px;
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: yellow;
 }
 
-.image-gallery img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
+h1 {
+  color: blueviolet;
+}
+
+img {
+  flex: 1;
+  width: 30%;
+}
+
+#images {
+  display: flex;
 }
