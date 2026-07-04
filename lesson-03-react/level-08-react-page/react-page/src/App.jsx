@@ -2,7 +2,6 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
-import React from "react";
 import "./App.css";
 
 function App() {
@@ -10,7 +9,7 @@ function App() {
   return (
     <main className="product-showcase">
       {/* 8, 9. h1 title describing the product */}
-      <h1>Mechanical Ergonomic Keyboard</h1>
+      <h1>Mechanical Keyboard</h1>
 
       {/* 8, 9. p tag describing the product */}
       <p>

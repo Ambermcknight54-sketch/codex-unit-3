@@ -26,9 +26,9 @@ function App() {
 
       {/* 8, 11, 14. Image tags with variables in curly braces */}
       <div className="image-gallery">
-        <img src={pic1} alt="First gallery showcase" />
-        <img src={pic2} alt="Second gallery showcase" />
-        <img src={pic3} alt="Third gallery showcase" />
+        <img src={pic1.jpg} alt="First gallery showcase" />
+        <img src={pic2.jpg} alt="Second gallery showcase" />
+        <img src={pic3.jpg} alt="Third gallery showcase" />
       </div>
     </main>
   );
