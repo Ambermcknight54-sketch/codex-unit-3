@@ -1,7 +1,7 @@
 // 15. Added the props object as a parameter
 function Main(props) {
   // 14. Added the debugger here to inspect the incoming message
-  debugger;
+  // debugger;
 
   return (
     <main>
