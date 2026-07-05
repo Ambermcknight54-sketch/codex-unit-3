@@ -1,29 +1,35 @@
-// import react from "react";
-
 function Main() {
-  // Step 7: The count variable
+  // Step 7: Add a variable let count = 0;
   let count = 0;
 
-  // The handleClick function that accepts an event and prevents default behavior
-  const handleClick = (event) => {
-    event.preventDefault();
-    count++;
-    console.log("Current count is:", count);
-  };
-
   return (
+    // Step 8: Add a main tag
     <main>
-      {/* Attached handleClick using the onClick attribute */}
+      {/* Step 8 & 15: Add a button tag that says Click counter and attach handleClick using onClick */}
       <button onClick={handleClick}>Click counter</button>
+
+      {/* Step 9: Add a p tag that renders the value of count */}
       <p>{count}</p>
 
+      {/* Step 10 & 11: Add a p tag with a message explaining stateless variables */}
       <p>
-        Because "count" is a regular local variable (stateless), clicking the
-        button won't update the UI. React doesn't track changes to standard
-        variables, so the component won't re-render to display a new value.
+        This counter uses a stateless variable. When you click the button, the
+        local variable 'count' increments in memory (which you can see via the
+        debugger), but because it is not a state variable (useState), it does
+        not trigger a component re-render. If the component ever does re-render,
+        the variable resets back to 0.
       </p>
     </main>
   );
+
+  // Step 12: Inside of the Main function and underneath the return statement, create a function called handleClick
+  function handleClick(event) {
+    // Step 13: Accept an event object and prevent default behavior
+    event.preventDefault();
+
+    // Step 14: Add debugger and increment the value of count
+    count = count + 1;
+  }
 }
 
 export default Main;
