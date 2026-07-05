@@ -1,6 +1,5 @@
 // 9. Export a function called Info that returns a p tag
 export function Info() {
-  /* 10. Explanation of what components are and how to use them */
   return (
     <p>
       React components are isolated, reusable blocks of code that serve as the
