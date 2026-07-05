@@ -3,8 +3,7 @@
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
 import "./App.css";
-
-function App() {
+export default function App() {
   return (
     <main>
       <h1>Destructured useState</h1>
@@ -18,5 +17,3 @@ function App() {
     </main>
   );
 }
-
-export default App;
