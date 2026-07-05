@@ -3,5 +3,8 @@ h1 {
 }
 p {
   font-family: "Georgia", serif;
-  color: #34495e;
+  color: hsl(289, 91%, 26%);
+}
+body {
+  background-color: peru;
 }

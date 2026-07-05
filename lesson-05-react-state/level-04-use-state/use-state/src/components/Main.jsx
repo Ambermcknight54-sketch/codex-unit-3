@@ -4,7 +4,7 @@ function Main() {
   const results = useState(0);
 
   // Execution pauses here during rendering to let you inspect the 2-item array
-  debugger;
+  
 
   const count = results[0];
   const setCount = results[1];
@@ -12,7 +12,6 @@ function Main() {
   
   
   function handleClick(event) {
-     debugger;
     event.preventDefault();
     setCount(count + 1
   }

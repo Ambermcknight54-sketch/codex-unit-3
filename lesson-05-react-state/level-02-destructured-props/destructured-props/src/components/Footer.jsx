@@ -1,9 +1,7 @@
-function Footer({ year }) {
+export function Footer({ year }) {
   return (
     <footer>
-      <p> Amber Mcknight {year}</p>
+      <p>Amber McKnight {year}</p>
     </footer>
   );
 }
-
-export default Footer;
