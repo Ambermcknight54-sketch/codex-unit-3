@@ -2,16 +2,17 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
+import Header from "./components/Header.jsx";
+import Main from "./components/Main.jsx";
+import Footer from "./components/Footer.jsx";
+
 import "./App.css";
 export default function App() {
   return (
-    <main>
-      <h1>Stateful Variables</h1>
-      <p>
-        A normal function forgets everything once it finishes running. A
-        stateful variable is special because it acts like a memory chip—it lets
-        your component remember information even after it runs.
-      </p>
-    </main>
+    <>
+      <Header />
+      <Main />
+      <Footer />
+    </>
   );
 }
