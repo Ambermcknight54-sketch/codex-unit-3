@@ -1,7 +1,5 @@
 // 6. Header accepts a parameter called props
-function Header(props) {
-  // 14. Debugger removed from here as instructed
-
+export default function Header(props) {
   return (
     <header>
       {/* 13. Access the title property using dot notation inside curly braces */}
@@ -9,5 +7,3 @@ function Header(props) {
     </header>
   );
 }
-
-export default Header;

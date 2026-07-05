@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer>
-      <p> Amber Mckight 2026.</p>
+      <p> Created by Amber Mckight 2026.</p>
     </footer>
   );
 }
