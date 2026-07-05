@@ -7,13 +7,13 @@ import "./App.css";
 function App() {
   return (
     <main>
-      <h1>React Template</h1>
+      <h1>Destructured useState</h1>
       <p>
-        To make a React template, run the Vite command in your terminal to
-        create the project. Go into the new folder and run npm install to get
-        the files ready. Then, delete the starter code and extra CSS so you have
-        a clean folder for your next project. designing your own layouts right
-        away.
+        In React, components are functions, but normal functions forget their
+        data after they run. A stateful variable acts like a memory chip that
+        preserves its value between function calls. When you click the button,
+        the setter function updates this value, which tells React to clear the
+        old view and re-render the page with the brand new count.
       </p>
     </main>
   );
