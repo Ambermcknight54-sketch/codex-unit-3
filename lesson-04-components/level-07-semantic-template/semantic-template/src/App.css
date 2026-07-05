@@ -5,3 +5,6 @@ p {
   font-family: "Georgia", serif;
   color: hwb(314 19% 39%);
 }
+body {
+  background-color: burlywood;
+}
