@@ -27,21 +27,22 @@ There are noticable differences in how Tailwind and TW Elements are installed an
 15. View the page to make sure it runs without errors.
 16. In the `components` folder, create the file `Slides.jsx` to export the `Slides` component.
 17. In `Slides`, `return` the TW Elements HTML code for a carousel.
-18. View the page. There will be errors.
-19. Code the following tasks from scratch. Don't copy/paste.
-20. To fix comment errors, replace HTML comments with JavaScript comments.
-21. To fix class errors, replace `class=` with `className=`.
-22. To fix style errors, convert `style` strings into objects and convert hyphenated CSS properties to camelCase.
-23. To fix stroke errors, convert hyphendated `stroke-` attributes to camelCase.
-24. To fix render or visual issues, restart the server.
-25. View the page to make sure it runs without errors and visual issues. Observe that the carousel renders, but doesn't work properly.
-26. In the TW Elements website, view the JavaScript code for the carousel. In React, `initTWE` must run in the mount phase, after the carousel code has mounted.
-27. Set up the `Slides` component to track the mount phase. Use `useState`, `didMount`, `setDidMount`, `componentDidMount`, `useEffect`, and an empty array of dependencies.
-28. In `Slides.jsx`, import the items listed in the TW Elements website - `Carousel` and `initTWE`.
-29. In `componentDidMount`, use `initTWE` as instructed in the TW Elements website.
-30. View the page in the browser. The carousel should work properly.
-31. In the `Main` component, add a `p` tag with a message that explains how to render TW Elements components.
-32. View the page in the browser.
+18. In `Main.jsx`, render the `Slides` component in the `Main` component.
+19. View the page. There will be errors.
+20. Code the following tasks from scratch. Don't copy/paste.
+21. To fix comment errors, replace HTML comments with JavaScript comments.
+22. To fix class errors, replace `class=` with `className=`.
+23. To fix style errors, convert `style` strings into objects and convert hyphenated CSS properties to camelCase.
+24. To fix stroke errors, convert hyphendated `stroke-` attributes to camelCase.
+25. To fix render or visual issues, restart the server.
+26. View the page to make sure it runs without errors and visual issues. Observe that the carousel renders, but doesn't work properly.
+27. In the TW Elements website, view the JavaScript code for the carousel. In React, `initTWE` must run in the mount phase, after the carousel code has mounted.
+28. Set up the `Slides` component to track the mount phase. Use `componentDidMount`, `useEffect`, and an empty array of dependencies.
+29. In `Slides.jsx`, import the items listed in the TW Elements website - `Carousel` and `initTWE`.
+30. In `componentDidMount`, use `initTWE` as instructed in the TW Elements website.
+31. View the page in the browser. The carousel should work properly.
+32. In the `Main` component, add a `p` tag with a message that explains how to render TW Elements components.
+33. View the page in the browser.
 
 ## More Information
 
