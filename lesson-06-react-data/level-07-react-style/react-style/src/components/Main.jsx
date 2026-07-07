@@ -1,13 +1,11 @@
-// import React from "react";
 import Slides from "./Slides";
 
+// Make sure it says "export default function"
 export default function Main() {
   return (
-    <>
+    <div id="root">
       <header>
         <h1>TW Elements Carousel Integration</h1>
-
-        {/* Task 31: Paragraph tag explaining how to render TWE components */}
         <p>
           To correctly render TW Elements components within a React environment,
           you must structure HTML attributes into JSX-compliant camelCase
@@ -20,7 +18,7 @@ export default function Main() {
       <main>
         <Slides />
       </main>
-    </>
+    </div>
   );
 }
 

@@ -2,15 +2,14 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
-import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
-function App() {
+export default function App() {
   return (
-    <main>
-      <h1>React Template</h1>
-      <p></p>
-    </main>
+    <>
+      <Header />
+      <Main />
+    </>
   );
 }
-
-export default App;
