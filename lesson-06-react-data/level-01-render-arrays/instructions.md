@@ -12,7 +12,6 @@ React can be used to render data with HTML.
 
 1. In your system's file explorer or file picker, copy your `react-template` folder into this level folder. The template should render `Header`, `Main`, and `Footer` components.
 2. In this level folder, rename `react-template` to `render-arrays`.
-
 3. Start the Vite server and open the React Debugger browser.
 4. In the `src/components/` folder, let the `Header` component render the title `Render Data Arrays with React`.
 5. In the `src/components/` folder, view the file `Main.jsx`.
