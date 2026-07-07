@@ -54,8 +54,8 @@ export default function Slides() {
           />
           <div className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
             {/* Fixed: class -> className */}
-            <h5 className="text-xl">First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h5 className="text-xl">View of SunSet on a Cliff</h5>
+            {/* <p>Some representative placeholder content for the first slide.</p> */}
           </div>
         </div>
         {/* Second item */}
@@ -70,8 +70,8 @@ export default function Slides() {
           />
           <div className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
             {/* Fixed: class -> className */}
-            <h5 className="text-xl">Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+            <h5 className="text-xl">Beautiful View of the Desert</h5>
+            {/* <p>Some representative placeholder content for the second slide.</p> */}
           </div>
         </div>
         {/* Third item */}
@@ -86,8 +86,8 @@ export default function Slides() {
           />
           <div className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
             {/* Fixed: class -> className */}
-            <h5 className="text-xl">Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            <h5 className="text-xl">SunSet by the Ocean</h5>
+            {/* <p>Some representative placeholder content for the third slide.</p> */}
           </div>
         </div>
       </div>
