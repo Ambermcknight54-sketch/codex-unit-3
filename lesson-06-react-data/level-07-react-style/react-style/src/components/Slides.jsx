@@ -1,4 +1,10 @@
-export function Slides() {
+import { useEffect } from "react";
+import { Carousel, initTWE } from "tw-elements";
+
+const MOUNT_PHASE = [];
+
+export default function Slides() {
+  useEffect(componanrDidMount, MOUNT_PHASE);
   return (
     <div
       id="carouselExampleCaptions"
@@ -133,4 +139,7 @@ export function Slides() {
       </button>
     </div>
   );
+  function componanrDidMount() {
+    initTWE({ Carousel });
+  }
 }
