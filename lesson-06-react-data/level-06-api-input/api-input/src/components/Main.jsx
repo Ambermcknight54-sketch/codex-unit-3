@@ -25,6 +25,19 @@ export function Main() {
           Max Characters:
           <input type="number" name="max" />
         </label>
+
+        {/* Added Input 1: Search Name */}
+        <label>
+          Search Name:
+          <input type="text" name="search" />
+        </label>
+
+        {/* Added Input 2: House */}
+        <label>
+          House:
+          <input type="text" name="house" />
+        </label>
+
         <button type="submit">Characters</button>
       </form>
     </main>
@@ -57,6 +70,8 @@ export function Main() {
     // Ensured form.elements.max matches the input name="max"
     const data = {
       max: form.elements.max.value,
+      search: form.elements.search.value, // Captured new input 1
+      house: form.elements.house.value,
     };
 
     const dataString = new URLSearchParams(data).toString();
