@@ -4,7 +4,6 @@ import { Carousel, initTWE } from "tw-elements";
 const MOUNT_PHASE = [];
 
 export default function Slides() {
-  // Corrected function reference name
   useEffect(componentDidMount, MOUNT_PHASE);
 
   return (
