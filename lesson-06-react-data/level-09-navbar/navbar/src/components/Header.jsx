@@ -1,11 +1,10 @@
-import React from "react";
-
-const Header = () => {
+export default function Header() {
   return (
     <header>
       <h1>TW Elements Navbar in React</h1>
+      <nav>
+        <a href="/">Home</a> | <a href="/about">About</a>
+      </nav>
     </header>
   );
-};
-
-export default Header;
+}
