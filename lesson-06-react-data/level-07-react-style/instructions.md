@@ -17,7 +17,7 @@ There are noticable differences in how Tailwind and TW Elements are installed an
 5. View the page to make sure it runs without errors.
 6. In a new terminal, navigate to the `react-style` folder.
 7. In the terminal, install (or add) these packages - `tailwindcss@3`, `postcss`, `autoprefixer`, and `tw-elements`.
-8. This will create the files `tailwind.config.js` and `postcss.config.js`.
+8. In the terminal, initialize Tailwind with `npx tailwindcss init --postcss`. This will create the files `tailwind.config.js` and `postcss.config.js`.
 9. In `tailwind.config.js`, add `"./index.html"`, `"./src/**/*.{html,js,ts,jsx,tsx}"`, and `"./node_modules/tw-elements/js/**/*.js"` to the `content` array.
 10. In `tailwind.config.js`, add `require("tw-elements/plugin.cjs")` to the `plugins` array.
 11. On the line after `plugins`, add `darkMode: "class"`.
