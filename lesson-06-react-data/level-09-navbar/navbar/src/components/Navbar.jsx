@@ -1,90 +1,173 @@
- import { useEffect } from "react";
-import { Collapse, initTWE } from "tw-elements";
-import { NavLink } from "react-router-dom"; // Make sure to import NavLink
- const MOUNT_PHASE = [];
+// import { useState } from "react";
+// import { useCollapseTWE } from "tw-elements";
+// import { NavLink } from "react-router-dom";
 
-export default function Navbar() {
-    
-  return (
+// export function Navbar() {
+//   // Properly initialize TW Elements when the component mounts
+//   useCollapseTWE();
 
-   
-    //   {/* Main navigation container */}
-    //   {/* 9. Return TW Elements HTML code / 12. Fix class -> className, comments, and SVG attributes */}
-      <nav
-        className="relative flex w-full flex-nowrap items-center justify-between bg-zinc-50 py-2 text-neutral-500 shadow-dark-mild hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4"
-        data-twe-navbar-ref
-      >
-      <div className="flex w-full flex-wrap items-center justify-between px-3">
-        <div className="ms-2">
-          {/* Logo/Brand link using NavLink */}
-          <NavLink className="text-xl text-black dark:text-white" to="/">
-            Navbar
-          </NavLink>
-        </div>
-        
-        {/* Hamburger button for mobile view */}
-        <button
-          className="block border-0 bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
-          type="button"
-          data-twe-collapse-init
-          data-twe-target="#navbarSupportedContent2"
-          aria-controls="navbarSupportedContent2"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="[&>svg]:w-7 [&>svg]:stroke-black/50 dark:[&>svg]:stroke-neutral-200">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </span>
-        </button>
+//   return (
+//     <nav
+//       className="relative flex w-full flex-nowrap items-center justify-between bg-zinc-50 py-2 text-neutral-500 shadow-dark-mild hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4"
+//       data-twe-navbar-ref>
+//       <div className="flex w-full flex-wrap items-center justify-between px-3">
+//         <div className="ms-2">
+//           {/* Logo/Brand link using NavLink */}
+//           <NavLink className="text-xl text-black dark:text-white" to="/">
+//             Navbar
+//           </NavLink>
+//         </div>
 
-        {/* Collapsible navbar container */}
-        <div
-          className="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
-          id="navbarSupportedContent2"
-          data-twe-collapse-item
-        >
-          {/* Left links */}
-          <ul
-            className="list-style-none me-auto flex flex-col ps-0 lg:mt-1 lg:flex-row"
-            data-twe-navbar-nav-ref
-          >
-            {/* 19/22/23. Home Link replaced with NavLink using 'to=' instead of 'href=' */}
-            <li className="my-4 ps-2 lg:my-0 lg:pe-1 lg:ps-2" data-twe-nav-item-ref>
-              <NavLink
-                className="text-black dark:text-white lg:px-2"
-                to="/"
-                data-twe-nav-link-ref
-              >
-                Home
-              </NavLink>
-            </li>
-            
-            {/* 19/22/23. About Link replaced with NavLink using 'to=' instead of 'href=' */}
-            <li className="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0" data-twe-nav-item-ref>
-              <NavLink
-                className="p-0 text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-                to="/about"
-                data-twe-nav-link-ref
-              >
-                About
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-   
-  );
-  function componentDidMount() {
-    initTWE({ Collapse });
-}
+//         {/* Hamburger button for mobile view */}
+//         <button
+//           className="block border-0 bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+//           type="button"
+//           data-twe-collapse-init
+//           data-twe-target="#navbarSupportedContent2"
+//           aria-controls="navbarSupportedContent2"
+//           aria-expanded="false"
+//           aria-label="Toggle navigation">
+//           <span className="[&>svg]:w-7 [&>svg]:stroke-black/50 dark:[&>svg]:stroke-neutral-200">
+//             <svg
+//               xmlns="http://www.w3.org/2000/svg"
+//               viewBox="0 0 24 24"
+//               fill="currentColor">
+//               <path
+//                 fillRule="evenodd"
+//                 d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+//                 clipRule="evenodd"
+//               />
+//             </svg>
+//           </span>
+//         </button>
+
+//         {/* Collapsible navbar container */}
+//         <div
+//           className="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
+//           id="navbarSupportedContent2"
+//           data-twe-collapse-item>
+//           {/* Left links */}
+//           <ul
+//             className="list-style-none me-auto flex flex-col ps-0 lg:mt-1 lg:flex-row"
+//             data-twe-navbar-nav-ref>
+//             {/* Home Link */}
+//             <li
+//               className="my-4 ps-2 lg:my-0 lg:pe-1 lg:ps-2"
+//               data-twe-nav-item-ref>
+//               <NavLink
+//                 className="text-black dark:text-white lg:px-2"
+//                 to="/"
+//                 data-twe-nav-link-ref>
+//                 Home
+//               </NavLink>
+//             </li>
+
+//             {/* About Link */}
+//             <li
+//               className="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0"
+//               data-twe-nav-item-ref>
+//               <NavLink
+//                 className="p-0 text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+//                 to="/about"
+//                 data-twe-nav-link-ref>
+//                 About
+//               </NavLink>
+//             </li>
+//           </ul>
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// }
+
+//  import { useEffect } from "react";
+// import { Collapse, initTWE } from "tw-elements";
+// import { NavLink } from "react-router-dom";
+//  import Navbar from "./Navbar";
+
+//  const MOUNT_PHASE = [];
+
+// export function Navbar() {
+
+//   return (
+
+//     //   {/* Main navigation container */}
+//     //   {/* 9. Return TW Elements HTML code / 12. Fix class -> className, comments, and SVG attributes */}
+//       <nav
+//         className="relative flex w-full flex-nowrap items-center justify-between bg-zinc-50 py-2 text-neutral-500 shadow-dark-mild hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-700 lg:flex-wrap lg:justify-start lg:py-4"
+//         data-twe-navbar-ref
+//       >
+//       <div className="flex w-full flex-wrap items-center justify-between px-3">
+//         <div className="ms-2">
+//           {/* Logo/Brand link using NavLink */}
+//           <NavLink className="text-xl text-black dark:text-white" to="/">
+//             Navbar
+//           </NavLink>
+//         </div>
+
+//         {/* Hamburger button for mobile view */}
+//         <button
+//           className="block border-0 bg-transparent px-2 text-black/50 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+//           type="button"
+//           data-twe-collapse-init
+//           data-twe-target="#navbarSupportedContent2"
+//           aria-controls="navbarSupportedContent2"
+//           aria-expanded="false"
+//           aria-label="Toggle navigation"
+//         >
+//           <span className="[&>svg]:w-7 [&>svg]:stroke-black/50 dark:[&>svg]:stroke-neutral-200">
+//             <svg
+//               xmlns="http://www.w3.org/2000/svg"
+//               viewBox="0 0 24 24"
+//               fill="currentColor"
+//             >
+//               <path
+//                 fillRule="evenodd"
+//                 d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+//                 clipRule="evenodd"
+//               />
+//             </svg>
+//           </span>
+//         </button>
+
+//         {/* Collapsible navbar container */}
+//         <div
+//           className="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
+//           id="navbarSupportedContent2"
+//           data-twe-collapse-item
+//         >
+//           {/* Left links */}
+//           <ul
+//             className="list-style-none me-auto flex flex-col ps-0 lg:mt-1 lg:flex-row"
+//             data-twe-navbar-nav-ref
+//           >
+//             {/* 19/22/23. Home Link replaced with NavLink using 'to=' instead of 'href=' */}
+//             <li className="my-4 ps-2 lg:my-0 lg:pe-1 lg:ps-2" data-twe-nav-item-ref>
+//               <NavLink
+//                 className="text-black dark:text-white lg:px-2"
+//                 to="/"
+//                 data-twe-nav-link-ref
+//               >
+//                 Home
+//               </NavLink>
+//             </li>
+
+//             {/* 19/22/23. About Link replaced with NavLink using 'to=' instead of 'href=' */}
+//             <li className="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0" data-twe-nav-item-ref>
+//               <NavLink
+//                 className="p-0 text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
+//                 to="/about"
+//                 data-twe-nav-link-ref
+//               >
+//                 About
+//               </NavLink>
+//             </li>
+//           </ul>
+//         </div>
+//       </div>
+//     </nav>
+
+//   );
+//   function componentDidMount() {
+//     initTWE({ Collapse });
+// }
