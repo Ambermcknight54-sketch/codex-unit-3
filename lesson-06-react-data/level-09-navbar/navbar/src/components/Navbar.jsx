@@ -1,5 +1,6 @@
- { useEffect } from "react";
+ import { useEffect } from "react";
 import { Collapse, initTWE } from "tw-elements";
+import { NavLink } from "react-router-dom"; // Make sure to import NavLink
  const MOUNT_PHASE = [];
 
 export default function Navbar() {
