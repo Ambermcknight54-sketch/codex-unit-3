@@ -3,7 +3,7 @@ import Slides from "./Slides";
 // Make sure it says "export default function"
 export default function Main() {
   return (
-    <div id="root">
+    <div>
       <header>
         <h1>TW Elements Carousel Integration</h1>
         <p>
