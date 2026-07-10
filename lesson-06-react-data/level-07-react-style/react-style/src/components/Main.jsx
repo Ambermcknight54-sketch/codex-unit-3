@@ -1,3 +1,5 @@
+import { Slides } from "./Slides";
+
 export default function Main() {
   return (
     <main>
@@ -7,6 +9,7 @@ export default function Main() {
         package. It allows us to define paths using BrowserRouter, Routes, and
         Route components to switch views without reloading the browser.
       </p>
+      <Slides />
     </main>
   );
 }
