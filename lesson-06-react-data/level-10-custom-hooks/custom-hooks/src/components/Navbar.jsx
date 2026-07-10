@@ -1,12 +1,18 @@
-import { useEffect } from "react";
-import { Collapse, initTWE } from "tw-elements";
+// import { useEffect } from "react";
+// import { Collapse, initTWE } from "tw-elements";
+
+// export function Navbar() {
+//   useEffect(componentDidMount, []);
+
+//   function componentDidMount() {
+//     initTWE({ Collapse });
+//   }
+
+import { useCollapseTWE } from "../hooks/useCollapseTWE";
 
 export function Navbar() {
-  useEffect(componentDidMount, []);
-
-  function componentDidMount() {
-    initTWE({ Collapse });
-  }
+  // Call the custom hook to handle initialization and component state
+  useCollapseTWE();
 
   return (
     <nav
@@ -42,7 +48,6 @@ export function Navbar() {
           className="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
           id="navbarSupportedContent"
           data-twe-collapse-item>
-          {/* Left links */}
           <ul
             className="list-style-none me-auto flex flex-col ps-0 lg:flex-row"
             data-twe-navbar-nav-ref>
