@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import { Carousel, initTWE } from "tw-elements";
+import { Collapse, initTWE } from "tw-elements";
 
 /**
- * Custom hook to initialize the TW Elements Carousel component.
+ * Custom hook to initialize the TW Elements Collapse component.
  */
-export function useCarouselTWE() {
+export function useCollapseTWE() {
   useEffect(componentDidMount, []);
 
   function componentDidMount() {
-    initTWE({ Carousel });
+    initTWE({ Collapse });
   }
 }
