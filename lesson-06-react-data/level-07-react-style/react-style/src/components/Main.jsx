@@ -5,9 +5,12 @@ export default function Main() {
     <main>
       <h2>React Style</h2>
       <p>
-        To create a multi-page website in React, we use the react-router
-        package. It allows us to define paths using BrowserRouter, Routes, and
-        Route components to switch views without reloading the browser.
+        To render TW Elements interactive components correctly in React, replace
+        class with className, wrapping styles into objects, and converting
+        properties like stroke-width to camelCase. The elements rely on
+        underlying JavaScript behavior, the initTWE function must be imported
+        alongside the component module and executed during the component's mount
+        phase using the useEffect hook with an empty dependency array.
       </p>
       <Slides />
     </main>
