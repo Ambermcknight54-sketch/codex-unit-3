@@ -9,10 +9,9 @@ export function Main() {
   const [didMount, setDidMount] = useState(false);
   const [images, setImages] = useState([]);
   useEffect(componentDidMount, []);
-  debugger;
+
  return (
-<main>
-     
+    <main>
       <p>{"didMount: " + didMount}</p>
       <section>{images}</section>
       <p>
@@ -23,9 +22,10 @@ export function Main() {
  );
  
  function componentDidMount() {
+  debugger;
   setDidMount(true);
   const figure = []
-    for (let index = 0; i < data.length; i++) {
+    for (let index = 0; index < data.length;) {
       const item = data[index];
       const figure = (
         <figure>

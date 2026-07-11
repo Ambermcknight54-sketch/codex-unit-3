@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { MOUNT_PHASE } from "../../../../../data/lifecycle.js";
-import { data } from "../../../../../data/data.js";
+import { MOUNT_PHASE } from ".../map-arrays/data/lifecycle.js";
+import { data } from ".../map-arrays/data/data.js";
 
 export function Main() {
   const [didMount, setDidMount] = useState(false);
@@ -20,8 +20,20 @@ export function Main() {
       </p>
     </main>
   );
-
   function componentDidMount() {
+    // debugger;
     setDidMount(true);
+
+    const detailsElements = data.map(toDetails);
+    setSubjects(detailsElements);
   }
+}
+function toDetails(dataItem) {
+  const details = (
+    <details>
+      <summary>{dataItem.name}</summary>
+      {dataItem.description}
+    </details>
+  );
+  return details;
 }
