@@ -1,13 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App.js"; // 1. Make sure App is imported!
-import "./index.css"; // 2. Make sure your Tailwind styles are linked
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-);
+export function Home() {
+  return (
+    <p>
+      React components are isolated, reusable blocks of code that serve as the
+      building blocks for a user interface. They behave like custom HTML
+      elements, allowing you to package structure, logic, and styling together,
+      and can be easily embedded across your application by rendering them as
+      self-closing tags.
+    </p>
+  );
+}

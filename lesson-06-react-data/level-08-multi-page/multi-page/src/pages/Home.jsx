@@ -1,7 +1,7 @@
-export default function Home() {
+function Home() {
   return (
     <main>
-      <h2>Home Page</h2>
+      <h2>Home</h2>
       <p>
         To create a multi-page website in React, we use the react-router
         package. It allows us to define paths using BrowserRouter, Routes, and
@@ -10,3 +10,4 @@ export default function Home() {
     </main>
   );
 }
+export default Home;
