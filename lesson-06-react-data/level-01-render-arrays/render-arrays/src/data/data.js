@@ -1,4 +1,4 @@
-const imageData = [
+export const data = [
   {
     src: "/images/92ECD092-4FD8-489C-AEBB-152F1E4864D0_1_105_c.jpeg",
     caption:
@@ -23,8 +23,6 @@ const imageData = [
       "An explicit feature showcasing creative layout design frameworks.",
   },
 ];
-
-export default imageData;
 
 // export const data = [
 //   {

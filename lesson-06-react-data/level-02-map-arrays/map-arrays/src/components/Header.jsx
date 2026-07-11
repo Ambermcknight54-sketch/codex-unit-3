@@ -1,6 +1,4 @@
-export default Header;
-
-function Header() {
+export function Header() {
   return (
     <header>
       <h1>Map Arrays to React Elements</h1>

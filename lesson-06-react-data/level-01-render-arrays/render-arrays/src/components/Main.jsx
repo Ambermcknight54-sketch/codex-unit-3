@@ -1,58 +1,49 @@
 import { useState, useEffect } from "react";
-import imageData from "../data/data.js";
+import {MOUNT_PHASE} from "../data/lifecycle.js";
+import data from "../data/data.js";
 
-function Main() {
-  debugger;
+const MOUNT_PHASE = [],
+
+export function Main() {
   // 1. Declare all State variables first
   const [didMount, setDidMount] = useState(false);
   const [images, setImages] = useState([]);
-
-  // 2. Set up the Effect hook to track the mount phase
   useEffect(componentDidMount, []);
   debugger;
-  // 3. Define the helper function that handles your mounting logic
-  function componentDidMount() {
-    const figures = []; // Temporary JavaScript array to collect elements
-
-    // Traverse the data array with a traditional for loop
-    for (let i = 0; i < data.length; i++) {
-      const item = data[i]; // Fixed from imageData[i]
+ return (
+<main>
+     
+      <p>{"didMount: " + didMount}</p>
+      <section>{images}</section>
+      <p>
+        Using the Mount_Phase to render a data array by taking list of information (like a list of names, products, or images) 
+        an turning each item into HTML elements so they display on a web page.
+      </p>
+    </main>
+ );
+ 
+ function componentDidMount() {
+  setDidMount(true);
+  const figure = []
+    for (let index = 0; i < data.length; i++) {
+      const item = data[index];
       const figure = (
         <figure>
           <img src={item.src} />
           <figcaption>{item.caption}</figcaption>
         </figure>
       );
-      figures.push(figure);
-    } // Closes for loop
-
-    setImages(figures);
-
-    // Set your mount tracking flag to true
-    setDidMount(true);
-  } // Closes componentDidMount function
-
-  // 4. The return statement must always come LAST
-  return (
-    <main>
-      {/* Render the value of didMount using a p tag */}
-      <p>{"didMount: " + didMount}</p>
-
-      {/* Render images in a section tag */}
-      <section>{images}</section>
-
-      {/* Narrative block explaining how to render a data array */}
-      <p>
-        To render data from an API, we fetch the array of information when the
-        component first mounts. Once we have the data, we use standard dot
-        notation to call the .map method, writing a regular function directly
-        inside it to loop through each character and output organized HTML
-        elements to the page.
-      </p>
-    </main>
-  );
+      figures.push(figure)
+    }
+    setImages(figures)
+  }
 }
-export default Main;
+
+  
+    
+  
+
+  // 4. The return statement must always come 
 // import { useState, useEffect } from "react";
 
 // import data from "../data/data.js";
