@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import imageData from "../data/data.js";
 
-export function Main() {
+function Main() {
   debugger;
   // 1. Declare all State variables first
   const [didMount, setDidMount] = useState(false);
@@ -9,7 +9,7 @@ export function Main() {
 
   // 2. Set up the Effect hook to track the mount phase
   useEffect(componentDidMount, []);
-
+  debugger;
   // 3. Define the helper function that handles your mounting logic
   function componentDidMount() {
     const figures = []; // Temporary JavaScript array to collect elements
@@ -19,14 +19,13 @@ export function Main() {
       const item = data[i]; // Fixed from imageData[i]
       const figure = (
         <figure>
-          <img src={item.src} /> {/* Fixed from imageData.src */}
+          <img src={item.src} />
           <figcaption>{item.caption}</figcaption>
         </figure>
       );
       figures.push(figure);
     } // Closes for loop
 
-    // Moves the items from the temporary array into React state right after the loop
     setImages(figures);
 
     // Set your mount tracking flag to true
@@ -53,6 +52,7 @@ export function Main() {
     </main>
   );
 }
+export default Main;
 // import { useState, useEffect } from "react";
 
 // import data from "../data/data.js";

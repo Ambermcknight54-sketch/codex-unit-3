@@ -1,32 +1,29 @@
-// 9. Define the array of 5 objects
 const imageData = [
   {
-    src: "https://picsum.photos/id/10/200/300",
+    src: "/images/92ECD092-4FD8-489C-AEBB-152F1E4864D0_1_105_c.jpeg",
     caption:
-      "A beautiful view of a peaceful mountain lake surrounded by trees.",
+      "A personalized snapshot featuring family members from my gallery collection.",
   },
   {
-    src: "https://picsum.photos/id/20/200/300",
-    caption:
-      "A clean and organized office workspace with a laptop and notebook.",
+    src: "/images/peace.jpg",
+    caption: "A serene photo capturing a moment of peace and reflection.",
   },
   {
-    src: "https://picsum.photos/id/29/200/300",
+    src: "/images/conquering code.jpg",
     caption:
-      "A scenic look at rugged mountains stretching out under a clear blue sky.",
+      "A visual representation of conquering challenges while learning to code.",
   },
   {
-    src: "https://picsum.photos/id/42/200/300",
-    caption: "A old-school analog table clock standing outdoors.",
+    src: "/images/pic1.jpg",
+    caption: "A beautiful scenery shot highlighting travels and destinations.",
   },
   {
-    src: "https://picsum.photos/id/60/200/300",
+    src: "/images/pic2.jpg",
     caption:
-      "A large desktop computer monitor sitting on a desk showing colorful graphics.",
+      "An explicit feature showcasing creative layout design frameworks.",
   },
-]; // <-- Array safely closed here
+];
 
-// Export default the array using its correct variable name
 export default imageData;
 
 // export const data = [
