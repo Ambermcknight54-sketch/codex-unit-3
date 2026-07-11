@@ -3,23 +3,21 @@
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header.jsx";
-import Home from "./page/Home.jsx";
-import About from "./page/About.jsx";
+import { Header } from "./components/Header";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
     <BrowserRouter>
-      {/* The Header (and Navbar) stays visible on every page */}
       <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
 
-      {/* Main page viewports switch dynamically based on the URL path */}
-      <main className="container mx-auto px-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </main>
+      <Footer />
     </BrowserRouter>
   );
 }
