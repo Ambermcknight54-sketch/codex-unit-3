@@ -1,4 +1,4 @@
-export default Header;
+import React from "react";
 
 function Header() {
   return (
@@ -7,3 +7,5 @@ function Header() {
     </header>
   );
 }
+
+export default Header;

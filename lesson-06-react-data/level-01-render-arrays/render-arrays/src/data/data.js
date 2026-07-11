@@ -1,4 +1,4 @@
-// 9. Export default an array of 5 objects
+// 9. Define the array of 5 objects
 const imageData = [
   {
     src: "https://picsum.photos/id/10/200/300",
@@ -24,7 +24,10 @@ const imageData = [
     caption:
       "A large desktop computer monitor sitting on a desk showing colorful graphics.",
   },
-];
+]; // <-- Array safely closed here
+
+// Export default the array using its correct variable name
+export default imageData;
 
 // export const data = [
 //   {
