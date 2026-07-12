@@ -2,15 +2,13 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
-// import Header from "./components/Header";
-// import Main from "./components/Header";
-// import Footer from "./components/Footer";
+
 import "./App.css";
 
 function App() {
   return (
     <main>
-      <h1>React Template</h1>
+      <h1>TW Elements Navbar in React.</h1>
       <p>
         To make a React template, run the Vite command in your terminal to
         create the project. Go into the new folder and run npm install to get
