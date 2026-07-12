@@ -1,7 +1,9 @@
 export function Header() {
   return (
     <header>
-      <h1>React Template</h1>
+      <main>
+        <h1>React Template</h1>
+      </main>
     </header>
   );
 }
