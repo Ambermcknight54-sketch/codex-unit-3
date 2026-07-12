@@ -1,7 +1,9 @@
 export default function Header() {
   return (
     <header>
-      <h1>Style React with Tailwind and TW Elements</h1>
+      <main>
+        <h1>NavBar with Tailwind and TW Elements</h1>
+      </main>
     </header>
   );
 }

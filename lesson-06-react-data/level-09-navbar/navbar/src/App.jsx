@@ -2,21 +2,27 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
-
 import "./App.css";
+import { Header } from "./components/Header";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router";
 
 function App() {
   return (
-    <main>
-      <h1>TW Elements Navbar in React.</h1>
-      <p>
-        To make a React template, run the Vite command in your terminal to
-        create the project. Go into the new folder and run npm install to get
-        the files ready. Then, delete the starter code and extra CSS so you have
-        a clean folder for your next project. designing your own layouts right
-        away.
-      </p>
-    </main>
+    <BrowserRouter>
+      <Header />
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
   );
 }
 
