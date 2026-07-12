@@ -13,8 +13,8 @@ import { BrowserRouter, Routes, Route } from "react-router";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Navbar />
+      <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />
