@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <footer>
-      <p>Amber McKnight NavBar with TM ELEMENTS</p>
+      <p> Amber Mcknight 2026</p>
     </footer>
   );
 }

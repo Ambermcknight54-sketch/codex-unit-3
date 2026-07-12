@@ -1,4 +1,4 @@
-export function Home() {
+export function Main() {
   return (
     <p>
       React components are isolated, reusable blocks of code that serve as the
