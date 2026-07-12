@@ -8,10 +8,11 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Footer } from "./components/Footer";
 
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
       <Header />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -21,3 +22,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+export default App;
