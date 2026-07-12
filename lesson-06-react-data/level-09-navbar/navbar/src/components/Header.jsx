@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header>
-      <h1>React Template</h1>
+      <h1>TW Elements Navbar in React.</h1>
     </header>
   );
 }
