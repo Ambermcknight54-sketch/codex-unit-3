@@ -6,7 +6,8 @@ import { Collapse, initTWE } from "tw-elements";
  */
 export function useCollapseTWE() {
   useEffect(componentDidMount, []);
-}
-function componentDidMount() {
-  initTWE({ Collapse });
+
+  function componentDidMount() {
+    initTWE({ Collapse });
+  }
 }
