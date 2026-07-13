@@ -1,9 +1,10 @@
+import { Navbar } from "./Navbar";
+
 export default function Header() {
   return (
     <header>
-      <main>
-        <h1>NavBar with Tailwind and TW Elements</h1>
-      </main>
+      <h1>Custom Hooks for TW Elements Components</h1>
+      <Navbar />
     </header>
   );
 }

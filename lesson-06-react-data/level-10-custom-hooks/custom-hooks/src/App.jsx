@@ -3,11 +3,12 @@
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
 // import "./App.css";
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import { Header } from "./components/Header";
+import { Main } from "./components/Main";
+import { Footer } from "./components/Footer";
 import "./App.css";
-export default function App() {
+
+function App() {
   return (
     <main>
       <Header />
@@ -16,3 +17,5 @@ export default function App() {
     </main>
   );
 }
+
+export default App;

@@ -1,8 +1,8 @@
-export default function Footer() {
+export function Footer() {
   return (
     <main>
       <footer>
-        <p> Amber's Page</p>
+        <p> Amber's Custom Hooks Page</p>
       </footer>
     </main>
   );
