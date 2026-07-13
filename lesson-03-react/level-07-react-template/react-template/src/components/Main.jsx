@@ -1,15 +1,12 @@
 export function Main() {
   return (
-    <header>
-      <main>
-        <p>
-          React components are isolated, reusable blocks of code that serve as
-          the building blocks for a user interface. They behave like custom HTML
-          elements, allowing you to package structure, logic, and styling
-          together, and can be easily embedded across your application by
-          rendering them as self-closing tags.
-        </p>
-      </main>
-    </header>
+    <main>
+      <p>
+        A React template is a starter codebase designed to jumpstart the
+        development of a web application. Instead of configuring everything from
+        scratch, it provides a pre-structured foundation with essential files,
+        dependencies, and layout pieces already set up.
+      </p>
+    </main>
   );
 }

@@ -9,22 +9,11 @@ import { Footer } from "./components/Footer";
 
 function App() {
   return (
-    <>
+    <main>
       <Header />
-
-      <main>
-        <h1>React Template</h1>
-        <p>
-          A React template is a starter codebase designed to jumpstart the
-          development of a web application. Instead of configuring everything
-          from scratch, it provides a pre-structured foundation with essential
-          files, dependencies, and layout pieces already set up.
-        </p>
-      </main>
-
       <Main />
       <Footer />
-    </>
+    </main>
   );
 }
 
