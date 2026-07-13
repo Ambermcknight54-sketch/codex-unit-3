@@ -1,6 +1,6 @@
 import { Slides } from "./Slides";
 
-export function Main() {
+export default function Main() {
   return (
     <main>
       <p>Custom hooks</p>

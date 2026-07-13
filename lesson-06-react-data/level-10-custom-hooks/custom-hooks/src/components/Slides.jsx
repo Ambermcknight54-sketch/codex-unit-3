@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useCarouselTWE } from "../hooks/useCarouselTWE";
 
 export function Slides() {
@@ -43,7 +42,7 @@ export function Slides() {
           className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           data-twe-carousel-active
           data-twe-carousel-item
-          style="backface-visibility: hidden">
+          style={{ backfaceVisibility: "hidden" }}>
           <img
             src="https://tecdn.b-cdn.net/img/Photos/Slides/img%20(15).jpg"
             className="block w-full"

@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { Collapse, initTWE } from "tw-elements";
 
-const MOUNT_PHASE = [];
-
 export function Navbar() {
   useEffect(componentDidMount, []);
 
