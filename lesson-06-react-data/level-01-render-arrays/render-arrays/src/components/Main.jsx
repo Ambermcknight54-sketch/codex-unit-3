@@ -3,7 +3,7 @@ import { MOUNT_PHASE } from "../data/lifecycle.js";
 import { data } from "../data/data.js";
 
 function Main() {
-  debugger;
+  // debugger;
   const [didMount, setDidMount] = useState(false);
   const [images, setImages] = useState([]);
   useEffect(componentDidMount, MOUNT_PHASE);
@@ -21,18 +21,18 @@ function Main() {
   );
 
   function componentDidMount() {
-    debugger;
+    // debugger;
     setDidMount(true);
-    const figure = [];
+    const figures = [];
     for (let index = 0; index < data.length; index++) {
       const item = data[index];
-      const figure = (
+      const figures = (
         <figure>
           <img src={item.src} />
           <figcaption>{item.caption}</figcaption>
         </figure>
       );
-      figures.push(figure);
+      figures.push(figures);
     }
     setImages(figures);
   }
