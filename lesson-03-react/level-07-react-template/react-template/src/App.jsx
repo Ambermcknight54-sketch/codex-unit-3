@@ -2,23 +2,29 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
-// import Header from "./components/Header";
-// import Main from "./components/Header";
-// import Footer from "./components/Footer";
-import "./App.css";
+// src/App.jsx
+import { Header } from "./components/Header";
+import { Main } from "./components/Main";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
-    <main>
-      <h1>React Template</h1>
-      <p>
-        To make a React template, run the Vite command in your terminal to
-        create the project. Go into the new folder and run npm install to get
-        the files ready. Then, delete the starter code and extra CSS so you have
-        a clean folder for your next project. designing your own layouts right
-        away.
-      </p>
-    </main>
+    <>
+      <Header />
+
+      <main>
+        <h1>React Template</h1>
+        <p>
+          A React template is a starter codebase designed to jumpstart the
+          development of a web application. Instead of configuring everything
+          from scratch, it provides a pre-structured foundation with essential
+          files, dependencies, and layout pieces already set up.
+        </p>
+      </main>
+
+      <Main />
+      <Footer />
+    </>
   );
 }
 
