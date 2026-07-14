@@ -36,7 +36,7 @@ export function Main() {
           <input type="text" name="house" />
         </label> */}
 
-        <button type="submit">Characters</button>
+        <button type="submit">Submit</button>
       </form>
     </main>
   );
@@ -64,13 +64,12 @@ export function Main() {
   async function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
-
-    // Ensured form.elements.max matches the input name="max"
     const data = {
       max: form.elements.max.value,
       // search: form.elements.search.value,
       // house: form.elements.house.value,
     };
+
     const dataString = new URLSearchParams(data).toString();
     try {
       const response = await fetch(
