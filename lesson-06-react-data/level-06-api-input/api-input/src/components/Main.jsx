@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 export function Main() {
   const [characters, setCharacters] = useState([]);
   const [didMount, setDidMount] = useState(false);
-
   // Track the mount phase
   useEffect(componentDidMount, []);
 
@@ -70,7 +69,7 @@ export function Main() {
     // Ensured form.elements.max matches the input name="max"
     const data = {
       max: form.elements.max.value,
-      search: form.elements.search.value, // Captured new input 1
+      search: form.elements.search.value,
       house: form.elements.house.value,
     };
 
