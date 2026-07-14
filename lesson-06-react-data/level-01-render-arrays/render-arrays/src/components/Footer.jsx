@@ -1,7 +1,7 @@
 export function Footer() {
   return (
-    <main>
-      <h1>Amber's Webside 2026</h1>
-    </main>
+    <header>
+      <h1>Amber's Website 2026</h1>
+    </header>
   );
 }

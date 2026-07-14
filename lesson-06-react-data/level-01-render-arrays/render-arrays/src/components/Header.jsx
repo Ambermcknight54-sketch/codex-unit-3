@@ -1,7 +1,7 @@
 export function Header() {
   return (
-    <main>
-      <h1>Amber's Webside 2026</h1>
-    </main>
+    <header>
+      <h1>Map Arrays to React Elements</h1>
+    </header>
   );
 }
