@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   {
     src: "/images/92ECD092-4FD8-489C-AEBB-152F1E4864D0_1_105_c.jpeg",
     caption:
@@ -24,27 +24,4 @@ export const data = [
   },
 ];
 
-// export const data = [
-//   {
-//     name: "Xavier Prep",
-//     description: "A High School in New Orleans. That I graduated from!",
-//   },
-//   {
-//     name: "React",
-//     description:
-//       "A popular open-source JavaScript library developed by Meta for building user interfaces, specifically for single-page applications by creating reusable UI components.",
-//   },
-//   {
-//     name: "Vite",
-//     description:
-//       "A modern, ultra-fast frontend build tool and development server that pre-bundles dependencies using esbuild to deliver lightning-quick Hot Module Replacement.",
-//   },
-//   {
-//     name: "Mount Phase",
-//     description: "When a react component appears in the DOM.",
-//   },
-//   {
-//     name: "New Orleans",
-//     description: "A city at the bottom of the map of the USA.",
-//   },
-// ];
+export default data;

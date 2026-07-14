@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { MOUNT_PHASE } from "../data/lifecycle.js";
-import { data } from "../data/data.js";
+import { MOUNT_PHASE } from "../data/lifecycle";
+import { data } from "../data/data";
 
-function Main() {
-  // debugger;
+export function Main() {
   const [didMount, setDidMount] = useState(false);
   const [images, setImages] = useState([]);
   useEffect(componentDidMount, MOUNT_PHASE);
@@ -21,21 +20,20 @@ function Main() {
   );
 
   function componentDidMount() {
-    // debugger;
     setDidMount(true);
     const figures = [];
+
     for (let index = 0; index < data.length; index++) {
       const item = data[index];
-      const figures = (
+      const figure = (
         <figure>
           <img src={item.src} />
           <figcaption>{item.caption}</figcaption>
         </figure>
       );
-      figures.push(figures);
+
+      figures.push(figure);
     }
     setImages(figures);
   }
 }
-
-export default Main;

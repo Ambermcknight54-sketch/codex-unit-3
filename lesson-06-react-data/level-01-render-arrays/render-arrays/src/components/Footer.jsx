@@ -1,9 +1,7 @@
-function Footer() {
+export function Footer() {
   return (
-    <header>
-      <h1>Amber 2026</h1>
-    </header>
+    <main>
+      <h1>Amber's Webside 2026</h1>
+    </main>
   );
 }
-
-export default Footer;
