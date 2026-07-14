@@ -1,3 +1,7 @@
-export default function Footer() {
-  return <footer>By Amber Mcknight 2026</footer>;
+export function Footer() {
+  return (
+    <header>
+      <h1>Amber's Website 2026</h1>
+    </header>
+  );
 }
