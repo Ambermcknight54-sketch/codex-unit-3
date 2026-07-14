@@ -26,17 +26,17 @@ Data is commonly received from an API, then converted to React elements with the
 14. In `componentDidMount`, call the `handleData` function.
 15. In the `Main` function and after the `return` statement, create the function `handleData`.
 16. View the page to make sure it runs without errors.
-17. Let `handleData` fetch data from the Harry Potter API `https://potterapi-fedeperin.vercel.app/en/characters`.
+17. Let async function `handleData` const response = await fetch data from the Harry Potter API `https://potterapi-fedeperin.vercel.app/en/characters`, const result = await response.json()
 18. After parsing the API response, add the `data` variable to store the array of characters.
 19. Map the data to React elements with `const details = data.map(toCharacters);`.
 20. On the line after `details`, add `setCharacters(details);`.
 21. Outside and under the `Main` function, create the function `toCharacters`. This will be the callback function for the `map` method.
 22. View the page to make sure it runs without errors.
-23. In `toCharacters` parameters, receive a `dataItem`, which will be an object from the API.
+23. In function`toCharacters`() parameters, receive a `dataItem`, which will be an object from the API.
 24. In `toCharacters`, add a `debugger` breakpoint, then use the debugger to inspect `dataItem`.
-25. In `toCharacters`, add `const details = <details></details>;`
+25. In function toCharacters`(dataItem), return ()`const details from map = `<details></details>`
 26. In the `details` tag, add a `summary` tag that contains the character's name from `dataItem`.
-27. In the `details` tag, add a `figure` tag with an `img` tag that that displays the image from `dataItem`.
+27. In the `details` tag, add a `figure` tag with an `img src` tag that that displays the image from `dataItem`.
 28. In the `figure` tag, add a `figcaption` tag that displays the actor's name from `dataItem`.
 29. In `toCharacters`, `return` the `details` object. This object will be added to the array that `map` produces.
 30. View the page to make sure it runs without errors.

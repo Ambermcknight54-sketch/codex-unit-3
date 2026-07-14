@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { MOUNT_PHASE } from "../data/lifecycle";
-import data from "../data/data";
+import { data } from "../data/data";
 
 export function Main() {
   const [didMount, setDidMount] = useState(false);
@@ -22,6 +23,7 @@ export function Main() {
   function componentDidMount() {
     setDidMount(true);
     const figures = [];
+
     for (let index = 0; index < data.length; index++) {
       const item = data[index];
       const figure = (
@@ -30,7 +32,6 @@ export function Main() {
           <figcaption>{item.caption}</figcaption>
         </figure>
       );
-
       figures.push(figure);
     }
     setImages(figures);

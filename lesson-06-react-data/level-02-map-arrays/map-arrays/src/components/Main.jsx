@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { MOUNT_PHASE } from "../data/lifecycle.js";
 import { data } from "../data/data.js";
@@ -20,8 +21,8 @@ export function Main() {
       </p>
     </main>
   );
+
   function componentDidMount() {
-    // debugger;
     setDidMount(true);
 
     const detailsElements = data.map(toDetails);
