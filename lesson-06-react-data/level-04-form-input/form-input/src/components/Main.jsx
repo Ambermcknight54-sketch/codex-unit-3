@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export function Main() {
   const [values, setValues] = useState([]);
