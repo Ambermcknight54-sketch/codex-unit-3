@@ -14,8 +14,6 @@ export function Main() {
         role: form.elements.role.value,
       },
     };
-
-    // 17 & 22. Map through inputs using the callback function and update state
     const details = formInputs.map(toDetails);
     setValues(details);
   }
