@@ -1,3 +1,5 @@
+<!-- /* eslint-disable react-hooks/exhaustive-deps */ -->
+
 # API Input
 
 ## Objective
@@ -20,7 +22,8 @@ Data from an API is commonly based on user input, then converted to React elemen
 8. View the page to make sure it runs without errors.
 9. In `src/components/`, view `Main.jsx`.
 10. In the `toCharacters` function, add a second parameter - `index`.
-11. In `toCharacters`, add `const key = index + dataItem.fullName`.
+11. In `toCharacters`, add `const key = index + dataItem.fullName``function toCharactersdataItem, index const key = index + dataItem.fullName;
+return `<details key={key}>.`
 12. In the `details` tag, add the attribute `key={key}`.
 13. View the page to make sure it runs without errors.
 14. In the `main` tag, add a `form` tag, a number `input` with `name` attribute, a `label` tag, and a submit `button`. This will specify the `max` number of characters to fetch from the API.
@@ -28,10 +31,10 @@ Data from an API is commonly based on user input, then converted to React elemen
 16. In the `Main` function and under the `handleData` function, create the `handleSubmit` function.
 17. View the page to make sure it runs without errors.
 18. In `handleSubmit`, accept the `event` object and prevent default form behavior.
-19. Add `const form = event.target;`.
+19. Add `async function handleSubmit(event)event.preventDefault(); const form = event.target;`
 20. Add `const data` and let it be the data object for the API.
-21. Use `URLSearchParams` to create a `dataString`.
-22. Fetch from `https://potterapi-fedeperin.vercel.app/en/characters` and include the `dataString` as query parameters.
+21. Use `URLSearchParams const dataString = new URLSearchParams(data).toString();` to create a `dataString`.
+22. Fetch const response = await fetch const results = await response.json() from `https://potterapi-fedeperin.vercel.app/en/characters` and include the `dataString` as query parameters.
 23. Parse the API response into `results`, use `map` and `toCharacters`, save the element array in `details`, then use `setCharacters` to set `details` as the new value of `characters`.
 24. View the page to make sure it runs without errors.
 25. Place a `debugger` breakpoint at the beginning of `handleSubmit`.

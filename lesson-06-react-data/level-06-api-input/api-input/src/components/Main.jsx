@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 export function Main() {
   const [characters, setCharacters] = useState([]);
   const [didMount, setDidMount] = useState(false);
-  // Track the mount phase
   useEffect(componentDidMount, []);
 
   return (
@@ -26,16 +25,16 @@ export function Main() {
         </label>
 
         {/* Added Input 1: Search Name */}
-        <label>
+        {/* <label>
           Search Name:
           <input type="text" name="search" />
-        </label>
+        </label> */}
 
         {/* Added Input 2: House */}
-        <label>
+        {/* <label>
           House:
           <input type="text" name="house" />
-        </label>
+        </label> */}
 
         <button type="submit">Characters</button>
       </form>
@@ -69,8 +68,8 @@ export function Main() {
     // Ensured form.elements.max matches the input name="max"
     const data = {
       max: form.elements.max.value,
-      search: form.elements.search.value,
-      house: form.elements.house.value,
+      // search: form.elements.search.value,
+      // house: form.elements.house.value,
     };
 
     const dataString = new URLSearchParams(data).toString();
@@ -85,9 +84,11 @@ export function Main() {
       console.error("Error fetching filtered data:", error);
     }
   }
-  function toCharacters(dataItem) {
+
+  function toCharacters(dataItem, index) {
+    const key = index + dataItem.fullName;
     return (
-      <details>
+      <details key={key}>
         <summary>{dataItem.fullName}</summary>
         <figure>
           <img src={dataItem.image} />
