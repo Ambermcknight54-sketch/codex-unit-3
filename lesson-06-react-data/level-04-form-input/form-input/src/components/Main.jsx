@@ -1,17 +1,19 @@
 import { useState } from "react";
 
 export function Main() {
+  // 8. Track the form values in a stateful array
   const [values, setValues] = useState([]);
 
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
 
+    //  Build an array of objects representing values from the form elements
     const formInputs = {
       user: {
         username: form.elements.username.value,
         email: form.elements.email.value,
-        role: form.elements.role.value,
+        password: form.elements.password.value,
       },
     };
     const details = formInputs.map(toDetails);

@@ -71,7 +71,6 @@ export function Main() {
       // search: form.elements.search.value,
       // house: form.elements.house.value,
     };
-
     const dataString = new URLSearchParams(data).toString();
     try {
       const response = await fetch(
