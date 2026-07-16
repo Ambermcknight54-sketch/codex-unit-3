@@ -19,19 +19,20 @@ An SPA template can speed up the development of complete multi-page websites.
 7. View the page to make sure it runs without errors.
 8. Add Tailwind and TW Elements to the template. Install (or add) the necessary packages - `tailwindcss@3`, `postcss`, `autoprefixer`, and `tw-elements`. Initialize Tailwind and PostCSS - `npx tailwindcss init --postcss`. In `tailwind.config.js`, add the necessary items to the `content` and `plugins` array, and add `darkMode`. In `style.css`, connect Tailwind and TW Elements. In `index.html`, link `style.css`.
 9. View the page to make sure it runs without errors.
-10. In the `components` folder, use TW Elements to create a `Navbar` component in `Navbar.jsx`, then add `Navbar` to the `Header` component. In the `src/hooks/` folder, create the `useCollapseTWE` hook, then use it in the `Navbar` component. Replace `a` tags with `NavLink` tags.
+10. In the `components` folder, use TW Elements to create a `Navbar` component in `Navbar.jsx`, then add `Navbar` to the `Header` component. In the `src/hooks/` folder, create the `useCollapseTWE` hook, then use it in the `Navbar` component.
 11. View the page to make sure it runs without errors and that the navbar collapse works. The server may need to be restarted to fix visual glitches.
 12. Add multi-page routing to the template. Install `react-router`. In `App.jsx`, replace the empty tags with `BrowserRouter`, add `Routes`, add a `Route` for the `Home` page, let `Header` render at the top of each page, and let `Footer` render at the bottom of each page.
-13. View the page to make sure it runs without errors.
-14. In `src/pages/`, add `ApiKey.jsx` and create the `ApiKey` component that gets an API key from the user. Use a custom hook like `useSecret` that separates logic from rendering. Let the custom hook store and restore the API key with `sessionStorage`.
-15. View the page to make sure it runs without errors.
-16. In the `ApiKey` component, use TW Elements for the form input and `submit` button. Create the custom hook `useInputTWE` to separate logic from rendering.
-17. View the page to make sure it runs without errors. The input should have an animation.
-18. In `BrowserRouter`, add a `Route` for `ApiKey` and link to it from the `Navbar`. Remove unused links from the `Navbar`.
-19. View the page to make sure it runs without errors. You should be able to switch back and forth between pages.
-20. In the `Home` component, add a `p` tag with a message that explains how to make an SPA template.
-21. View the page to make sure it runs without errors.
-22. Copy the `spa-template` folder to a location that's easier to access for creating new React projects. In the copied folder, do not include the `node_modules` folder nor any lock files like `pnpm-lock.yaml`.
+13. In `Navbar`, replace `a` tags with `NavLink` tags, and `href=` with `to=`.
+14. View the page to make sure it runs without errors.
+15. In `src/pages/`, add `ApiKey.jsx` and create the `ApiKey` component that gets an API key from the user. Use a custom hook like `useSecret` that separates logic from rendering. Let the custom hook store and restore the API key with `sessionStorage`.
+16. View the page to make sure it runs without errors.
+17. In the `ApiKey` component, use TW Elements for the form input and `submit` button. Create the custom hook `useInputTWE` to separate logic from rendering.
+18. View the page to make sure it runs without errors. The input should have an animation.
+19. In `BrowserRouter`, add a `Route` for `ApiKey` and link to it from the `Navbar`. Remove unused links from the `Navbar`.
+20. View the page to make sure it runs without errors. You should be able to switch back and forth between pages.
+21. In the `Home` component, add a `p` tag with a message that explains how to make an SPA template.
+22. View the page to make sure it runs without errors.
+23. Copy the `spa-template` folder to a location that's easier to access for creating new React projects. In the copied folder, do not include the `node_modules` folder nor any lock files like `pnpm-lock.yaml`.
 
 ## More Information
 

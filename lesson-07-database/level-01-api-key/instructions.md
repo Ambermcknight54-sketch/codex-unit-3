@@ -43,7 +43,7 @@ Accessing `sessionStorage` is slightly different in React websites.
 
 ## More Information
 
-- The `name` attribute adds the element to `form.elements`.
+- The `name` attribute adds the property to `form.elements`. Example: `name="apiKey"` adds `form.elements.apiKey`
 - The debugger can be used to inspect values in `form.elements`.
 - `sessionStorage` stores information in the browser temporarily. The information is cleared when the browser is closed.
 - The `setItem` method takes a key and value. Example: `sessionStorage.setItem("myName", "Bob");`
