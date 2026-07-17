@@ -10,7 +10,7 @@ These templates will speed up development of websites that use the Prisma web cl
 
 ## Complete these tasks
 
-1. NOTE: This level requires `spa-template` from a previous level. Complete these tasks from scratch. Do not copy/paste unless the task permits it.
+1. NOTE: This level requires `spa-template` from a previous level. Complete these tasks from scratch. Do not copy/paste unless the task permits it. Code for TW Elements can be copied/pasted.
 2. In the `prisma-template` folder of this level folder, set up the Prisma web client: In the VS Code terminal, navigate to the `prisma-template` folder. Use `npm` to initialize a project, and set the `type` to `module`. Install these packages - `prisma@6`, `dotenv`, and `prisma-json-schema-generator`.
 3. Initialize Prisma in the terminal: `npx prisma init`. In `schema.prisma`, change the `provider` for `generator client` to `prisma-client-js`. Under the `generator client` section, add the `generator jsonSchema` section. Set the `provider` to `"prisma-json-schema-generator"` and set `output` to `".."`.
 4. In `.env`, replace the string for `DATABASE_URL` with the `Connection string` from Supabase `Session pooler`. In the connection string, replace `[YOUR-PASSWORD]` with the database password you created (or generated).
