@@ -12,7 +12,7 @@ export function useBooksApi() {
     const maxVal = form.elements.max.value;
     // Create the data object containing the max parameter
     const dataObj = {
-      limit: maxVal,
+      max: maxVal,
     };
     // Convert data to a query string
     const dataString = new URLSearchParams(dataObj).toString();
