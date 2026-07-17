@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useBooksApi } from "../hooks/useBooksApi";
 
 export function Main() {
-  // <-- MUST have 'export function Main' here!
   const [characters, setCharacters] = useState([]);
   const [didMount, setDidMount] = useState(false);
 
