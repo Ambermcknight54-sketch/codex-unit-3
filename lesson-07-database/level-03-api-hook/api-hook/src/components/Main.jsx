@@ -1,13 +1,62 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from "react";
+// Ensure this path goes up to 'src' and then into 'hooks'
+import { useBooksApi } from "../hooks/useBooksApi";
+
 export function Main() {
+  // <-- MUST have 'export function Main' here!
+  const [characters, setCharacters] = useState([]);
+  const [didMount, setDidMount] = useState(false);
+
+  // Use the custom hook and destructure data and handleSubmit
+  const [data, handleSubmit] = useBooksApi();
+
+  useEffect(componentDidMount, []);
+
   return (
     <main>
-      <h2> What is a React Template</h2>
+      <p>{"didMount: " + didMount}</p>
+
+      <form onSubmit={handleSubmit}>
+        <label>
+          Max Books:
+          <input type="number" name="max" required />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+
+      {/* Output tag rendering data.map(toDetails) */}
+      <output>{data.map(toDetails)}</output>
+
+      <section>{characters}</section>
+
       <p>
-        A React template is a starter codebase designed to jumpstart the
-        development of a web application. Instead of configuring everything from
-        scratch, it provides a pre-structured foundation with essential files,
-        dependencies, and layout pieces already set up.
+        To render data from an API, we fetch the array of information when the
+        component first mounts. Once we have the data, we use standard dot
+        notation to call the .map method, writing a regular function directly
+        inside it to loop through each character and output organized HTML
+        elements to the page.
       </p>
     </main>
+  );
+
+  function componentDidMount() {
+    setDidMount(true);
+  }
+}
+
+// Keep this outside and under the Main function
+function toDetails(item, index) {
+  const key = index;
+  return (
+    <details key={key}>
+      <summary>{item.title}</summary>
+      <img
+        src={item.cover}
+        alt={item.title}
+        style={{ maxWidth: "150px", marginTop: "10px" }}
+      />
+      <p>{item.description}</p>
+    </details>
   );
 }
