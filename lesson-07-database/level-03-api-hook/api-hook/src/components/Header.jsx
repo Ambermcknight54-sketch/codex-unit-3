@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <main>
-      <h1>React Template</h1>
+      <h1>Custom Hook for REST API Responses</h1>
     </main>
   );
 }
