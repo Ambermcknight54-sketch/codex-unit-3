@@ -4,12 +4,9 @@ import { useState, useEffect } from "react";
 import { useBooksApi } from "../hooks/useBooksApi";
 
 export function Main() {
-  const [characters, setCharacters] = useState([]);
   const [didMount, setDidMount] = useState(false);
-
   // Use the custom hook and destructure data and handleSubmit
   const [data, handleSubmit] = useBooksApi();
-
   useEffect(componentDidMount, []);
 
   return (
@@ -27,8 +24,6 @@ export function Main() {
       {/* Output tag rendering data.map(toDetails) */}
       <output>{data.map(toDetails)}</output>
 
-      <section>{characters}</section>
-
       <p>
         To render data from an API, we fetch the array of information when the
         component first mounts. Once we have the data, we use standard dot
@@ -42,20 +37,20 @@ export function Main() {
   function componentDidMount() {
     setDidMount(true);
   }
-}
 
-// Keep this outside and under the Main function
-function toDetails(item, index) {
-  const key = index;
-  return (
-    <details key={key}>
-      <summary>{item.title}</summary>
-      <img
-        src={item.cover}
-        alt={item.title}
-        style={{ maxWidth: "150px", marginTop: "10px" }}
-      />
-      <p>{item.description}</p>
-    </details>
-  );
+  // Keep this outside and under the Main function
+  function toDetails(item, index) {
+    const key = index;
+    return (
+      <details key={key}>
+        <summary>{item.title}</summary>
+        <img
+          src={item.cover}
+          alt={item.title}
+          style={{ maxWidth: "150px", marginTop: "10px" }}
+        />
+        <p>{item.description}</p>
+      </details>
+    );
+  }
 }
