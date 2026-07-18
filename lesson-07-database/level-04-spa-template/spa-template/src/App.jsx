@@ -13,16 +13,16 @@ import "./App.css";
 import { Header } from "./components/Header";
 import { Home } from "./components/Home";
 import { Footer } from "./components/Footer";
-import { Navbar } from "./components/Navbar";
+import { ApiKey } from "../pages/ApiKey";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/apikey" element={<ApiKey />} />
       </Routes>
 
       <Footer />
