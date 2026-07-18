@@ -2,18 +2,31 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "./assets/vite.svg";
 // import heroImg from "./assets/hero.png";
+// import "./App.css";
+// import { Header } from "./components/Header";
+// import { Home } from "./pages/Home";
+// import { About } from "./pages/About";
+// import { Navbar } from "./components/Navbar";
+// import { Footer } from "./components/Footer";
+import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
 import { Header } from "./components/Header";
-import { Main } from "./components/Main";
+import { Home } from "./components/Home";
 import { Footer } from "./components/Footer";
+import { Navbar } from "./components/Navbar";
 
 function App() {
   return (
-    <main>
+    <BrowserRouter>
+      <Navbar />
       <Header />
-      <Main />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+
       <Footer />
-    </main>
+    </BrowserRouter>
   );
 }
 

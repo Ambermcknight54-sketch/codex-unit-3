@@ -2,7 +2,7 @@ export function Footer() {
   return (
     <main>
       <footer>
-        <p>Amber's Website</p>
+        <p>Amber's SPA Website</p>
       </footer>
     </main>
   );
