@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
 import { useSecret } from "../hooks/useSecret";
 
 export function useSecret(secretKey) {
   const [secretValue, setSecretValue] = useState();
-  useEffect(componentDiDMount, []);
 
   return [secretValue, handleSubmit];
 
