@@ -5,15 +5,15 @@ let results;
 
 await prisma.users.create({
   data: {
-    email: "aaaaaaaa.com",
-    password: "aaaaaaaa ",
+    email: "aaaaaa.com",
+    password: "aaaaaa",
   },
 });
 console.log(results);
 
 results = await prisma.users.create({
   data: {
-    email: "bbbbbbb.com",
+    email: "bbbbbb.com",
     password: "bbbbbb ",
   },
 });
@@ -21,8 +21,8 @@ console.log(results);
 
 results = await prisma.users.create({
   data: {
-    email: "cccccc.com",
-    password: "cccccc ",
+    email: "cccccccc.com",
+    password: "cccccccc ",
   },
 });
 console.log(results);
