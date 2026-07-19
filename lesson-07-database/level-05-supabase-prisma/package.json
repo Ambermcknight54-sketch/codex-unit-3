@@ -9,11 +9,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@prisma/client": "^7.8.0"
-  },
   "devDependencies": {
     "dotenv": "^17.4.2",
     "prisma": "^6.19.3"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.3"
   }
 }
