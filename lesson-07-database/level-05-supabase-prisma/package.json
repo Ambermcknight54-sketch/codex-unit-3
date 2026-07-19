@@ -1,0 +1,19 @@
+{
+  "name": "level-05-supabase-prisma",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.8.0"
+  },
+  "devDependencies": {
+    "dotenv": "^17.4.2",
+    "prisma": "^6.19.3"
+  }
+}
