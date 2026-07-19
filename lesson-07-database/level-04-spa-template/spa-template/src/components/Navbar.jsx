@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useCollapseTWE } from "../hooks/useCollapseTWE";
+import { useCollapseTWE } from "../hooks/useCollapseTWE.js";
 
 export function Navbar() {
   useCollapseTWE();

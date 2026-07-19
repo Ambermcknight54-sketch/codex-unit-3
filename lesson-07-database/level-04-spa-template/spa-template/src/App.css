@@ -6,6 +6,17 @@ p {
   color: #220463;
   font-size: 16px;
 }
-body {
+html {
   background-color: cadetblue;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Tell the main content area to grow and take up all remaining empty space */
+.main-content {
+  flex: 1;
 }

@@ -1,7 +1,8 @@
-import { useSecret } from "../hooks/useSecret";
+import { useEffect, useState } from "react";
 
 export function useSecret(secretKey) {
   const [secretValue, setSecretValue] = useState();
+  useEffect(componentDiDMount, []);
 
   return [secretValue, handleSubmit];
 
@@ -16,5 +17,6 @@ export function useSecret(secretKey) {
     const value = form.elements[secretValue].value;
     sessionStorage.setItem("secretKey", value);
     setSecretValue(value);
+    form.reset;
   }
 }
