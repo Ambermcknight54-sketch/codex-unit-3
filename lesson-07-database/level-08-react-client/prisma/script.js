@@ -1,0 +1,42 @@
+import { createWebClient } from "./web-client.js";
+const results = await createWebClient({ jsonSchema: "jsonSchema.json" });
+let results;
+
+results = await prima.products.create({
+  data: {
+    name: "pants",
+    src: "https://media.bergdorfgoodman.com/f_auto,q_auto:low,ar_5:7,c_fill,dpr_2.0,w_375/01/bg_4145906_100419_m",
+    price: 298.0,
+  },
+});
+
+results = await prima.products.create({
+  data: {
+    name: "shirt",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTSFD5WY8p8ddGHY3Bre9dnUH5ZtahpxWZrmrkwTalkA&s=10",
+    price: "34.00",
+  },
+});
+
+results = await prima.products.create({
+  data: {
+    name: "candy",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc7PRkDy9aX70IYLwe7Wq3QkQ3pChuRsGr1QShMb2wRQ&s=10",
+    price: "13.45",
+  },
+});
+
+results = prima.products.create({
+  data: {
+    name: "comforter",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-9JjJS0SHwvjhEw7rN8AFncQohSSHgqFFEzgUcaN83Q&s=10",
+    price: "1109.00",
+  },
+});
+
+console.log(results);
+
+console.log(results);
+results = await prisma.products.findMany();
+console.log(results);
+console.log("TOO DO");
