@@ -1,9 +1,9 @@
-import { PrismaClient } from "./generated/prisma";
+import { PrismaClient } from "./generated/prisma/client.js";
 
 const prisma = new PrismaClient();
 let results;
 
-await prisma.users.create({
+results = await prisma.users.create({
   data: {
     email: "aaaaaa.com",
     password: "aaaaaa",

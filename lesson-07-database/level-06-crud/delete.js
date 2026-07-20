@@ -1,9 +1,10 @@
-import { PrismaClient } from "./generated/prisma.js";
+import { PrismaClient } from "./generated/prisma/client.js";
 
 const prisma = new PrismaClient();
 const results = await prisma.users.delete({
   where: {
-    email: "aaaaaa@aaaaaa.com",
+    email: "aaaaaa.com",
+    id: "1",
   },
 });
 console.log(results);
