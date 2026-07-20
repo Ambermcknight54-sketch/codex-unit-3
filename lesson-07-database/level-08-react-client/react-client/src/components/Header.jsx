@@ -1,7 +1,7 @@
 export function Header() {
   return (
-    <main>
-      <h1> React SPA Template </h1>
-    </main>
+    <header>
+      <h1> Using Prisma Web Client in React </h1>
+    </header>
   );
 }
