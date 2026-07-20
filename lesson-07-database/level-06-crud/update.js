@@ -6,7 +6,7 @@ const results = await prisma.users.update({
     id: "3",
   },
   data: {
-    email: "zzzzzz.com",
+    email: "xxxxxx.com",
   },
 });
 
