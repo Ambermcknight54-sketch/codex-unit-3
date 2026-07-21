@@ -15,7 +15,7 @@ console.log(results);
 results = await prisma.students.create({
   data: {
     name: "Ambra",
-    level: 2n,
+    level: 2,
   },
 });
 console.log(results);
@@ -23,7 +23,7 @@ console.log(results);
 results = await prisma.students.create({
   data: {
     name: "Ammma",
-    level: 5n,
+    level: 5,
   },
 });
 console.log(results);
@@ -31,7 +31,7 @@ console.log(results);
 results = await prisma.students.create({
   data: {
     name: "Emma",
-    level: 4n,
+    level: 4,
   },
 });
 console.log(results);
@@ -39,7 +39,7 @@ console.log(results);
 results = await prisma.students.create({
   data: {
     name: "Amb",
-    level: 1n,
+    level: 1,
   },
 });
 console.log(results);
