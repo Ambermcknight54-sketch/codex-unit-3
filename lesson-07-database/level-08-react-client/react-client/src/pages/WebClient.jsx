@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useInputTWE } from "../hooks/useInputTWE";
 import { useSecret } from "../hooks/useSecret";
 import { createWebClient } from "../../../web-client";
@@ -8,6 +8,7 @@ export function WebClient() {
   useInputTWE();
   const [password, handleSubmit] = useSecret("password");
   const [data, setData] = useState([]);
+  useEffect(componentDidUpdate, [password]);
 
   return (
     <main>
@@ -15,10 +16,10 @@ export function WebClient() {
         <div className="relative mb-3" data-twe-input-wrapper-init>
           <input
             type="password"
+            name="password"
             className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
-            classname="password"
             id="password"
-            placeholder="Example label"
+            placeholder=""
           />
           <label
             htmlFor="password"
@@ -38,22 +39,34 @@ export function WebClient() {
       </output>
     </main>
   );
-  async function handleData() {
-    const prisma = await createWebClient({ jsonSchema: "schema" });
-  }
-}
 
-function toDetails(item, index) {
-  const key = index + item.name;
-  const details = (
-    <>
-      <dt> {item.index} </dt>
-      <dd></dd>
-    </>
-  );
+  function componentDidUpdate() {
+    if (password) {
+      handleData();
+    }
+  }
+  async function handleData() {
+    debugger;
+    const prisma = await createWebClient({
+      jsonSchema: schema,
+      datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
+    });
+    const results = await prisma.products.findMany();
+    setData(results);
+  }
+
+  function toDetails(item, index) {
+    const key = index + item.name;
+    const details = (
+      <Fragment key={key}>
+        <dt> {item.name}</dt>
+        <dd>
+          <img src={item.src} />
+          {item.price}
+        </dd>
+      </Fragment>
+    );
+  }
+
+  return details;
 }
-//  <Fragment key={key}>
-//       <dt></dt>
-//       <dd></dd>
-//     </Fragment>
-//   );
