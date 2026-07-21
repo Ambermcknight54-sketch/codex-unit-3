@@ -29,3 +29,22 @@ model users {
   email      String?
   password   String?
 }
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model products {
+  id         BigInt   @default(autoincrement())
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  name       String
+  src        String
+  price      Decimal  @db.Decimal
+
+  @@id([id, created_at, name, src, price])
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model students {
+  id         BigInt   @id @default(autoincrement())
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  name       String?
+  level      String?
+}

@@ -1,4 +1,4 @@
-import { createWebClient } from "./web-client.js";
+import { createWebClient } from "./webClient.js";
 const prisma = await createWebClient({ jsonSchema: "jsonSchema.json" });
 let results;
 results = await prisma.students.create({
