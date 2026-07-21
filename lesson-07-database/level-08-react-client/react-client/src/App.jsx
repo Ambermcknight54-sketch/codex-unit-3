@@ -13,7 +13,7 @@ import "./App.css";
 import { Header } from "./components/Header";
 import { Home } from "./components/Home";
 import { Footer } from "./components/Footer";
-import { WebClient } from "./pages/WebClient";
+import { APIkey } from "./pages/WebClient";
 import { Navbar } from "./components/Navbar";
 function App() {
   return (
@@ -28,8 +28,9 @@ function App() {
           {/* 2. Wrap your Routes in a main tag */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/WebClient" element={<WebClient />} />
+            <Route path="/apikey" element={<APIkey />} />
           </Routes>
+          <Home />
         </main>
         <Footer />
       </div>
