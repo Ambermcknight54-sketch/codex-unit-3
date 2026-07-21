@@ -49,6 +49,51 @@
           ]
         }
       }
+    },
+    "products": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "name": {
+          "type": "string"
+        },
+        "src": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        }
+      }
+    },
+    "students": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "level": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
     }
   },
   "type": "object",
@@ -58,6 +103,12 @@
     },
     "users": {
       "$ref": "#/definitions/users"
+    },
+    "products": {
+      "$ref": "#/definitions/products"
+    },
+    "students": {
+      "$ref": "#/definitions/students"
     }
   }
 }
