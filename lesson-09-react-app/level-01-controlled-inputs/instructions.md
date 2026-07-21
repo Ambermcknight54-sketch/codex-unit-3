@@ -44,9 +44,20 @@ Sometimes its useful to get the input value without a submit button.
 - React components can access them through the `props` object. Example: `function MyComponent(props) { ... }`
 - The `props` object can be destructured in-line. Example: `function MyComponent({ myAttribute1, myAttribute2 })`
 - Property shorthand syntax can be used when an object property matches a variable. Example: Instead of `{ where: where }` the shorthand is `{ where }`.
+- The custom hook `useControlledInput` returns a value and a handler.
+- The handler should be attached to an input. Example: `onChange={handleName}`.
+- The value is updated real-time as it is typed in the input.
+- The custom hook can be used multiple times. Example:
+
+```javascript
+const [name, handleName] = useControlledInput();
+const [price, handlePrice] = useControlledInput();
+const [src, handleSrc] = useControlledInput();
+```
 
 ## Usage Tips
 
+- The `useEffect` dependecy list should list the controlled inputs. Example: `[name, price, src]`
 - The `Fragment` component is the same as empty brackets, except that it can accept a `key`.
 - The empty tag can group adjacent elements together without adding a parent element.
 - A `key` is required when using `map` to create an array of elements.
