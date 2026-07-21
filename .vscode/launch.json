@@ -44,6 +44,14 @@
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/lesson-01-nodejs/level-06-debugger-controls/script.js"
+    },
+
+    {
+      "name": "React-Debugger",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}"
     }
   ]
 }
