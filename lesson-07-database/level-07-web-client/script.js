@@ -7,7 +7,7 @@ let results;
 results = await prisma.students.create({
   data: {
     name: "Amber",
-    level: 3n,
+    level: 3,
   },
 });
 console.log(results);
