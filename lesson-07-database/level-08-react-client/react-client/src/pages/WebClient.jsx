@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useInputTWE } from "../hooks/useInputTWE";
 import { useSecret } from "../hooks/useSecret";
 import { createWebClient } from "../../../web-client";
@@ -46,7 +46,6 @@ export function WebClient() {
     }
   }
   async function handleData() {
-    debugger;
     const prisma = await createWebClient({
       jsonSchema: schema,
       datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
@@ -66,7 +65,6 @@ export function WebClient() {
         </dd>
       </Fragment>
     );
+    return details;
   }
-
-  return details;
 }
