@@ -14,7 +14,7 @@ export function useSecret(secretKey) {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
-    const value = form.elements[secretValue].value;
+    const value = form.elements[secretKey].value;
     sessionStorage.setItem("secretKey", value);
     setSecretValue(value);
     form.reset;
