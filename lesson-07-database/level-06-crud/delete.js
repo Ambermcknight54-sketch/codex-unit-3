@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 const results = await prisma.users.delete({
   where: {
     email: "ffffff.com",
-    id: "12",
+    id: "18",
   },
 });
 console.log(results);

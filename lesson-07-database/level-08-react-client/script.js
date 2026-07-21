@@ -1,3 +1,4 @@
+import { PrismaClient } from "./generated/prisma/";
 import { createWebClient } from "./web-client.js";
 const prisma = await createWebClient({ jsonSchema: "json-schema.json" });
 

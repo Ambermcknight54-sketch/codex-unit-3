@@ -1,6 +1,6 @@
 import { createWebClient } from "./webClient.js";
 
-const prisma = await createWebClient({ jsonSchema: "jsonSchema.json" });
+const prisma = await createWebClient({ jsonSchema: "json-schema.json" });
 
 let results;
 
