@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { useInputTWE } from "../hooks/useInputTWE";
 import { useSecret } from "../hooks/useSecret";
+import { createWebClient } from "../../../web-client";
+import schema from "../../../json-schema.json";
 
 export function WebClient() {
   useInputTWE();
   const [password, handleSubmit] = useSecret("password");
+  const [data, setData] = useState([]);
 
   return (
     <main>
@@ -29,7 +33,27 @@ export function WebClient() {
           Submit
         </button>
       </form>
-      <output>{password}</output>
+      <output>
+        <dl>{data.map(toDetails)}</dl>
+      </output>
     </main>
   );
+  async function handleData() {
+    const prisma = await createWebClient({ jsonSchema: "schema" });
+  }
 }
+
+function toDetails(item, index) {
+  const key = index + item.name;
+  const details = (
+    <>
+      <dt> {item.index} </dt>
+      <dd></dd>
+    </>
+  );
+}
+//  <Fragment key={key}>
+//       <dt></dt>
+//       <dd></dd>
+//     </Fragment>
+//   );
