@@ -2,7 +2,7 @@ export function Footer() {
   return (
     <main>
       <footer>
-        <p>Amber's SPA Website</p>
+        <p>Amber's React-Client Website</p>
       </footer>
     </main>
   );
