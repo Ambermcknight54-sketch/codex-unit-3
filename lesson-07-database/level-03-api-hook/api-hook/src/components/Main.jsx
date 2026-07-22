@@ -1,10 +1,9 @@
-// /* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useBooksApi } from "../hooks/useBooksApi";
 
 export function Main() {
   const [didMount, setDidMount] = useState(false);
-  // Use the custom hook and destructure data and handleSubmit
   const [data, handleSubmit] = useBooksApi();
   useEffect(componentDidMount, []);
 
@@ -15,7 +14,7 @@ export function Main() {
       <form onSubmit={handleSubmit}>
         <label>
           Max Books:
-          <input type="number" name="max" />
+          <input type="number" name="max" required />
         </label>
         <button type="submit">Submit</button>
       </form>
@@ -43,7 +42,7 @@ export function Main() {
     return (
       <details key={key}>
         <summary>{item.title}</summary>
-        <img src={item.cover} alt={item.title} />
+        <img src={item.cover} />
         <p>{item.description}</p>
       </details>
     );
