@@ -10,9 +10,14 @@ export function ApiKey() {
   return (
     <main>
       <p>
-        To preserve your session, the API key is saved to local storage using a
-        submission handler function, allowing it to be automatically retrieved
-        and restored whenever the component mounts.
+        Custom hooks receive values as arguments (like useBooksApi(5)) and give
+        values back using a return statement, typically returning an array or an
+        object containing state variables and handler functions. When working
+        with objects in JavaScript, bracket notation (object[key]) allows you to
+        access or set properties using variables (e.g.,
+        form.elements[fieldName]), handle property names with spaces or hyphens,
+        or compute property keys, which isn't possible with standard dot
+        notation.
       </p>
       {/* Setup form tag with labels, input, name attribute, and a submit button */}
       <form onSubmit={handleSubmit}>
