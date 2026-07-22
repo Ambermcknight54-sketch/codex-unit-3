@@ -23,7 +23,5 @@ export function useBooksApi() {
       console.error("Error fetching filtered data:", error);
     }
   }
-
-  // Return data and handleSubmit
   return [data, handleSubmit];
 }
