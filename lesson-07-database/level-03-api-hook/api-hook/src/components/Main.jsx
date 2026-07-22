@@ -1,6 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+// /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
-// Ensure this path goes up to 'src' and then into 'hooks'
 import { useBooksApi } from "../hooks/useBooksApi";
 
 export function Main() {
@@ -16,7 +15,7 @@ export function Main() {
       <form onSubmit={handleSubmit}>
         <label>
           Max Books:
-          <input type="number" name="max" required />
+          <input type="number" name="max" />
         </label>
         <button type="submit">Submit</button>
       </form>
@@ -44,11 +43,7 @@ export function Main() {
     return (
       <details key={key}>
         <summary>{item.title}</summary>
-        <img
-          src={item.cover}
-          alt={item.title}
-          style={{ maxWidth: "150px", marginTop: "10px" }}
-        />
+        <img src={item.cover} alt={item.title} />
         <p>{item.description}</p>
       </details>
     );
