@@ -2,13 +2,10 @@
 // /* eslint-disable no-unused-vars */
 // /* eslint-disable react-hooks/set-state-in-effect */
 // // eslint-disable-next-line react-hooks/set-state-in-effect
-import { useState, useEffect } from "react";
+import { useSecret } from "../hooks/useSecret";
 
-export function Main() {
-  // debugger;
-  const [apiKey, setApiKey] = useState();
-  // Track the mount phase with useEffect
-  useEffect(componentDidMount, []);
+export function ApiKey() {
+  const [secretValue, handleSubmit] = useSecret();
 
   return (
     <main>
@@ -21,28 +18,14 @@ export function Main() {
       <form onSubmit={handleSubmit}>
         <label>
           API Key:
-          <input type="password" name="apiKey" />
+          <input type="password" name="secretValue" />
         </label>
         <br />
         <button> Submit </button>
       </form>
 
       {/* Output tag below the form rendering the apiKey */}
-      <output>{apiKey}</output>
+      <output>{secretValue}</output>
     </main>
   );
-
-  function componentDidMount() {
-    // debugger;
-    const value = sessionStorage.getItem("apikey");
-    setApiKey(value);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const value = form.elements.apiKey;
-    sessionStorage.setItem("apiKey", value);
-    setApiKey(value);
-  }
 }

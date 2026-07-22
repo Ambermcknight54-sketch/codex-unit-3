@@ -1,7 +1,7 @@
 export function Header() {
   return (
-    <main>
+    <Header>
       <h1> Save and restore an API </h1>
-    </main>
+    </Header>
   );
 }

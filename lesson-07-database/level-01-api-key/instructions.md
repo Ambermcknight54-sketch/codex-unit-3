@@ -27,7 +27,7 @@ Accessing `sessionStorage` is slightly different in React websites.
 15. Add `const value` and let it be the API key that the user submitted.
 16. Use `sessionStorage` to store `value`.
 17. Use `setApiKey` to save `value` in the state variable `apiKey`.
-18. In the `form` tag, add the attribute `onSubmit={handleSubmit}`.
+18. In the `form` tag, add the attribute `onSubmit={handleSubmit}` .
 19. View the page to make sure it runs without errors.
 20. Set up the component to track the mount phase. Use `useEffect`, the callback `componentDidMount`, and an empty array of dependencies.
 21. In the function `componentDidMount`, get `apiKey` from `sessionStorage`.
