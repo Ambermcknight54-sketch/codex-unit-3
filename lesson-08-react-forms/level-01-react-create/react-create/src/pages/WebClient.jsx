@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { useInputTWE } from "../hooks/useInputTWE";
 import { useSecret } from "../hooks/useSecret";
-import { createWebClient } from "../../../web-client";
+import { createWebClient } from "../pages/WebClient";
 import schema from "../../../json-schema.json";
 
 export function WebClient() {
