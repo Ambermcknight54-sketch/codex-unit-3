@@ -40,4 +40,6 @@ console.log(results);
 console.log(results);
 results = await prisma.products.findMany();
 console.log(results);
-console.log("TOO DO");
+console.log(
+  "React client (or client-side React) refers to the frontend portion of a web application that executes directly inside the user's web browser. Its primary role is to build and manage the interactive user interface by handling application state, responding to user input, and rendering components.",
+);
