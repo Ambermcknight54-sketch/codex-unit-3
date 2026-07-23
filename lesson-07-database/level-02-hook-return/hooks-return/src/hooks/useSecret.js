@@ -21,5 +21,6 @@ export function useSecret() {
     const value = form.elements.secretValue.value;
     sessionStorage.setItem("secretValue", value);
     setSecretValue(value);
+    form.reset();
   }
 }
