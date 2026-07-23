@@ -11,26 +11,26 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Header } from "./components/Header";
-import { Home } from ".pages/Home";
+import { Home } from "./pages/Home";
 import { Footer } from "./components/Footer";
 import { ApiKey } from "./pages/ApiKey";
 import { Navbar } from "./components/Navbar";
 function App() {
   return (
     <BrowserRouter>
+      {/* 1. Wrap everything in a main container */}
       <div className="app-container">
-        {" "}
-        {/* 1. Add this wrapper div */}
         <Header />
         <Navbar />
+
+        {/* 2. Target your main content section */}
         <main className="main-content">
-          {" "}
-          {/* 2. Wrap your Routes in a main tag */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/apikey" element={<ApiKey />} />
           </Routes>
         </main>
+
         <Footer />
       </div>
     </BrowserRouter>
