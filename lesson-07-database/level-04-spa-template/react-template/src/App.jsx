@@ -38,3 +38,20 @@ function App() {
 }
 
 export default App;
+
+// <BrowserRouter>
+//       <Header />
+
+//       <Navbar />
+
+//       <main>
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/apikey" element={<ApiKey />} />
+//         </Routes>
+//       </main>
+
+//       <Footer />
+//     </BrowserRouter>
+//   );
+// }
