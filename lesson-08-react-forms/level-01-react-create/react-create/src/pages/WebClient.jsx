@@ -16,7 +16,7 @@ export function WebClient() {
       <form onSubmit={handleSubmit}>
         <div className="relative mb-3" data-twe-input-wrapper-init>
           <input
-            type="password"
+            type="passwaord"
             className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
             name="password"
             id="password"
@@ -30,10 +30,9 @@ export function WebClient() {
         </div>
 
         <button
-          type="submit"
-          className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
           Submit
-        </button>
+          type="submit"
+          className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"></button>
       </form>
 
       <form onSubmit={handleCreate}>
@@ -42,7 +41,6 @@ export function WebClient() {
           <div className="relative mb-3" data-twe-input-wrapper-init>
             <input
               type="text"
-              step="any"
               className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
               name="productName"
               id="productName"
@@ -88,6 +86,7 @@ export function WebClient() {
         </fieldset>
 
         <button
+          Submit
           type="submit"
           className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong">
           Submit
@@ -124,9 +123,9 @@ export function WebClient() {
     if (prisma) {
       const form = event.target;
       const data = {
-        name: form.elements.productsName.value,
-        src: form.elements.productsImage.value,
-        price: form.elements.pricePrice.value,
+        name: form.elements.productName.value,
+        src: form.elements.productImage.value,
+        price: form.elements.productPrice.value,
       };
       await prisma.products.create({ data: data });
       const results = await prisma.products.findMany();
@@ -138,11 +137,11 @@ export function WebClient() {
 
 function toDetails(item, index) {
   const key = index + item.name;
-  return (
+  const details = (
     <Fragment key={key}>
-      <dt> {item.name}</dt>
+      <dt>{item.name}</dt>
       <dd>
-        <img src={item.src} alt={item.name} />
+        <img src={item.src} />
         {item.price}
       </dd>
     </Fragment>
