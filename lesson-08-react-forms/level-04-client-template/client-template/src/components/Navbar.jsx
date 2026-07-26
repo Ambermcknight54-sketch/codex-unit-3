@@ -60,7 +60,7 @@ export function Navbar() {
                 Home
               </NavLink>
             </div>
-            {/* <!-- Api Key link --> */}
+            {/* <!-- WebClient link --> */}
             <div
               className="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0"
               data-twe-nav-item-ref>
