@@ -11,11 +11,8 @@ export function Navbar() {
       data-twe-navbar-ref>
       <div className="flex w-full flex-wrap items-center justify-between px-3">
         <div className="ms-2">
-          <NavLink
-            className="p-0 text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-            to="/Navbar"
-            data-twe-nav-link-ref>
-            NavBar
+          <NavLink className="text-xl text-black dark:text-white" to="/">
+            Navbar
           </NavLink>
         </div>
         {/* <!-- Hamburger button for mobile view --> */}
@@ -69,9 +66,9 @@ export function Navbar() {
               data-twe-nav-item-ref>
               <NavLink
                 className="p-0 text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80 lg:px-2"
-                to="/apiKey"
+                to="/webclient"
                 data-twe-nav-link-ref>
-                API Key
+                Webclient:
               </NavLink>
             </div>
           </div>
