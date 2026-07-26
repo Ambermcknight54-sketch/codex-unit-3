@@ -37,7 +37,6 @@ results = prisma.products.create({
 
 console.log(results);
 
-console.log(results);
 results = await prisma.products.findMany();
 console.log(results);
 console.log(

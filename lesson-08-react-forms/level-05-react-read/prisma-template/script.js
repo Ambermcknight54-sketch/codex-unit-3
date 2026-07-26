@@ -1,7 +1,6 @@
-import { PrismaClient } from "./generated/prisma/client.js";
-import { createWebClient } from "./web-client.js";
+import { PrismaClient } from "./generated/prisma/";
 
-const prisma = await createWebClient({ jsonSchema: "json-schema.json" });
+const prisma = new PrismaClient();
 
 const results = await prisma.products.findMany();
 

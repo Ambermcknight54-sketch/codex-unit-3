@@ -1,7 +1,6 @@
-import { PrismaClient } from "./generated/prisma/";
-import { createWebClient } from "./web-client.js";
-const prisma = await PrismaClient({ jsonSchema: "json-schema.json" });
+import { PrismaClient } from "./generated/prisma/client";
 
+const prisma = new PrismaClient();
 let results;
 results = await prisma.users.create({
   data: {
@@ -11,16 +10,6 @@ results = await prisma.users.create({
   },
 });
 console.log("CREATE", results);
-
-const results = await prisma.products.findMany({
-  where: {
-    price: {
-      lte: 80,
-    },
-  },
-});
-
-console.log(results);
 
 results = await prisma.users.update({
   where: {
@@ -32,7 +21,7 @@ results = await prisma.users.update({
 });
 console.log("UPDATE", results);
 
-const results = await prisma.users.delete({
+results = await prisma.users.delete({
   where: {
     id: 7,
   },
