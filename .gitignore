@@ -10,3 +10,4 @@
 !.vscode/
 !.vscode/**/*
 node_modules/
+/generated/prisma
