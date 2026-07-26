@@ -19,18 +19,17 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app-container">
-        {" "}
-        {/* 1. Add this wrapper div */}
         <Header />
+
         <Navbar />
+
         <main className="main-content">
-          {" "}
-          {/* 2. Wrap your Routes in a main tag */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/webclient" element={<WebClient />} />
           </Routes>
         </main>
+
         <Footer />
       </div>
     </BrowserRouter>
