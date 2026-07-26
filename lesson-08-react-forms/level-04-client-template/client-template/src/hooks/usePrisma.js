@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { CreateWebClient } from "../../../prisma-template";
+import { CreateWebClient } from "../../../prisma-template/web-client";
 import schema from "../../../prisma-template";
 
 export function usePrisma(password) {
   const [prisma, setPrisma] = useState();
-
   useEffect(componentDidUpdate, [password]);
   return prisma;
 
