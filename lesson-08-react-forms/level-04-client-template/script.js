@@ -1,6 +1,6 @@
 // import { PrismaClient } from "./generated/prisma/client.js";
-import { PrismaClient } from "./prisma-template/generated/prisma";
-
+import { PrismaClient } from "./prisma-template/prisma";
+// import { WebClient } from "./client-template/src/pages/WebClient";
 const prisma = new PrismaClient();
 let results;
 
