@@ -1,6 +1,8 @@
 import { PrismaClient } from "./generated/prisma/client.js";
 import { createWebClient } from "./web-client.js";
 
+const prisma = new PrismaClient({ jsonSchema: "json-schema.json" });
+
 let results;
 results = await prisma.products.create({
   data: {
