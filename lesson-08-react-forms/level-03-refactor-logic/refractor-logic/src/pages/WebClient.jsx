@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { useInputTWE } from "../hooks/useInputTWE";
+import { useInputTWE, usePrisa } from "../hooks/useInputTWE";
 import { createWebClient } from "../../../web-client";
 import schema from "../../../json-schema.json";
 import { DbPassword } from "../components/DbPassword";
@@ -8,8 +8,11 @@ import { Create } from "../components/Create";
 export function WebClient() {
   useInputTWE();
   const [password, setPassword] = useState();
-  const [data, setData] = useState([]);
   const [prisma, setPrisma] = useState();
+
+  usePrisa(password);
+
+  const [data, setData] = useState([]);
 
   useEffect(componentDidUpdate, [password]);
 
@@ -50,6 +53,5 @@ export function WebClient() {
         </dd>
       </Fragment>
     );
-    return details;
   }
 }

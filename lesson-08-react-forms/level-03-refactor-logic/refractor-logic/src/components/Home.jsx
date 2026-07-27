@@ -1,8 +1,8 @@
 export function Home() {
   return (
-    <main>
-      <h1>Home Page</h1>
+    <header>
+      <h1>Refactor to Separate Logic from Rendering</h1>
       <p></p>
-    </main>
+    </header>
   );
 }
