@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { useState, useEffect } from "react";
 import { createWebClient } from "../../../web-client.js";
-import schema from "../../../prisma-template/prisma/schema";
+import schema from "../../prisma";
 
 export function usePrisma(password) {
   const [prisma, setPrisma] = useState();
