@@ -57,7 +57,7 @@ export function Navbar() {
                 aria-current="page"
                 to="/"
                 data-twe-nav-link-ref>
-                Home
+                Home:
               </NavLink>
             </div>
             {/* <!-- WebClient link --> */}
