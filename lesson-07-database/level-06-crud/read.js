@@ -5,20 +5,22 @@ let results;
 
 results = await prisma.users.findMany({
   where: { email: "eeeeee.com" },
-  //  id: 5n,
+  // id: 5n,
 });
 console.log(results);
 
 results = await prisma.users.findMany({
-  where: { email: "zzzzzz.com" },
-  //  id: 3n,
+  where: {
+    email: "zzzzzz.com",
+    id: 3n,
+  },
 });
 console.log(results);
 
 results = await prisma.users.findFirst({
   where: {
     email: "bbbbbb.com",
-    // id: 2n,
+    id: 2n,
   },
 });
 console.log(results);
