@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { useState, useEffect } from "react";
-import { createWebClient } from "../../../web-client.js";
-import schema from "../../../prisma-template/prisma/schema";
+import { createWebClient } from "../../../prisma-template/web-client.js";
+import schema from "../../../prisma-template/json-schema.json";
 
 export function usePrisma(password) {
   const [prisma, setPrisma] = useState();
@@ -14,7 +14,7 @@ export function usePrisma(password) {
 
   async function handlePrisma() {
     if (password) {
-      const connectionString = `postgresql://postgres.lajdxfozfpkirmfudjce:XvDdd347QL1sBem@aws-1-us-east-2.pooler.supabase.com:5432/postgres`;
+      const connectionString = `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`;
       const prisma = await createWebClient({
         datasourceUrl: connectionString,
         jsonShemma: schema,
