@@ -41,9 +41,7 @@ export function WebClient() {
   );
 
   function componentDidUpdate() {
-    if (password) {
-      handleData();
-    }
+    if (password) handleData();
   }
   async function handleData() {
     const prisma = await createWebClient({
