@@ -4,7 +4,7 @@ import { useInputTWE } from "../hooks/useInputTWE";
 
 export function DbPassword() {
   useInputTWE();
-  const [password, handleSubmit] = useSecret("apiKey");
+  const [password, handleSubmit] = useSecret("password");
 
   return (
     <>
