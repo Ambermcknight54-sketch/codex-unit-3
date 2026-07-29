@@ -33,3 +33,50 @@ export function ApiKey() {
     </main>
   );
 }
+
+// {
+
+//   import { Fragment, useEffect, useState } from "react";
+//   import { useInputTWE } from "../hooks/useInputTWE";
+//   import { useSecret } from "../hooks/useSecret";
+//   import { createWebClient } from "../../../web-client";
+//   import schema from "../../../json-schema.json";
+
+//   export function WebClient() {
+//     useInputTWE();
+//     const [password, handleSubmit] = useSecret("password");
+//     const [data, setData] = useState([]);
+//     useEffect(componentDidUpdate, [password]);
+/* <output>
+        <dl>{data.map(toDetails)}</dl>
+      </output>
+    </main>
+  );
+
+  function componentDidUpdate() {
+    if (password) handleData();
+  }
+  async function handleData() {
+    const prisma = await createWebClient({
+      jsonSchema: schema,
+      datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
+    });
+    const results = await prisma.products.findMany();
+    setData(results);
+  }
+
+  function toDetails(item, index) {
+    const key = index + item.name;
+    const details = (
+      <Fragment key={key}>
+        <dt> {item.name}</dt>
+        <dd>
+          <img src={item.src} />
+          {item.price}
+        </dd>
+      </Fragment>
+    );
+    return details;
+  }
+} */
+// }
