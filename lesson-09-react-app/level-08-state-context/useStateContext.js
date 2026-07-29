@@ -1,24 +1,33 @@
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 
 const STATE_CONTEXT_LIST = Symbol.for("STATE_CONTEXT_LIST");
 
 export function useStateContext(key) {
   if (!key) throw new Error("key is required.");
 
-  let map, updateMap, value;
+  let map, updateMap, setMap, value, subscribe, unsubscribe;
   const Contexts = window[STATE_CONTEXT_LIST];
 
   for (let Context of Contexts) {
     const contextValue = useContext(Context);
     if (contextValue) {
-      const [mapTemp, updateMapTemp] = contextValue;
+      // const [mapTemp, updateMapTemp] = contextValue;
+      const [mapTemp, setMapTemp, subscribeTemp, unsubscribeTemp] =
+        contextValue;
       if (mapTemp.has(key)) {
         map = mapTemp;
-        updateMap = updateMapTemp;
+        // updateMap = updateMapTemp;
+        setMap = setMapTemp;
         value = map.get(key);
+        subscribe = subscribeTemp;
+        unsubscribe = unsubscribeTemp;
       }
     }
   }
+
+  const [stateVersion, setStateVersion] = useState(1);
+  useEffect(componentDidMount, []);
+  useEffect(componentWillUnmount, []);
 
   if (!map)
     throw new Error(
@@ -33,8 +42,17 @@ export function useStateContext(key) {
 
   /////////////////////////////////////////////////////
 
+  function componentDidMount() {
+    subscribe(setStateVersion, key);
+  }
+  function componentWillUnmount() {
+    return function () {
+      unsubscribe(setStateVersion);
+    };
+  }
   function setter(newValue) {
-    map.set(key, newValue);
-    updateMap();
+    setMap(key, newValue);
+    // map.set(key, newValue);
+    // updateMap();
   }
 }

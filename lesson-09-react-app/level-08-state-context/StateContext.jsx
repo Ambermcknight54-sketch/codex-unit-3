@@ -7,7 +7,8 @@ import {
 } from "react";
 
 const STATE_CONTEXT_LIST = Symbol.for("STATE_CONTEXT_LIST");
-window[STATE_CONTEXT_LIST] = [];
+window[STATE_CONTEXT_LIST] = new Set();
+const listeners = new Set();
 
 export function StateContext({ children, initialState }) {
   if (!initialState)
@@ -17,12 +18,19 @@ export function StateContext({ children, initialState }) {
 
   const [didMount, setDidMount] = useState();
   const [Context, setContext] = useState();
-  const [state, updateState] = useReducer(reducer, initialState);
+  const [stateVersion, setStateVersion] = useState(1);
+  const [listeners] = useState(new Set());
+  const [map] = useState(initialState);
   useEffect(componentDidMount, []);
+  useEffect(componentWillUnmount, []);
 
   let component = <></>;
   if (didMount)
-    component = <Context value={[state, updateState]}>{children}</Context>;
+    component = (
+      <Context value={[map, setValue, subscribe, unsubscribe]}>
+        {children}
+      </Context>
+    );
 
   return <>{component}</>;
 
@@ -30,14 +38,37 @@ export function StateContext({ children, initialState }) {
 
   function componentDidMount() {
     const Context = createContext();
-    window[STATE_CONTEXT_LIST].push(Context);
+    window[STATE_CONTEXT_LIST].add(Context);
 
     setDidMount(true);
     setContext(Context);
   }
+  function componentWillUnmount() {
+    return function () {
+      setDidMount(false);
+    };
+  }
+
+  function subscribe(setter, key) {
+    listeners.add({ update: setter, key });
+  }
+
+  function unsubscribe(setter) {
+    for (let item of listeners) {
+      if (item.update === setter) listeners.delete(item);
+    }
+  }
+
+  function setValue(key, value) {
+    map.set(key, value);
+    setStateVersion(incrementVersion);
+    listeners.forEach(updateListener);
+    function updateListener(listener) {
+      if (listener.key === key) listener.update(incrementVersion);
+    }
+  }
 }
 
-function reducer(state, action) {
-  const newState = new Map(state);
-  return newState;
+function incrementVersion(currentVersion) {
+  return currentVersion + 1;
 }
