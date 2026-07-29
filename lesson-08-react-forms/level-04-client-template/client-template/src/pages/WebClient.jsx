@@ -9,7 +9,7 @@ export function WebClient() {
   useInputTWE();
   const [password, setPassword] = useState();
   const [data, setData] = useState([]);
-  useEffect(componentDidUpdate, [password]);
+  // useEffect(componentDidUpdate, [password]);
   const [prisma, setPrisma] = useState();
 
   return (

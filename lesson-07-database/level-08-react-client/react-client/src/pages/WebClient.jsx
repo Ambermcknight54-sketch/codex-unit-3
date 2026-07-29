@@ -43,14 +43,15 @@ export function WebClient() {
   function componentDidUpdate() {
     if (password) handleData();
   }
-  async function handleData() {
-    const prisma = await createWebClient({
-      jsonSchema: schema,
-      datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
-    });
-    const results = await prisma.products.findMany();
-    setData(results);
-  }
+
+  // async function handleData() {
+  //   const prisma = await createWebClient({
+  //     jsonSchema: schema,
+  //     datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
+  //   });
+  //   const results = await prisma.products.findMany();
+  //   setData(results);
+  // }
 
   function toDetails(item, index) {
     const key = index + item.name;
@@ -66,3 +67,25 @@ export function WebClient() {
     return details;
   }
 }
+// /
+
+//   const results = await prisma.products.findMany(); {
+//   setData(results);
+//   setPrisma(prisma);
+// }
+
+// async function handleCreate(event) {
+//   event.preventDefault();
+//   if (prisma) {
+//     const form = event.target;
+//     const data = {
+//       name: form.elements.productName.value,
+//       src: form.elements.productImage.value,
+//       price: form.elements.productPrice.value,
+//     };
+//     await prisma.products.create({ data });
+//     const results = await prisma.products.findMany();
+//     setData(results);
+
+//   }
+// form.reset();

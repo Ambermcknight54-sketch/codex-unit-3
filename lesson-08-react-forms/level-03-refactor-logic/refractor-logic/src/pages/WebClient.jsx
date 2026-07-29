@@ -1,46 +1,47 @@
 import { Fragment, useEffect, useState } from "react";
-import { useInputTWE, usePrisa } from "../hooks/useInputTWE";
-import { createWebClient } from "../../../web-client";
-import schema from "../../../json-schema.json";
+import { useInputTWE } from "../hooks/useInputTWE";
+// import { createWebClient } from "../../../web-client";
+// import schema from "../../../json-schema.json";
 import { DbPassword } from "../components/DbPassword";
-import { Create } from "../components/Create";
+// import { Create } from "../components/Create";
+import { usePrisma } from "../hooks/usePrisma";
 
 export function WebClient() {
   useInputTWE();
+
   const [password, setPassword] = useState();
-  const [prisma, setPrisma] = useState();
-
-  usePrisa(password);
-
   const [data, setData] = useState([]);
+  const prisma = usePrisma(password, setData);
 
-  useEffect(componentDidUpdate, [password]);
+  // const [prisma, setPrisma] = useState();
+
+  // useEffect(componentDidUpdate, [password]);
 
   return (
     <main>
       <DbPassword setPassword={setPassword} />
-      <Create prisma={prisma} setData={setData} />
+      {/* <Create prisma={prisma} setData={setData} /> */}
       <output>
         <dl>{data.map(toDetails)}</dl>
       </output>
     </main>
   );
 
-  function componentDidUpdate() {
-    if (password) {
-      handleData();
-    }
-  }
+  // function componentDidUpdate() {
+  //   if (password) {
+  //     handleData();
+  //   }
+  // }
 
-  async function handleData() {
-    const client = await createWebClient({
-      jsonSchema: schema,
-      datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
-    });
-    setPrisma(client);
-    const results = await client.products.findMany();
-    setData(results);
-  }
+  // async function handleData() {
+  //   const client = await createWebClient({
+  //     jsonSchema: schema,
+  //     datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
+  //   });
+  //   setPrisma(client);
+  //   const results = await client.products.findMany();
+  //   setData(results);
+  // }
 
   function toDetails(item, index) {
     const key = index + item.name;
@@ -53,5 +54,6 @@ export function WebClient() {
         </dd>
       </Fragment>
     );
+    return details;
   }
 }
