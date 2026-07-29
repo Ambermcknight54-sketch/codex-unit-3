@@ -1,13 +1,7 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useState,
-} from "react";
+import { createContext, useEffect, useState } from "react";
 
 const STATE_CONTEXT_LIST = Symbol.for("STATE_CONTEXT_LIST");
-window[STATE_CONTEXT_LIST] = new Set();
+window[STATE_CONTEXT_LIST] = [];
 const listeners = new Set();
 
 export function StateContext({ children, initialState }) {
@@ -27,7 +21,7 @@ export function StateContext({ children, initialState }) {
   let component = <></>;
   if (didMount)
     component = (
-      <Context value={[map, setValue, subscribe, unsubscribe]}>
+      <Context value={{ getValue, setValue, hasKey, subscribe, unsubscribe }}>
         {children}
       </Context>
     );
@@ -38,7 +32,7 @@ export function StateContext({ children, initialState }) {
 
   function componentDidMount() {
     const Context = createContext();
-    window[STATE_CONTEXT_LIST].add(Context);
+    window[STATE_CONTEXT_LIST].push(Context);
 
     setDidMount(true);
     setContext(Context);
@@ -59,6 +53,11 @@ export function StateContext({ children, initialState }) {
     }
   }
 
+  function getValue(key) {
+    const value = map.get(key);
+    return value;
+  }
+
   function setValue(key, value) {
     map.set(key, value);
     setStateVersion(incrementVersion);
@@ -66,6 +65,10 @@ export function StateContext({ children, initialState }) {
     function updateListener(listener) {
       if (listener.key === key) listener.update(incrementVersion);
     }
+  }
+
+  function hasKey(key) {
+    return map.has(key);
   }
 }
 

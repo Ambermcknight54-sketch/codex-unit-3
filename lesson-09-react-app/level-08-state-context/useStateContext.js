@@ -1,42 +1,19 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const STATE_CONTEXT_LIST = Symbol.for("STATE_CONTEXT_LIST");
 
 export function useStateContext(key) {
-  if (!key) throw new Error("key is required.");
-
-  let map, updateMap, setMap, value, subscribe, unsubscribe;
   const Contexts = window[STATE_CONTEXT_LIST];
+  const Context = Contexts.reduce(toClosestContext(key), null);
 
-  for (let Context of Contexts) {
-    const contextValue = useContext(Context);
-    if (contextValue) {
-      // const [mapTemp, updateMapTemp] = contextValue;
-      const [mapTemp, setMapTemp, subscribeTemp, unsubscribeTemp] =
-        contextValue;
-      if (mapTemp.has(key)) {
-        map = mapTemp;
-        // updateMap = updateMapTemp;
-        setMap = setMapTemp;
-        value = map.get(key);
-        subscribe = subscribeTemp;
-        unsubscribe = unsubscribeTemp;
-      }
-    }
-  }
+  handleErrors(key, Context);
+
+  const { getValue, setValue, hasKey, subscribe, unsubscribe } = Context;
+  const value = getValue(key);
 
   const [stateVersion, setStateVersion] = useState(1);
   useEffect(componentDidMount, []);
   useEffect(componentWillUnmount, []);
-
-  if (!map)
-    throw new Error(
-      "Invalid State Context. Include this component in <StateContext> to give it access.",
-    );
-  if (!map.has(key))
-    throw new Error(
-      "Invalid key. Keys must be declare in <StateContext> initialState.",
-    );
 
   return [value, setter];
 
@@ -51,8 +28,27 @@ export function useStateContext(key) {
     };
   }
   function setter(newValue) {
-    setMap(key, newValue);
-    // map.set(key, newValue);
-    // updateMap();
+    setValue(key, newValue);
   }
+}
+
+function toClosestContext(key) {
+  return function (closestContext, Context) {
+    const contextValue = useContext(Context);
+    if (contextValue) closestContext = contextValue;
+    return closestContext;
+  };
+}
+
+function handleErrors(key, Context) {
+  if (!key)
+    throw new Error('A key is required. Example: useStateContext("username")');
+  if (!Context)
+    throw new Error(
+      "Invalid StateContext. Include this component in <StateContext> to give it access.",
+    );
+  if (!Context.hasKey(key))
+    throw new Error(
+      "Invalid key. Keys must be declared in initialState. Example: <StateContext initialState={state}>",
+    );
 }
