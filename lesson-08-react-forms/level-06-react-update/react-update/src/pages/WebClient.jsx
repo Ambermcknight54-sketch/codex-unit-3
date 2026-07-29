@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { DbPassword } from "../components/DbPassword";
 import { usePrisma } from "../hooks/usePrisma";
-// import { useUpdate } from "../hooks/useUpdate";
+import { useUpdate } from "../hooks/useUpdate";
 import { Update } from "../components/Update";
 
 export function WebClient() {
@@ -21,7 +21,7 @@ export function WebClient() {
 }
 
 function toDetails(item, index) {
-  const key = index + item.name;
+  const key = index + (item.name || item.id);
   const details = (
     <Fragment key={key}>
       <dt> {item.name}</dt>

@@ -6,27 +6,30 @@ export function useUpdate(prisma) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const form = event.target;
-    const where = {
-      id: form.elements.productId.value,
-    };
-    const data = {};
-    const productName = form.elements.productName.value;
-    const productPrice = form.elements.productPrice.value;
-    const productImage = form.elements.productImage.value;
-    if (productName) data.name = productName;
-    if (productPrice) data.price = productPrice;
-    if (productImage) data.src = productImage;
 
-    const result = await prisma.products.update({
-      where: form.elements.productId.value,
-      data: data,
-    });
+    if (prisma) {
+      const form = event.target;
+      const where = {
+        id: form.elements.productId.value,
+      };
 
-    setData(result);
+      const data = {};
+      const productName = form.elements.productName.value;
+      const productPrice = form.elements.productPrice.value;
+      const productImage = form.elements.productImage.value;
+
+      if (productName) data.name = productName;
+      if (productPrice) data.price = productPrice;
+      if (productImage) data.src = productImage;
+
+      const result = await prisma.products.update({ where, data });
+
+      setData(result);
+    }
   }
 }
 
+export default useUpdate;
 // import { useState } from "react";
 
 // export function useRead(prisma) {
