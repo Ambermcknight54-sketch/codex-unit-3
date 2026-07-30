@@ -22,6 +22,7 @@ React Router provides utilities that can automatically highlight active links in
 10. View the website pages. They should run without errors. Observe that the highlighted link remains highlighted even when clicking on something else on the page, or refreshing the page.
 11. In the `Home` component, add a `p` tag that explains how to use Tailwind classes to properly highlight active links in TWE navbars.
 12. View the website pages and make sure they run without errors.
+13. Update your templates with proper active links.
 
 ## More Information
 
