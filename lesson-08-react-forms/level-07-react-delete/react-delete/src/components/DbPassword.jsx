@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useSecret } from "../hooks/useSecret";
 import { useInputTWE } from "../hooks/useInputTWE";
 
-export function DbPassword() {
+export function DbPassword({ setPassword }) {
   useInputTWE();
   const [password, handleSubmit] = useSecret("password");
-
+  useEffect(componentDidUpdate, [password]);
   return (
     <>
       <form onSubmit={handleSubmit}>
