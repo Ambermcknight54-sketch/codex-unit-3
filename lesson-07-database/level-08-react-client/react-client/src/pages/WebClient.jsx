@@ -44,14 +44,14 @@ export function WebClient() {
     if (password) handleData();
   }
 
-  // async function handleData() {
-  //   const prisma = await createWebClient({
-  //     jsonSchema: schema,
-  //     datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
-  //   });
-  //   const results = await prisma.products.findMany();
-  //   setData(results);
-  // }
+  async function handleData() {
+    const prisma = await createWebClient({
+      jsonSchema: schema,
+      datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
+    });
+    const results = await prisma.products.findMany();
+    setData(results);
+  }
 
   function toDetails(item, index) {
     const key = index + item.name;
