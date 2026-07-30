@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import { useInputTWE } from "../hooks/useInputTWE";
 // import { createWebClient } from "../../../web-client";
 // import schema from "../../../json-schema.json";
