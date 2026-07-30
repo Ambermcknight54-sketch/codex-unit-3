@@ -113,7 +113,7 @@ export function WebClient() {
 
       const results = await prisma.products.findMany();
       setData(results);
-      setPrisma(results);
+      setPrisma(prisma);
     }
   }
   async function handleCreate(event) {
