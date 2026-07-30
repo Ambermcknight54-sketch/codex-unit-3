@@ -10,7 +10,7 @@ The StateContext component gives child components access to state variables in p
 
 ## Complete these tasks
 
-1. NOTE: This level requires `prisma-template` and `spa-template` from a previous level. Complete these tasks from scratch. Do not copy/paste unless the task permits it.
+1. NOTE: This level requires `prisma-template` and `spa-template` from a previous level. Complete these tasks from scratch. Do not copy/paste unless the task permits it. Code for TW Elements can be copied/pasted.
 2. Set up the Prisma web client: In your system's file explorer or file picker, copy your `prisma-template` folder from a previous level into this level folder. In the terminal, navigate to `prisma-template` and run `script.js`. It should work without errors after `node_modules` are installed.
 3. Set up the website: In your system's file explorer or file picker, copy your `spa-template` folder into this level folder. In this level folder, rename `spa-template` to `state-context`. Change the title of the website to `Using StateContext for Centrally Stored States`. In the terminal, navigate to the `state-context` folder. Start the Vite server and open a React Debugger browser to the URL provided by Vite.
 4. View the website pages and make sure they run without errors.
