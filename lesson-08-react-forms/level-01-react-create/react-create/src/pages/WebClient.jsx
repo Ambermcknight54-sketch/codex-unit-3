@@ -102,8 +102,10 @@ export function WebClient() {
   );
 
   function componentDidUpdate() {
-    // debugger;
-    if (password) handleData();
+    if (password) {
+      sessionStorage.setItem("password", password);
+      handleData();
+    }
 
     async function handleData() {
       const prisma = await createWebClient({

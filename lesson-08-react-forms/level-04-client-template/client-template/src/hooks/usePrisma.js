@@ -1,26 +1,64 @@
 /* eslint-disable */
 import { useState, useEffect } from "react";
-import { createWebClient } from "../../../prisma-template/web-client.js";
-import schema from "../../../prisma-template/json-schema.json";
+import { createWebClient } from "../../../web-client.js";
+import schema from "../../../json-schema.json";
 
-export function usePrisma(password) {
+export function usePrisma(password, setData) {
   const [prisma, setPrisma] = useState();
+
   useEffect(componentDidUpdate, [password]);
+
   return prisma;
 
   function componentDidUpdate() {
-    handlePrisma();
-  }
-
-  async function handlePrisma() {
     if (password) {
-      const connectionString = `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`;
-      const prisma = await createWebClient({
-        datasourceUrl: connectionString,
-        jsonShemma: schema,
-      });
-      setPrisma(prisma);
+      sessionStorage.setItem("password", password);
+      handleData(password);
     }
-  }
+
+    async function handleData(dbPassword) {
+      const client = await createWebClient({
+        jsonSchema: schema,
+        datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${dbPassword}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
+      });
+
+      setPrisma(client);
+
+      // Use `client` here instead of `prisma`
+      const results = await client.products.findMany();
+      setData(results);
+    }
+  } // <-- Added missing closing brace for componentDidUpdate
 }
-export default usePrisma;
+// import { useState, useEffect } from "react";
+// import { createWebClient } from "../../../web-client.js";
+// import schema from "../../../prisma-template/prisma/schema";
+
+// export function usePrisma(password) {
+//   const [prisma, setPrisma] = useState();
+//   const [data, setData] = useState([]);
+
+//   useEffect(componentDidUpdate, [password]);
+
+//   return [prisma, data, setData];
+
+//   function componentDidUpdate() {
+//     if (password) {
+//       handleData();
+//     }
+//   }
+
+//   async function handleData() {
+//     const client = await createWebClient({
+//       jsonSchema: schema,
+//       datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
+//     });
+
+//     setPrisma(client);
+
+//     const results = await client.products.findMany();
+//     setData(results);
+//   }
+// }
+
+// export default usePrisma;
