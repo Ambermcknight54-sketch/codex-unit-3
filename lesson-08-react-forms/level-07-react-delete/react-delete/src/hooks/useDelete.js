@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function useRead(prisma) {
+export function useDelete(prisma) {
   const [data, setData] = useState();
   return [data, handleSubmit];
 
@@ -8,7 +8,9 @@ export function useRead(prisma) {
     event.preventDefault();
     if (prisma) {
       const form = event.target;
-      const where = {};
+      const where = {
+        id: 5,
+      };
 
       const productId = form.elements.productId.value;
       const productName = form.elements.productName.value;
@@ -18,16 +20,14 @@ export function useRead(prisma) {
       if (productName) where.name = productName;
       if (productPrice) where.price = { lte: productPrice };
 
-      const results = await prisma.products.findMany({ where });
+      const results = await prisma.products.findUnique({ where });
 
       setData(results);
     }
   }
 }
 
-export default useRead;
-
-// import { useState } from "react";
+export default useDelete;
 
 // export function useRead(prisma) {
 //   const [data, setData] = useState();

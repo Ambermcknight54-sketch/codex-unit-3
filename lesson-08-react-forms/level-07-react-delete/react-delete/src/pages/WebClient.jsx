@@ -1,8 +1,8 @@
 import { Fragment, useState } from "react";
 import { DbPassword } from "../components/DbPassword";
 import { usePrisma } from "../hooks/usePrisma";
-import { Read } from "../components/Read";
-import { useRead } from "../hooks/useRead";
+import { Delete } from "../components/Delete";
+import { useDelete } from "../hooks/useDelete";
 
 export function WebClient() {
   useRead();
@@ -13,7 +13,7 @@ export function WebClient() {
   return (
     <main>
       <DbPassword setPassword={setPassword} />
-      <Read prisma={prisma} setData={setData} />
+      <Delete prisma={prisma} setData={setData} />
       <output>
         <dl>{data.map(toDetails)}</dl>
       </output>

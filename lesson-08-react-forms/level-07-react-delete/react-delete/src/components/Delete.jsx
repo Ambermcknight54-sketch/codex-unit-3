@@ -1,11 +1,11 @@
 import { Fragment } from "react/jsx-runtime";
 import { useInputTWE } from "../hooks/useInputTWE";
 import { useEffect } from "react";
-import { useRead } from "../hooks/useDelete";
+import { useDelete } from "../hooks/useDelete";
 
 export function Delete({ prisma, setData }) {
   useInputTWE();
-  const [data, handleSubmit] = useRead(prisma);
+  const [data, handleSubmit] = useDelete(prisma);
   useEffect(componentDidUpdate, [data]);
 
   return (
@@ -29,7 +29,7 @@ export function Delete({ prisma, setData }) {
       </fieldset>
 
       <fieldset>
-        <legend>Product Read</legend>
+        <legend>Product Delete</legend>
 
         <div className="relative mb-3" data-twe-input-wrapper-init>
           <input
