@@ -20338,6 +20338,7 @@ async function createWebClient({
   // schemaPrisma = "./prisma/schema.prisma",
   disableWarningInBrowsers = false
 }) {
+  if (!jsonSchema) throw new Error("json-schema.json must be provided");
   try {
     const isNodeJs = typeof window === "undefined";
     if (isNodeJs) {
