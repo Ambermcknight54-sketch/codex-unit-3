@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useInputTWE } from "../hooks/useInputTWE";
+import { useRippleTWE } from "../hooks/useRippleTWE";
 
 export function Page404() {
-  useInputTWE(); // Initializes TW Elements JS components on render
+  useRippleTWE();
 
   return (
     <main className="flex min-h-[50vh] flex-col items-center justify-center p-6 text-center">
@@ -22,6 +22,8 @@ export function Page404() {
           </p>
           <Link
             to="/"
+            data-twe-ripple-init
+            data-twe-ripple-color="light"
             className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300">
             Go Home
           </Link>
