@@ -3,7 +3,7 @@ import { useInputTWE } from "../hooks/useInputTWE";
 import { createWebClient } from "../../../web-client";
 import schema from "../../../json-schema.json";
 import { DbPassword } from "../components/DbPassword";
-import { Create } from "../components/Create";
+// import { Create } from "../components/Create";
 
 export function WebClient() {
   useInputTWE();
@@ -15,7 +15,7 @@ export function WebClient() {
   return (
     <main>
       <DbPassword setPassword={setPassword} />
-      <Create prisma={prisma} setData={setData} />
+      {/* <Create prisma={prisma} setData={setData} /> */}
       <output>
         <dl>{data.map(toDetails)}</dl>
       </output>
