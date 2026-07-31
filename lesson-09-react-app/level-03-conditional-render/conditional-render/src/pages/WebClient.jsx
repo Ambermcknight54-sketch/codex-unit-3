@@ -1,19 +1,23 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import { useInputTWE } from "../hooks/useInputTWE";
-import { createWebClient } from "../../../prisma-template/web-client";
-import schema from "../../../prisma-template/json-schema.json";
 import { DbPassword } from "../components/DbPassword";
+import { Login } from "../components/Login";
 import { usePrisma } from "../hooks/usePrisma";
+import { useLogin } from "../hooks/useLogin";
 
 export function WebClient() {
   useInputTWE();
   const [password, setPassword] = useState();
-  const prisma = usePrisma(password);
+  const [login, setLogin] = useState();
   const [data, setData] = useState([]);
+
+  const prisma = usePrisma(password);
+  const user = useLogin(prisma, login);
 
   return (
     <main>
       <DbPassword setPassword={setPassword} />
+      <Login setLogin={setLogin} />
       {/* <Create prisma={prisma} setData={setData} /> */}
       <output>
         <dl>{data.map(toDetails)}</dl>
@@ -21,18 +25,18 @@ export function WebClient() {
     </main>
   );
 }
+
 function toDetails(item, index) {
   const key = index + item.name;
-  const details = (
+  return (
     <Fragment key={key}>
-      <dt> {item.name}</dt>
+      <dt>{item.name}</dt>
       <dd>
-        <img src={item.src} />
+        <img src={item.src} alt={item.name} />
         {item.price}
       </dd>
     </Fragment>
   );
-  return details;
 }
 
 // function componentDidUpdate() {

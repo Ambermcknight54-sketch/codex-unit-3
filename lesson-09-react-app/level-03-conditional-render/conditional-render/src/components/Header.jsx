@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header>
-      <h1> Prisma Web Client and React Templates </h1>
+      <h1> Conditionally Hide or Show React Components </h1>
     </header>
   );
 }
