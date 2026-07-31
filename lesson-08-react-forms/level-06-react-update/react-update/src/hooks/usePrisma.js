@@ -5,7 +5,6 @@ import schema from "../../../json-schema.json";
 
 export function usePrisma(password, setData) {
   const [prisma, setPrisma] = useState();
-
   useEffect(componentDidUpdate, [password]);
 
   return prisma;
@@ -24,11 +23,10 @@ export function usePrisma(password, setData) {
 
       setPrisma(client);
 
-      // Use `client` here instead of `prisma`
-      const results = await client.products.findMany();
+      const results = await prisma.products.findMany();
       setData(results);
     }
-  } // <-- Added missing closing brace for componentDidUpdate
+  }
 }
 // import { useState, useEffect } from "react";
 // import { createWebClient } from "../../../web-client.js";

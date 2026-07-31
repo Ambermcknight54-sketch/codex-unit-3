@@ -2,6 +2,7 @@ import { Fragment } from "react/jsx-runtime";
 import { useInputTWE } from "../hooks/useInputTWE";
 import { useEffect } from "react";
 import { useDelete } from "../hooks/useDelete";
+import { usePrisma } from "../hooks/usePrisma";
 
 export function Delete({ prisma, setData }) {
   useInputTWE();

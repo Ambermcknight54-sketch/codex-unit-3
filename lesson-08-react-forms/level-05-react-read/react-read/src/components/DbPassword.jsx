@@ -6,6 +6,9 @@ export function DbPassword({ setPassword }) {
   useInputTWE();
   const [password, handleSubmit] = useSecret("password");
   useEffect(componentDidUpdate, [password]);
+
+  let message = "";
+  if (password) message = "Password was entered,";
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -30,8 +33,11 @@ export function DbPassword({ setPassword }) {
           Submit
         </button>
       </form>
-      <output>{password}</output>
+      <output>{message} </output>
     </>
   );
+
+  function componentDidUpdate() {
+    setPassword(password);
+  }
 }
-export default DbPassword;

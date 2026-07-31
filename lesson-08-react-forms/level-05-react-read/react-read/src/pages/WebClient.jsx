@@ -2,10 +2,8 @@ import { Fragment, useState } from "react";
 import { DbPassword } from "../components/DbPassword";
 import { usePrisma } from "../hooks/usePrisma";
 import { Read } from "../components/Read";
-import { useRead } from "../hooks/useRead";
 
 export function WebClient() {
-  useRead();
   const [password, setPassword] = useState();
   const prisma = usePrisma(password);
   const [data, setData] = useState([]);
@@ -22,7 +20,7 @@ export function WebClient() {
 }
 
 function toDetails(item, index) {
-  const key = index + item.name;
+  const key = index + (item.name || item.id);
   const details = (
     <Fragment key={key}>
       <dt> {item.name}</dt>

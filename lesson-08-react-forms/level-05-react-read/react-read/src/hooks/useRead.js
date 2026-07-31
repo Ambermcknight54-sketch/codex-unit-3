@@ -2,30 +2,24 @@ import { useState } from "react";
 
 export function useRead(prisma) {
   const [data, setData] = useState();
-  return [data, handleSubmit];
 
   async function handleSubmit(event) {
     event.preventDefault();
+
     if (prisma) {
       const form = event.target;
-      const where = {};
-
-      const productId = form.elements.productId.value;
-      const productName = form.elements.productName.value;
-      const productPrice = form.elements.productPrice.value;
-
-      if (productId) where.id = productId;
-      if (productName) where.name = productName;
-      if (productPrice) where.price = { lte: productPrice };
+      const where = {
+        id: form.elements.productId.value,
+      };
 
       const results = await prisma.products.findMany({ where });
 
-      setData(results);
+      setData[results];
     }
   }
-}
 
-export default useRead;
+  return [data, handleSubmit];
+}
 
 // import { useState } from "react";
 
