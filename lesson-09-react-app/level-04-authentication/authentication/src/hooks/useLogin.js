@@ -8,6 +8,10 @@ export function useLogin(prisma, login) {
   return user;
 
   function componentDidUpdate() {
+    const userString = localStorage.getItem("user");
+    const storedUser = JSON.parse(userString);
+    setUser(storedUser);
+
     if (prisma) {
       if (login) {
         handleLogin();
@@ -22,6 +26,10 @@ export function useLogin(prisma, login) {
         password: login.password,
       },
     });
+
+    const userString = JSON.stringify(foundUser);
+    localStorage.setItem("user", userString);
+
     setUser(foundUser);
   }
 }

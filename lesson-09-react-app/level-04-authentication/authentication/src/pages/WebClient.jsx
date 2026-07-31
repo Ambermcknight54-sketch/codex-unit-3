@@ -3,7 +3,7 @@ import { useInputTWE } from "../hooks/useInputTWE";
 import { usePrisma } from "../hooks/usePrisma";
 import { useLogin } from "../hooks/useLogin";
 import { DbPassword } from "../components/DbPassword";
-import { Login } from "../components/Login";
+import { Authentication } from "../components/Authentication";
 
 export function WebClient() {
   useInputTWE();
@@ -14,16 +14,10 @@ export function WebClient() {
   const prisma = usePrisma(password);
   const user = useLogin(prisma, login);
 
-  let component = <Login setLogin={setLogin} />;
-
-  if (user) {
-    component = <p>You are logged in.</p>;
-  }
-
   return (
     <main>
       <DbPassword setPassword={setPassword} />
-      {component}
+      <Authentication setLogin={setLogin} user={user} />
       {/* <Create prisma={prisma} setData={setData} /> */}
       <output>
         <dl>{data.map(toDetails)}</dl>
