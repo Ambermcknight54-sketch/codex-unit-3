@@ -5,20 +5,29 @@ import schema from "../../../prisma-template/json-schema.json";
 import { DbPassword } from "../components/DbPassword";
 import { usePrisma } from "../hooks/usePrisma";
 import { Search } from "../components/SearchSearch";
+import { useState } from "react";
+import { useInputTWE } from "../hooks/useInputTWE";
+import { DbPassword } from "../components/DbPassword";
+import { usePrisma } from "../hooks/usePrisma";
+import { useProducts } from "../hooks/useProducts";
+import { useSearch } from "../hooks/useSearch";
+import { Search } from "../components/SearchSearch";
 
 export function WebClient() {
   useInputTWE();
   const [password, setPassword] = useState();
   const prisma = usePrisma(password);
+  const products = useProducts(prisma);
   const [data, setData] = useState([]);
   const [search, setSearch] = useState();
+  const searchResults = useSearch(products, search);
 
   return (
     <main>
       <DbPassword setPassword={setPassword} />
-      <Search prisma={prisma} setData={setData} />
+      <Search prisma={prisma} setData={setData} setSearch={setSearch} />
       <output>
-        <dl>{data.map(toDetails)}</dl>
+        <dl>{searchResults.map(toDetails)}</dl>
       </output>
     </main>
   );

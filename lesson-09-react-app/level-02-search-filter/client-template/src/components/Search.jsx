@@ -1,15 +1,15 @@
-// import { Fragment, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useInputTWE } from "../hooks/useInputTWE";
-// import { useSecret } from "../hooks/useSecret";
-// import { createWebClient } from "../../../web-client";
-// import schema from "../../../json-schema.json";
+import { useControlledInput } from "../hooks/useControlledInput";
 
-export function Search() {
+export function Search({ prisma, setData, setSearch }) {
   useInputTWE();
-  // const [password, handleSubmit] = useSecret("password");
-  // const [data, setData] = useState([]);
-  // useEffect(componentDidUpdate, [password]);
-  // const [prisma, setPrisma] = useState();
+
+  const [id, setId] = useControlledInput();
+  const [productName, setProductName] = useControlledInput();
+  const [maxPrice, setMaxPrice] = useControlledInput();
+
+  useEffect(componentDidUpdate, [id, productName, maxPrice]);
 
   return (
     <main>
@@ -21,6 +21,8 @@ export function Search() {
             name="id"
             id="id"
             placeholder=""
+            value={id}
+            onChange={setId}
           />
           <label
             htmlFor="id"
@@ -36,6 +38,8 @@ export function Search() {
             name="productName"
             id="productName"
             placeholder="Product Name"
+            value={productName}
+            onChange={setProductName}
           />
           <label
             htmlFor="productName"
@@ -49,9 +53,11 @@ export function Search() {
             type="number"
             step="0.01"
             className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
-            name="maxPice"
+            name="maxPrice"
             id="maxPrice"
             placeholder="Product Price"
+            value={maxPrice}
+            onChange={setMaxPrice}
           />
           <label
             htmlFor="maxPrice"
@@ -66,58 +72,15 @@ export function Search() {
           Submit
         </button>
       </form>
-      <output>
-        {/* <DbPassword setPassword={setPassword} />
-        <Create prisma={prisma} setData={setData} /> */}
-        <dl>{data.map(toDetails)}</dl>
-      </output>
     </main>
   );
+
+  function componentDidUpdate() {
+    const data = { id, productName, maxPrice };
+    setSearch(data);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
 }
-
-//   function componentDidUpdate() {
-//     if (password) {
-//       sessionStorage.setItem("password", password);
-//       handleData();
-//     }
-
-//     async function handleData() {
-//       const prisma = await createWebClient({
-//         jsonSchema: schema,
-//         datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
-//       });
-
-//       const results = await prisma.products.findMany();
-//       setData(results);
-//       setPrisma(prisma);
-//     }
-//   }
-//   async function handleCreate(event) {
-//     event.preventDefault();
-//     if (prisma) {
-//       const form = event.target;
-//       const data = {
-//         name: form.elements.productName.value,
-//         src: form.elements.productImage.value,
-//         price: form.elements.productPrice.value,
-//       };
-//       await prisma.products.create({ data });
-//       const results = await prisma.products.findMany();
-//       setData(results);
-//     }
-//   }
-
-//   function toDetails(item, index) {
-//     const key = index + item.name;
-//     const details = (
-//       <Fragment key={key}>
-//         <dt>{item.name}</dt>
-//         <dd>
-//           <img src={item.src} />
-//           {item.price}
-//         </dd>
-//       </Fragment>
-//     );
-//     return details;
-//   }
-//
