@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <Header>
-      <h1> Redirect to the Home Page with a 404 Page </h1>
+      <h1> Deploy a React Site to GitHub Pages</h1>
     </Header>
   );
 }
