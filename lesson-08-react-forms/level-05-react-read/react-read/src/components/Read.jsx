@@ -12,13 +12,13 @@ export function Read({ prisma, setData }) {
   return (
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend>Product Information</legend>
+        <legend>Product Read </legend>
         <div className="relative mb-3" data-twe-input-wrapper-init>
           <input
             type="number"
             className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
             name="productId"
-            id="productID"
+            id="productId"
             placeholder="Enter the product ID"
           />
           <label
@@ -29,8 +29,6 @@ export function Read({ prisma, setData }) {
         </div>
       </fieldset>
       <fieldset>
-        <legend>Product Read</legend>
-
         <div className="relative mb-3" data-twe-input-wrapper-init>
           <input
             type="text"

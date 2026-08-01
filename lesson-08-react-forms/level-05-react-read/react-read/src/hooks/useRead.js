@@ -20,7 +20,7 @@ export function useRead(prisma) {
 
     const results = await prisma.products.findMany({ where });
 
-    setData[results];
+    setData(results);
   }
 }
 

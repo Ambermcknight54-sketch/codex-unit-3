@@ -13,16 +13,16 @@ export function usePrisma(password) {
   function componentDidUpdate() {
     if (password) {
       sessionStorage.setItem("password", password);
-      handlePrisma(password);
+      handlePrisma();
     }
 
     async function handlePrisma() {
-      const client = await createWebClient({
+      const prisma = await createWebClient({
         jsonSchema: schema,
         datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
       });
 
-      setPrisma(client);
+      setPrisma(prisma);
     }
   }
 }
