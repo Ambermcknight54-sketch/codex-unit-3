@@ -3,22 +3,25 @@ import { useState } from "react";
 export function useRead(prisma) {
   const [data, setData] = useState();
 
+  return [data, handleSubmit];
+
   async function handleSubmit(event) {
     event.preventDefault();
+    const form = event.target;
+    const where = {};
 
-    if (prisma) {
-      const form = event.target;
-      const where = {
-        id: form.elements.productId.value,
-      };
+    const productId = form.elements.productId.value;
+    const productName = form.elements.productName.value;
+    const productPrice = form.elements.value;
 
-      const results = await prisma.products.findMany({ where });
+    if (productId) where.id = productId;
+    if (productName) where.name = productName;
+    if (productPrice) where.id = { lte: maxPrice };
 
-      setData[results];
-    }
+    const results = await prisma.products.findMany({ where });
+
+    setData[results];
   }
-
-  return [data, handleSubmit];
 }
 
 // import { useState } from "react";
