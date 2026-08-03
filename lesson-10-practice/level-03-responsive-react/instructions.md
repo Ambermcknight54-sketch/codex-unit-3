@@ -23,20 +23,22 @@ Responsive layouts make your React site convenient to view on any screen size.
 11. Layout the cards: In the `Home` component, add a `section` tag in the `main` tag, then move all the cards into the `section` tag. In `Home.css`, in the `#mainHome { ... }` style block, add styles for a mobile-first layout. Example: `section { flex-direction: column; }`. This is parent syntax, where a CSS selector is nested in another selector. Only `section` tags in `#mainHome` will be selected.
 12. View the website pages. They should run without errors. Observe that the styles in `Home.css` are only applied to the `Home` page and elements in the `#mainHome` tag.
 13. Experiment with styles: In the browser, inspect the Home page and the `section` tag. In the `Elements` tab, select the `section` tag. In the `Styles` tab and in the `element.style` selector, experiment with styles that layout the `Home` page for larger devices.
-14. In `Home.jsx` and in the `section` tag, apply responsive design with Tailwind breakpoints. Example: `className="sm:!flex-row"`. The `!` means `!important`, which overrides the current style property - `flex-row` will override `flex-direction: column`.
-15. In the `Home` component, add a `p` tag that explains how to create React components from TWE components and how to apply mobile-first responsive design.
-16. View the website pages and make sure they run without errors.
+14. In `Home.jsx` and in the `section` tag, apply responsive design with Tailwind breakpoints. Example: `className="sm:flex-row"`.
+15. View the website pages. They should run without errors. Observe the `Styles` tab again. Styles for `#mainHome` may override styles from Tailwind with a strikethrough. Example: ~~`flex-direction: row;`~~
+16. Configure Tailwind styles in `className` to override styles from `.css` files: In `tailwind.config.js`, add the property `important: true`.
+17. In the `Home` component, add a `p` tag that explains how to create React components from TWE components and how to apply mobile-first responsive design.
+18. View the website pages and make sure they run without errors.
 
 ## More Information
 
 - TWE code can be turned into React components with props.
 - A stylesheet can be imported into a component. Example: `import "../styles/Home.css"`
 - A convention for component stylesheets is to match the names. Example: The `Home` component has the `Home.css` stylesheet.
-- To isolate styles by page, place a unique ID in their `main` tag. Example: `id="mainHome"`
+- To isolate styles by page, place a unique ID in the `main` tag. Example: `id="mainHome"`
 - Mobile-first responsive design styles pages for mobile devices first, then overrides them with styles for larger devices.
 - Global styles that apply to all pages can be defined in `index.css`.
 - Styles that only apply to specific components can be defined in CSS files that are named after the component. Example: `Home.css` contains styles for the `Home` page.
-- Use `!` in `className` attributes or `!important` in `.css` files to indicate styles which should take priority.
+- `tailwind.config.js` can be configured to override styles in `.css` files by default. Example: `important: true`
 
 ## Usage Tips
 
@@ -44,6 +46,9 @@ Responsive layouts make your React site convenient to view on any screen size.
 - [CSS Grid - for 2 dimensional layouts](https://css-tricks.com/complete-guide-css-grid-layout/)
 - [Tailwind breakpoints](https://v3.tailwindcss.com/docs/responsive-design)
 - DOM stands for Document Object Model, which represents each element in the `document` object.
+- Use `!` in `className` attributes or `!important` in `.css` files to indicate individual styles that should take priority.
+- To make styles in `.css` files override Tailwind styles in `className`, append `!important` to the style rule. Example: `flex-direction: column !important;`.
+- To make a Tailwind style in `className` override a style in `.css`, prepend it with `!`. Example: `sm:!flex-row`
 - Component styles can be isolated with unique IDs. Example: `id="mainHome"`.
 - In React, when CSS files are imported, their styles apply to all pages in a website. To isolate styles to specific components, assign them unique IDs and use CSS parent syntax.
 - CSS parent syntax nests a selector in another selector. Example:
