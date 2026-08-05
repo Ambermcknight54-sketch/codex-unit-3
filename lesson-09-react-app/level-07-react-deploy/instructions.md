@@ -10,7 +10,7 @@ React apps can be deployed to GitHub, but a few changes must be made to navigati
 
 ## Complete these tasks
 
-1. NOTE: This level requires `prisma-template` and `404-page` from a previous level. Complete these tasks from scratch. Do not copy/paste unless the task permits it.
+1. NOTE: This level requires `prisma-template` and `404-page` from a previous level. Complete these tasks from scratch. Do not copy/paste unless the task permits it. Code for TW Elements can be copied/pasted.
 2. Set up the Prisma web client: In your system's file explorer or file picker, copy your `prisma-template` folder from a previous level into this level folder. In the terminal, navigate to `prisma-template` and run `script.js`. It should work without errors after `node_modules` are installed.
 3. Set up the website: In your system's file explorer or file picker, copy your `404-page` folder from a previous level into this level folder. In this level folder, rename `404-page` to `react-deploy`. Change the title of the website to `Deploy a React Site to GitHub Pages`. In the terminal, navigate to the `react-deploy` folder. Start the Vite server and open a React Debugger browser to the URL provided by Vite. View the website pages. It should work without errors after `node_modules` are installed.
 4. Use a separate VS Code workspace: With a new VS Code window, open the `react-deploy` folder directly. Save the project as a workspace. The name `react-deploy` should automatically be presented. This makes it a standalone frontend project separate from the `codex-unit-3` workspace.
