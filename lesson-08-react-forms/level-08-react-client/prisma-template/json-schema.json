@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "products": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "name": {
+          "type": "string"
+        },
+        "src": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/reviews"
+          }
+        }
+      }
+    },
+    "students": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "level": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "users": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "password": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/reviews"
+          }
+        }
+      }
+    },
+    "reviews": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "stars": {
+          "type": "integer"
+        },
+        "product_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "users_id": {
+          "type": "integer"
+        },
+        "products": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/products"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "users": {
+          "$ref": "#/definitions/users"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "products": {
+      "$ref": "#/definitions/products"
+    },
+    "students": {
+      "$ref": "#/definitions/students"
+    },
+    "users": {
+      "$ref": "#/definitions/users"
+    },
+    "reviews": {
+      "$ref": "#/definitions/reviews"
+    }
+  }
+}

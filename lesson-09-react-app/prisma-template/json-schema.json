@@ -52,31 +52,6 @@
         }
       }
     },
-    "subjects": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer"
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "name": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "date": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
-        }
-      }
-    },
     "users": {
       "type": "object",
       "properties": {
@@ -104,6 +79,12 @@
           "items": {
             "$ref": "#/definitions/reviews"
           }
+        },
+        "reviews_items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/reviews_items"
+          }
         }
       }
     },
@@ -118,10 +99,7 @@
           "format": "date-time"
         },
         "stars": {
-          "type": [
-            "integer",
-            "null"
-          ]
+          "type": "integer"
         },
         "product_id": {
           "type": [
@@ -129,11 +107,8 @@
             "null"
           ]
         },
-        "user_id": {
-          "type": [
-            "integer",
-            "null"
-          ]
+        "users_id": {
+          "type": "integer"
         },
         "products": {
           "anyOf": [
@@ -146,9 +121,66 @@
           ]
         },
         "users": {
+          "$ref": "#/definitions/users"
+        }
+      }
+    },
+    "items": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "name": {
+          "type": "string"
+        },
+        "src": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "reviews_items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/reviews_items"
+          }
+        }
+      }
+    },
+    "reviews_items": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "stars": {
+          "type": "integer"
+        },
+        "items_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "users_id": {
+          "type": "integer"
+        },
+        "users": {
+          "$ref": "#/definitions/users"
+        },
+        "items": {
           "anyOf": [
             {
-              "$ref": "#/definitions/users"
+              "$ref": "#/definitions/items"
             },
             {
               "type": "null"
@@ -166,14 +198,17 @@
     "students": {
       "$ref": "#/definitions/students"
     },
-    "subjects": {
-      "$ref": "#/definitions/subjects"
-    },
     "users": {
       "$ref": "#/definitions/users"
     },
     "reviews": {
       "$ref": "#/definitions/reviews"
+    },
+    "items": {
+      "$ref": "#/definitions/items"
+    },
+    "reviews_items": {
+      "$ref": "#/definitions/reviews_items"
     }
   }
 }

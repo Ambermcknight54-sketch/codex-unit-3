@@ -48,5 +48,11 @@ export function Login({ setLogin }) {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
+    const data = {
+      email: form.elements.email.value,
+      password: form.elements.password,
+      value,
+    };
+    setLogin(data);
   }
 }

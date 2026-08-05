@@ -1,26 +1,27 @@
 const data = [
   {
-    src: "/images/92ECD092-4FD8-489C-AEBB-152F1E4864D0_1_105_c.jpeg",
-    caption:
-      "A personalized snapshot featuring family members from my gallery collection.",
+    src: "peace.jpg",
+    caption: "peace",
   },
+
   {
-    src: "/images/peace.jpg",
-    caption: "A serene photo capturing a moment of peace and reflection.",
+    src: "creepyEmoji.jpg",
+    caption: "creepy emoji",
   },
+
   {
-    src: "/images/conquering code.jpg",
-    caption:
-      "A visual representation of conquering challenges while learning to code.",
+    src: "emojiCode.jpg",
+    caption: "emoji codes",
   },
+
   {
-    src: "/images/pic1.jpg",
-    caption: "A beautiful scenery shot highlighting travels and destinations.",
+    src: "emojiFaces.jpg",
+    caption: "emoji faces",
   },
+
   {
-    src: "/images/pic2.jpg",
-    caption:
-      "An explicit feature showcasing creative layout design frameworks.",
+    src: "emojiSentence.jpg",
+    caption: "emoji sentence.",
   },
 ];
 

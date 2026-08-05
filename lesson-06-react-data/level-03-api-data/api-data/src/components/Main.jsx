@@ -33,6 +33,8 @@ export function Main() {
     const details = result.map(toCharacters);
     setCharacters(details);
   }
+
+  
   function toCharacters(dataItem) {
     return (
       <details>

@@ -7,8 +7,6 @@ export function DbPassword({ setPassword }) {
   const [password, handleSubmit] = useSecret("password");
   useEffect(componentDidUpdate, [password]);
 
-  let message = "";
-  if (password) message = "Password was entered,";
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -33,7 +31,7 @@ export function DbPassword({ setPassword }) {
           Submit
         </button>
       </form>
-      <output>{message} </output>
+      <output>{password} </output>
     </>
   );
 

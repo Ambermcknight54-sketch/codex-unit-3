@@ -1,13 +1,35 @@
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
+
 export function Main() {
+  // const [didMount, setDidMount] = useState(false);
+  // useEffect(componentDidMount, MOUNT_PHASE);
   return (
     <main>
+      {/* <p>{"didMount: " + didMount}</p> */}
       <h2> What is a React Template</h2>
       <p>
-        A React template is a starter codebase designed to jumpstart the
-        development of a web application. Instead of configuring everything from
-        scratch, it provides a pre-structured foundation with essential files,
-        dependencies, and layout pieces already set up.
+        <Header />
+
+        <Main />
+
+        <Footer />
       </p>
     </main>
   );
 }
+// function componentDidMount() {
+//     setDidMount(true);
+//     const figures = [];
+
+//     for (let index = 0; index < data.length; index++) {
+//       const item = data[index];
+//       const figure = (
+//         <figure>
+//           <img src={item.src} />
+//           <figcaption>{item.caption}</figcaption>
+//         </figure>
+//       );
+//       figures.push(figure);
+//     }
+//   }

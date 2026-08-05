@@ -8,7 +8,7 @@ export function Login({ setLogin }) {
       <form onSubmit={handleSubmit}>
         <div className="relative mb-3" data-twe-input-wrapper-init>
           <input
-            type="email"
+            type="text"
             className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
             name="email"
             id="email"
@@ -23,7 +23,7 @@ export function Login({ setLogin }) {
 
         <div className="relative mb-3" data-twe-input-wrapper-init>
           <input
-            type="password"
+            type="text"
             className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill dark:peer-focus:text-primary [&:not([data-twe-input-placeholder-active])]:placeholder:opacity-0"
             name="password"
             id="password"
@@ -48,5 +48,11 @@ export function Login({ setLogin }) {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
+
+    const data = {
+      email: form.elements.email.value,
+      password: form.elements.password.value,
+    };
+    setLogin(data);
   }
 }

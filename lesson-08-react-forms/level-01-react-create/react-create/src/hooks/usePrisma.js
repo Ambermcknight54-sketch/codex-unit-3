@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { createWebClient } from "../../../web-client.js";
 import schema from "../../../json-schema.json";
 
-export function usePrisma(password, setData) {
+export function usePrisma(password) {
   const [prisma, setPrisma] = useState();
 
   useEffect(componentDidUpdate, [password]);
@@ -13,19 +13,16 @@ export function usePrisma(password, setData) {
   function componentDidUpdate() {
     if (password) {
       sessionStorage.setItem("password", password);
-      handleData(password);
+      handlePrisma();
     }
 
-    async function handleData(dbPassword) {
-      const client = await createWebClient({
+    async function handlePrisma() {
+      const prisma = await createWebClient({
         jsonSchema: schema,
-        datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${dbPassword}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
+        datasourceUrl: `postgresql://postgres.lajdxfozfpkirmfudjce:${password}@aws-1-us-east-2.pooler.supabase.com:5432/postgres`,
       });
 
-      setPrisma(client);
-
-      const results = await client.products.findMany();
-      setData(results);
+      setPrisma(prisma);
     }
   }
 }

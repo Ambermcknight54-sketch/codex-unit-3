@@ -5,7 +5,8 @@ generator client {
 
 generator jsonSchema {
   provider = "prisma-json-schema-generator"
-  output   = ".."
+  output  = ".."
+  keepRelationScalarFields = "true"
 }
 
 datasource db {
@@ -15,13 +16,12 @@ datasource db {
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model products {
-  id         BigInt   @default(autoincrement())
-  created_at DateTime @default(now()) @db.Timestamptz(6)
+  id         BigInt    @id @default(autoincrement())
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
   name       String
   src        String
-  price      Decimal  @db.Decimal
-
-  @@id([id, created_at, name, src, price])
+  price      Decimal   @db.Decimal
+  reviews    reviews[]
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
@@ -33,18 +33,57 @@ model students {
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model subjects {
   id          BigInt    @default(autoincrement())
   created_at  DateTime  @default(now()) @db.Timestamptz(6)
   name        String
-  description String    @id
+  description String
   date        DateTime? @db.Date
+
+  @@ignore
 }
 
 /// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
 model users {
-  id         BigInt   @id @default(autoincrement())
+  id            BigInt          @id @default(autoincrement())
+  created_at    DateTime        @default(now()) @db.Timestamptz(6)
+  email         String?
+  password      String?
+  reviews       reviews[]
+  reviews_items reviews_items[]
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model items {
+  id            BigInt          @id @default(autoincrement())
+  created_at    DateTime        @default(now()) @db.Timestamptz(6)
+  name          String
+  src           String
+  price         Decimal         @db.Decimal
+  reviews_items reviews_items[]
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model reviews {
+  id         BigInt    @id @default(autoincrement())
+  created_at DateTime  @default(now()) @db.Timestamptz(6)
+  stars      Int       @db.SmallInt
+  product_id BigInt?
+  users_id   BigInt
+  products   products? @relation(fields: [product_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  users      users     @relation(fields: [users_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model reviews_items {
+  id         BigInt   @id(map: "reviews_duplicate_pkey") @default(autoincrement())
   created_at DateTime @default(now()) @db.Timestamptz(6)
-  email      String?
-  password   String?
+  stars      Int      @db.SmallInt
+  items_id   BigInt?
+  users_id   BigInt
+  users      users    @relation(fields: [users_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "reviews_duplicate_users_id_fkey")
+  items      items?   @relation(fields: [items_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }

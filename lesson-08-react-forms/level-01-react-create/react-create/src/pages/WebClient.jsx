@@ -8,8 +8,8 @@ export function WebClient() {
   useInputTWE();
   const [password, handleSubmit] = useSecret("password");
   const [data, setData] = useState([]);
-  useEffect(componentDidUpdate, [password]);
   const [prisma, setPrisma] = useState();
+  useEffect(componentDidUpdate, [password]);
 
   return (
     <main>
@@ -95,7 +95,7 @@ export function WebClient() {
 
       <output>
         {/* <DbPassword setPassword={setPassword} />
-        <Create prisma={prisma} setData={setData} /> */}
+         <Create prisma={prisma} setData={setData} /> */}
         <dl>{data.map(toDetails)}</dl>
       </output>
     </main>

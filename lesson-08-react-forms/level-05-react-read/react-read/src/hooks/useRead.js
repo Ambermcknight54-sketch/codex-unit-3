@@ -16,7 +16,7 @@ export function useRead(prisma) {
 
     if (productId) where.id = productId;
     if (productName) where.name = productName;
-    if (productPrice) where.id = { lte: maxPrice };
+    if (productPrice) where.price = { lte: maxPrice };
 
     const results = await prisma.products.findMany({ where });
 

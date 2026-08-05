@@ -5,6 +5,7 @@ import { useRead } from "../hooks/useRead";
 
 export function Read({ prisma, setData }) {
   useInputTWE();
+  useRead();
 
   const [data, handleSubmit] = useRead(prisma);
   useEffect(componentDidUpdate, [data]);

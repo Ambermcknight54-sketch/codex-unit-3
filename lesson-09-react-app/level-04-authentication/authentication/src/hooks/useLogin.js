@@ -1,3 +1,5 @@
+// src/hooks/useLogin.js
+
 import { useState, useEffect } from "react";
 
 export function useLogin(prisma, login) {
@@ -8,14 +10,26 @@ export function useLogin(prisma, login) {
   return user;
 
   function componentDidUpdate() {
+    // 1. Retrieve string from localStorage
     const userString = localStorage.getItem("user");
-    const storedUser = JSON.parse(userString);
-    setUser(storedUser);
 
-    if (prisma) {
-      if (login) {
-        handleLogin();
+    // 2. Safely parse JSON only if string exists
+    if (userString) {
+      try {
+        const storedUser = JSON.parse(userString);
+
+        // Prevent infinite render loops by checking if user changed
+        if (JSON.stringify(user) !== JSON.stringify(storedUser)) {
+          setUser(storedUser);
+        }
+      } catch (error) {
+        console.error("Failed to parse user from localStorage:", error);
       }
+    }
+
+    // 3. Keep conditional check strictly inside componentDidUpdate
+    if (prisma && login) {
+      handleLogin();
     }
   }
 
@@ -33,3 +47,11 @@ export function useLogin(prisma, login) {
     setUser(foundUser);
   }
 }
+
+//     const storedUser = JSON.parse(userString);
+//     setUser(storedUser);
+//   }
+//   if (prisma) {
+//     if (login) {
+//       handleLogin();
+// }
