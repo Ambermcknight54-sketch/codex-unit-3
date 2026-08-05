@@ -3,29 +3,27 @@ import { useState } from "react";
 export function useUpdate(prisma) {
   const [data, setData] = useState();
   return [data, handleSubmit];
+}
+async function handleSubmit(event) {
+  event.preventDefault();
 
-  async function handleSubmit(event) {
-    event.preventDefault();
+  if (prisma) {
+    const form = event.target;
+    const where = {
+      id: form.elements.productId.value,
+    };
 
-    if (prisma) {
-      const form = event.target;
-      const where = {
-        id: form.elements.productId.value,
-      };
+    const data = {};
+    const productName = form.elements.productName.value;
+    const productImage = form.elements.productImage.value;
+    const productPrice = form.elements.productPrice.value;
 
-      const data = {};
-      const productName = form.elements.productName.value;
-      const productPrice = form.elements.productPrice.value;
-      const productImage = form.elements.productImage.value;
+    if (productName) data.name = productName;
+    if (productImage) data.src = productImage;
+    if (productPrice) data.price = productPrice;
 
-      if (productName) data.name = productName;
-      if (productPrice) data.price = productPrice;
-      if (productImage) data.src = productImage;
-
-      const result = await prisma.products.update({ where, data });
-
-      setData(result);
-    }
+    const result = await prisma.products.update({ where, data });
+    setData(result);
   }
 }
 
