@@ -17,10 +17,10 @@ Custom hooks are useful for separating logic so components can focus on renderin
 5. In the `src/components/` folder, let the `Header` component render the title `Custom Hooks for TW Elements Components`.
 6. View the page to make sure it runs without errors.
 7. Configure the project for Tailwind and TW Elements: install the packages, initialize Tailwind, edit `tailwind.config.js`, connect Tailwind and TW Elements to `style.css`, and link `style.css` to `index.html`.
-8. In the `components` folder, create the file `Slides.jsx` that exports a `Slides` component, which returns a TW Elements carousel. Render `Slides` in the `Main` component, then make sure it works without errors. Call `initTWE` in `componentDidMount`.
+8. In the `components` folder, create the file `Slides.jsx` that exports a `Slides` component, which returns a TW Elements carousel. Render `Slides` in the `Main` component, then make sure it works without errors. Call `initTWE` in `function componentDidMount`.
 9. In the `src` folder, create the `hooks` folder.
 10. In the `hooks` folder, create the file `useCarouselTWE.js` that exports the function `useCarouselTWE`. This will be the custom hook for the TW Elements carousel.
-11. In `Slides.jsx`, move the imports for `useEffect` and `tw-elements` to `useCarouselTWE.js`. Move the code for `useEffect`, and `componentDidMount` into the `useCarouselTWE` function.
+11. In `Slides.jsx`, move the imports for `useEffect` and `tw-elements` to `useCarouselTWE.js`. Move the code for `useEffect()`, and function `componentDidMount` into the `useCarouselTWE` function.
 12. In the `Slides` component, call the `useCarouselTWE` function.
 13. View the page to make sure it runs without errors. Observe that `Slides` is more focused on rendering instead of logic.
 14. In the `components` folder, create `Navbar.jsx` that exports the `Navbar` component, which returns a TW Elements navbar, calls `initTWE` in `componentDidMount`, then render the `Navbar` component in the `Header` component. Make sure it works without errors.

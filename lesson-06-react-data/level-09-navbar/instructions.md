@@ -23,11 +23,11 @@ There are noticeable differences in how navbars are implemented in React project
 11. View the page. There will be errors.
 12. Fix errors with comments, `class`, `style`, hyphenated attributes, then restart the server to fix visual/render issues.
 13. View the page to make sure it runs without errors. Observe that the navbar collapse menu doesn't work properly.
-14. In the TW Elements website, view the JavaScript code for the navbar. In React, `initTWE` must run in the mount phase, after the navbar code has mounted.
+14. In the TW Elements website, view the JavaScript code for the navbar. In React, `initTWE ({})` must run in the function component Didmount phase, after the navbar code has mounted.
 15. Set up the `Navbar` component to track the mount phase. Use `useEffect`, `componentDidMount`, and an empty array of dependencies.
 16. In `Navbar.jsx`, import the items listed in the TW Elements website, then run `initTWE` in `componentDidMount`.
 17. View the page to make sure it runs without errors. Observe that the navbar collapse menu works properly.
-18. Set up the project for multiple pages: create the `pages` folder, convert `Main` to `Home`, move `Home` to the `pages` folder, add an `About` page with content, install `react-router`, and route pages with `BrowserRouter` in `App.jsx`.
+18. Set up the project for multiple pages: create the `pages` folder, convert `Main` to `Home`, move `Home` to the `pages` folder, add an `About` page with content, install `react-router`, and route pages with `BrowserRouter, Routes and Route` in `App.jsx`.
 19. Edit the `Navbar` component to link to valid pages. Remove unused links.
 20. View the page in the browser. The navbar should navigate between pages without errors. Observe that pages are fully reloaded when navbar links are visited.
 21. In `Navbar.jsx` component, import `NavLink` from `react-router`.

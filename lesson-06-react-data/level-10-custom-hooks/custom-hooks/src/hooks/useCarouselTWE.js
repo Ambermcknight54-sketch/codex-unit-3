@@ -11,3 +11,11 @@ export function useCarouselTWE() {
     initTWE({ Carousel });
   }
 }
+
+// export function useCarouselTWE() {
+//   useEffect(componentDidMount, []);
+
+//   function componentDidMount() {
+//     initTWE({ Carousel });
+//   }
+// }
