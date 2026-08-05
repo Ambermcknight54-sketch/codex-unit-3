@@ -78,8 +78,8 @@ export function Main() {
       const results = await response.json();
       const details = results.map(toCharacters);
       setCharacters(details);
-    } catch (error) {
-      console.error("Error fetching filtered data:", error);
+    } catch {
+      console.log("Error fetching filtered data:");
     }
   }
 
@@ -90,7 +90,7 @@ export function Main() {
         <summary>{dataItem.fullName}</summary>
         <figure>
           <img src={dataItem.image} />
-          <figcaption>{dataItem.interpretedBy || dataItem.actor}</figcaption>
+          <figcaption>{dataItem.interpretedBy}</figcaption>
         </figure>
       </details>
     );

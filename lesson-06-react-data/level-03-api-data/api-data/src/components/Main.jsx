@@ -2,8 +2,9 @@
 import { useState, useEffect } from "react";
 
 export function Main() {
-  const [characters, setCharacters] = useState([]);
   const [didMount, setDidMount] = useState(false);
+  const [characters, setCharacters] = useState([]);
+
   useEffect(componentDidMount, []);
 
   return (
@@ -33,18 +34,17 @@ export function Main() {
     const details = result.map(toCharacters);
     setCharacters(details);
   }
+}
 
-  
-  function toCharacters(dataItem) {
-    return (
-      <details>
-        <summary>{dataItem.fullName}</summary>
-        <figure>
-          <img src={dataItem.image} />
-          <figcaption>{dataItem.interpretedBy}</figcaption>
-        </figure>
-      </details>
-    );
-  }
+function toCharacters(dataItem) {
+  return (
+    <details>
+      <summary>{dataItem.fullName}</summary>
+      <figure>
+        <img src={dataItem.image} />
+        <figcaption>{dataItem.interpretedBy}</figcaption>
+      </figure>
+    </details>
+  );
 }
 export default Main;

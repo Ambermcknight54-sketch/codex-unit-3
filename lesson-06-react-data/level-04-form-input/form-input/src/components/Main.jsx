@@ -28,12 +28,11 @@ export function Main() {
           Username:
           <input type="text" name="username" />
         </label>
-
+        =
         <label>
           Email:
           <input type="email" name="email" />
         </label>
-
         <label>
           Password:
           <input type="text" name="password" />

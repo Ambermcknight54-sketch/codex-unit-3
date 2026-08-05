@@ -5,7 +5,7 @@ import { data } from "../data/data.js";
 
 export function Main() {
   const [didMount, setDidMount] = useState(false);
-  const [subjects, setSubjects] = useState();
+  const [subjects, setSubjects] = useState([]);
   useEffect(componentDidMount, MOUNT_PHASE);
 
   return (
@@ -24,9 +24,8 @@ export function Main() {
 
   function componentDidMount() {
     setDidMount(true);
-
-    const detailsElements = data.map(toDetails);
-    setSubjects(detailsElements);
+    const details = data.map(toDetails);
+    setSubjects(details);
   }
 }
 function toDetails(dataItem) {

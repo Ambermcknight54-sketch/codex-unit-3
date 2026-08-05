@@ -37,7 +37,7 @@ There are noticeable differences in how multi-page websites are created with Rea
 25. In `App.jsx` between the `Routes` tags, add a self-closing `Route` tag.
 26. In the `Route` tag, add the attributes `path="/about"` and `element={<About />}`
 27. View the page to make sure it runs without errors.
-28. In the `Header` component, add a navbar with the `nav` tag with `a` tags that link to `/` and `/about`.
+28. In the `Header` component, add a navbar with the `nav` tag with `a href =` tags that link to `/` Home and `/about` About.
 29. View the page to make sure it runs without errors. Use the navbar to navigate between pages. Observe the `path` in the address bar.
 30. In the `Home` page, add a `p` tag that explains how to create a multi-page website with `react-router`.
 31. View the page to make sure it runs without errors.

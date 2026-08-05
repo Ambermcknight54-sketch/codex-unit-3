@@ -35,10 +35,10 @@ Data is commonly received from an API, then converted to React elements with the
 23. In function`toCharacters`() parameters, receive a `dataItem`, which will be an object from the API.
 24. In `toCharacters`, add a `debugger` breakpoint, then use the debugger to inspect `dataItem`.
 25. In function toCharacters`(dataItem), return ()`const details from map = `<details></details>`
-26. In the `details` tag, add a `summary` tag that contains the character's name from `dataItem`.
+26. In the `details` tag, add a `summary` tag that contains the character's full name from `dataItem`.
 27. In the `details` tag, add a `figure` tag with an `img src` tag that that displays the image from `dataItem`.
-28. In the `figure` tag, add a `figcaption` tag that displays the actor's name from `dataItem`.
-29. In `toCharacters`, `return` the `details` object. This object will be added to the array that `map` produces.
+28. In the `figure` tag, add a `figcaption` tag that displays object from `dataItem`.
+29. In `toCharacters`, `return` the `details` object interpretedBy. This object will be added to the array that `map` produces.
 30. View the page to make sure it runs without errors.
 31. Place `debugger` breakpoints in `Main`, and `handleData`.
 32. Use the `debugger` to watch the variables change - `characters` and `details`. Also, watch characters render on the page.

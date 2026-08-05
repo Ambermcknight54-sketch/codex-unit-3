@@ -21,7 +21,7 @@ The `map` method of an array can be used to replace the `for` loop.
 9. View the page to make sure it runs without errors.
 10. In the `src` folder, create a `data` folder with a `data.js` file in it.
 11. In `data.js`, add `export const data`, where `data` is an array of 5 objects.
-12. Let each object have a `name` and `description`. The `name` is a subject - a person, place, or thing. The `description` should describe the subject.
+12. Let each object have a `name: "` and `description: "`. The `name` is a subject - a person, place, or thing. The `description` should describe the subject.
 13. In `Main.jsx`, import the `data` array from `"./data/data.js"`.
 14. View the page to make sure it runs without errors.
 15. In the `Main` component, on the line after `useState`, add `const [] = useState([]);`. This stateful array will contain HTML code.

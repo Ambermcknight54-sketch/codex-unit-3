@@ -35,7 +35,7 @@ return `<details key={key}>.`
 20. Add `const data` and let it be the data object for the API.
 21. Use `URLSearchParams const dataString = new URLSearchParams(data).toString();` to create a `dataString`.
 22. Fetch const response = await fetch const results = await response.json() from `https://potterapi-fedeperin.vercel.app/en/characters` and include the `dataString` as query parameters.
-23. Parse the API response into `results`, use `map` and `toCharacters`, save the element array in `details`, then use `setCharacters` to set `details` as the new value of `characters`.
+23. Parse the API response into `results`, await response use `map` and `toCharacters`, save the element array in `details`, then use `setCharacters` to set `details` as the new value of `characters`.
 24. View the page to make sure it runs without errors.
 25. Place a `debugger` breakpoint at the beginning of `handleSubmit`.
 26. Use the `debugger` to watch the variables change - `data`, `dataString`, `results`, and `details`.
