@@ -6,7 +6,7 @@ export function useControlledInput() {
 
   function handleChange(event) {
     const input = event.target;
-    const newValue = input.value;
-    setValue(newValue);
+    const inputValue = input.value;
+    setValue(inputValue);
   }
 }

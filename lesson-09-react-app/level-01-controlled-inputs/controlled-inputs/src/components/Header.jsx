@@ -1,7 +1,10 @@
+import { Navbar } from "./Navbar";
+
 export function Header() {
   return (
-    <main>
-      <h1> Control Inputs with React </h1>
-    </main>
+    <header>
+      <Navbar />
+      Control Inputs with React
+    </header>
   );
 }

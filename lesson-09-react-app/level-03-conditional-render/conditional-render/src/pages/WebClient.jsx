@@ -1,30 +1,24 @@
 import { Fragment, useState } from "react";
-import { useInputTWE } from "../hooks/useInputTWE";
 import { usePrisma } from "../hooks/usePrisma";
 import { useLogin } from "../hooks/useLogin";
 import { DbPassword } from "../components/DbPassword";
 import { Login } from "../components/Login";
 
 export function WebClient() {
-  useInputTWE();
   const [password, setPassword] = useState();
-  const [login, setLogin] = useState();
-  const [data, setData] = useState([]);
-
   const prisma = usePrisma(password);
+  const [data, setData] = useState([]);
+  const [login, setLogin] = useState();
   const user = useLogin(prisma, login);
 
   let component = <Login setLogin={setLogin} />;
-
-  if (user) {
-    component = <p>You are logged in.</p>;
-  }
+  if (user) component = <p>You are logged in.</p>;
 
   return (
     <main>
       <DbPassword setPassword={setPassword} />
       {component}
-      {/* <Create prisma={prisma} setData={setData} /> */}
+      {/* <Login setLogin={setLogin} /> */}
       <output>
         <dl>{data.map(toDetails)}</dl>
       </output>

@@ -3,7 +3,7 @@ import "./App.css";
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { Footer } from "./components/Footer";
-// import { ApiKey } from "./pages/ApiKey";
+import { ApiKey } from "./pages/ApiKey";
 import { Navbar } from "./components/Navbar";
 import { Page404 } from "./pages/Page404";
 
@@ -19,7 +19,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/apikey" element={<ApiKey />} /> */}
+            <Route path="/apikey" element={<ApiKey />} />
             <Route path="*" element={<Page404 />} />
           </Routes>
         </main>

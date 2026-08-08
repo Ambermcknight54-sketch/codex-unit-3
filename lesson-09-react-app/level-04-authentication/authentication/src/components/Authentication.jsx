@@ -9,14 +9,5 @@ export function Authentication({ setLogin, user }) {
   } else {
     component = <Login setLogin={setLogin} />;
   }
-
-  // let component =
-
-  // <Login setLogin={setLogin} />;
-
-  // if (user) {
-  //   component = <Logout setLogin={setLogin} />;
-  // }
-
   return component;
 }

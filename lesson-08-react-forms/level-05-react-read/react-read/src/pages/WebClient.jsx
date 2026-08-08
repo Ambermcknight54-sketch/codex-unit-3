@@ -1,37 +1,38 @@
 import { Fragment, useState } from "react";
 import { DbPassword } from "../components/DbPassword";
 import { usePrisma } from "../hooks/usePrisma";
-import { Read } from "../components/Read";
+import { Search} from "../components/Read";
 
 export function WebClient() {
   const [password, setPassword] = useState();
   const prisma = usePrisma(password);
   const [data, setData] = useState([]);
+  const [search, setSearch = useState();
 
   return (
     <main>
       <DbPassword setPassword={setPassword} />
-      <Read prisma={prisma} setData={setData} />
+      <Search setSearch = {setSearch} />
       <output>
         <dl>{data.map(toDetails)}</dl>
       </output>
     </main>
   );
-}
+} 
 
-function toDetails(item, index) {
-  const key = index + (item.name || item.id);
-  const details = (
-    <Fragment key={key}>
-      <dt> {item.name}</dt>
-      <dd>
-        <img src={item.src} />
-        {item.price}
-      </dd>
-    </Fragment>
-  );
-  return details;
-}
+// function toDetails(item, index) {
+//   const key = index + (item.name || item.id);
+//   const details = (
+//     <Fragment key={key}>
+//       <dt> {item.name}</dt>
+//       <dd>
+//         <img src={item.src} />
+//         {item.price}
+//       </dd>
+//     </Fragment>
+//   );
+//   return details;
+// }
 //   function componentDidUpdate() {
 //     if (password) {
 //       handleData();
