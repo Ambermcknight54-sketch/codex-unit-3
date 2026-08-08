@@ -1,23 +1,49 @@
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
+import { useEffect, useState } from "react";
 
 export function Main() {
-  // const [didMount, setDidMount] = useState(false);
-  // useEffect(componentDidMount, MOUNT_PHASE);
+  const [didMount, setDidMount] = useState(false);
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(componentDidMount, []);
+
+  function componentDidMount() {
+    setDidMount(true);
+    handleData();
+  }
+
+  async function handleData() {
+    try {
+      const response = await fetch(
+        "https://potterapi-fedeperin.vercel.app/en/characters",
+      );
+      const data = await response.json();
+      const details = data.map(toCharacters);
+      setCharacters(details);
+    } catch (error) {
+      console.error("Failed to fetch characters:", error);
+    }
+  }
+
   return (
     <main>
-      {/* <p>{"didMount: " + didMount}</p> */}
-      <h2> What is a React Template</h2>
-      <p>
-        <Header />
-
-        <Main />
-
-        <Footer />
-      </p>
+      <section>{characters}</section>
+      <p>{"didMount: " + didMount}</p>
     </main>
   );
 }
+
+function toCharacters(dataItem, index) {
+  return (
+    <details key={dataItem.nickname || index}>
+      <summary>{dataItem.fullName}</summary>
+      <figure>
+        <img src={dataItem.image} alt={dataItem.fullName} />
+        <figcaption>{dataItem.interpretedBy}</figcaption>
+      </figure>
+    </details>
+  );
+}
+
 // function componentDidMount() {
 //     setDidMount(true);
 //     const figures = [];

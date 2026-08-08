@@ -1,7 +1,3 @@
 export function Header() {
-  return (
-    <main>
-      <h1>React Template</h1>
-    </main>
-  );
+  return <Header>Render API Data with React</Header>;
 }
