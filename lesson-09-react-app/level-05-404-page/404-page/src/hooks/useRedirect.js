@@ -1,24 +1,21 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router";
 
 export function useRedirect(url, milliseconds) {
-  debugger;
   const navigateTo = useNavigate();
   const [timerId, setTimerId] = useState();
+  useEffect(componentDidMount, []);
+  return handleRedirect;
 
-  useEffect(function componentDidMount() {
-    debugger;
+  function componentDidMount() {
     if (milliseconds) {
       const id = setTimeout(handleRedirect, milliseconds);
       setTimerId(id);
     }
-  }, []);
-
-  function handleRedirect() {
-    debugger;
-    clearTimeout(timerId);
-    navigateTo(url);
   }
-
-  return handleRedirect;
+  function handleRedirect() {
+    navigateTo(url);
+    clearTimeout(timerId);
+  }
 }
